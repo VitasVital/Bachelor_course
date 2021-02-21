@@ -20,29 +20,43 @@ def erf(x):
     Sn *= 2 / np.sqrt(np.pi)
     return Sn
 
-def result1(resf):
+def result1():
     xi = a
     while(xi <= b):
         res = erf(xi)
-        resf.append([xi, res])
+        f.append([xi, res])
         xi += h
-    return resf
 
-result1(f)
+result1()
 
 for i in f:
     print(i)
 
-def product_series():
-    return
+def product_series_numerator(x):
+    product = 1
+    for i in range(len(f)):
+        product *= (x - f[i][0])
+    return product
 
-def l(x):
-    return
+def product_series_denominator(xk, k):
+    product = 1
+    for i in range(len(f)):
+        if f[i][0] != f[k][0]:
+            product *= (xk - f[i][0])
+    return product
 
+def l(x, k):
+    sum = 0
+    for j in range(len(f)):
+        if (f[j][0] != f[k][0]):
+            sum += product_series_numerator(x) / ((x - f[k][0]) * (x - f[j][0]) * product_series_denominator(f[k][0], k))
+    return sum
 
-def result2(resf):
-    xi = a
-    Lx = 0
-    for k in resf:
-        print(k[0], ' ', k[1])
-        Lx += k[1] * l(k[0])
+def result2(x):
+    sum = 0
+    for k in range(len(f)):
+        sum += f[k][1] * l(x, k)
+    return sum
+
+for x in range(2, 10):
+    print(x, " ", result2(x))
