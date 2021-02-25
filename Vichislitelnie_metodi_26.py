@@ -29,13 +29,15 @@ def result1():
 
 result1()
 
+print("\n1 result\n")
 for i in f:
     print(i)
 
-def product_series_numerator(x):
+def product_series_numerator(x, k, j):
     product = 1
     for i in range(len(f)):
-        product *= (x - f[i][0])
+        if (f[i][0] != f[k][0] and f[i][0] != f[j][0]):
+            product *= (x - f[i][0])
     return product
 
 def product_series_denominator(xk, k):
@@ -49,7 +51,7 @@ def l(x, k):
     sum = 0
     for j in range(len(f)):
         if (f[j][0] != f[k][0]):
-            sum += product_series_numerator(x) / ((x - f[k][0]) * (x - f[j][0]) * product_series_denominator(f[k][0], k))
+            sum += product_series_numerator(x, k, j) / product_series_denominator(f[k][0], k)
     return sum
 
 def result2(x):
@@ -58,5 +60,6 @@ def result2(x):
         sum += f[k][1] * l(x, k)
     return sum
 
-for x in range(2, 10):
-    print(x, " ", result2(x))
+print("\n2 result\n")
+for i in range(len(f)):
+    print(f[i][0], ' ', result2(f[i][0]), ' ', (2 / np.sqrt(np.pi)) * np.exp((-1) * f[i][0] ** 2))
