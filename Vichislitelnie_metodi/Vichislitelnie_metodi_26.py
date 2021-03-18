@@ -67,22 +67,36 @@ def result2(func, x):
         res.append(row)
     return res
 
-x = []
-step = 0
-for i in range(200):
-    res = step
-    x.append(res)
-    step += 0.01
+x = np.linspace(0, 2, 100)
+
+function1 = []
+function2 = []
+
+for i in x:
+    res = (2 / np.sqrt(np.pi)) * np.exp(-1 * i ** 2)
+    function1.append(res)
+
+k = 1.5
+for i in x:
+    res = np.sin(np.pi * i * k)
+    function2.append(res)
+
+plt.plot(x, function1)
+plt.show()
+
+plt.figure()
+plt.plot(x, function2)
 
 res2 = result2(f, x)
 for i in res2:
     print(i)
-plt.title(str(h))
+#plt.title(str(0.1))
 row0 = []
 row1 = []
 for i in res2:
     row0.append(i[0])
     row1.append(i[1] - i[2])
+plt.figure()
 plt.plot(row0, row1)
 plt.show()
 #проверить между узлами
