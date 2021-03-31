@@ -67,36 +67,43 @@ def result2(func, x):
         res.append(row)
     return res
 
-x = np.linspace(0, 2, 100)
+def make_test(x, res2):
+    function1 = []
+    for i in x:
+        res = (2 / np.sqrt(np.pi)) * np.exp(-1 * i ** 2)
+        function1.append(res)
+    step = 2.0 / len(x)
+    plt.figure()
+    plt.title('Встроеная функция.\n Шаг = ' + str(step))
+    plt.plot(x, function1)
+    plt.show()
 
-function1 = []
-function2 = []
+    row0 = []
+    row1 = []
+    for i in res2:
+        row0.append(i[0])
+        row1.append(i[1])
+    plt.figure()
+    plt.title('Своя функция.\n Шаг = ' + str(step))
+    plt.plot(row0, row1)
+    plt.show()
 
-for i in x:
-    res = (2 / np.sqrt(np.pi)) * np.exp(-1 * i ** 2)
-    function1.append(res)
+    row_razn0 = []
+    row_razn1 = []
+    for i in res2:
+        row_razn0.append(i[0])
+        row_razn1.append(i[3])
+    plt.figure()
+    plt.title('Разница между своей и встроенной функцией.\n Шаг = ' + str(step))
+    plt.plot(row_razn0, row_razn1)
+    plt.show()
+    return
 
-k = 1.5
-for i in x:
-    res = np.sin(np.pi * i * k)
-    function2.append(res)
+def more_tests():
+    for count in range(10, 100, 10):
+        x = np.linspace(0, 2, count)
+        res2 = result2(f, x)
+        make_test(x, res2)
+    return
 
-plt.plot(x, function1)
-plt.show()
-
-plt.figure()
-plt.plot(x, function2)
-
-res2 = result2(f, x)
-for i in res2:
-    print(i)
-#plt.title(str(0.1))
-row0 = []
-row1 = []
-for i in res2:
-    row0.append(i[0])
-    row1.append(i[1] - i[2])
-plt.figure()
-plt.plot(row0, row1)
-plt.show()
-#проверить между узлами
+more_tests()
