@@ -73,20 +73,32 @@ def make_test(x, res2):
         res = (2 / np.sqrt(np.pi)) * np.exp(-1 * i ** 2)
         function1.append(res)
     step = 2.0 / len(x)
-    plt.figure()
-    plt.title('Встроеная функция.\n Шаг = ' + str(step))
-    plt.plot(x, function1)
-    plt.show()
 
     row0 = []
     row1 = []
     for i in res2:
         row0.append(i[0])
         row1.append(i[1])
-    plt.figure()
-    plt.title('Своя функция.\n Шаг = ' + str(step))
-    plt.plot(row0, row1)
-    plt.show()
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111, label="1")
+    ax2 = fig.add_subplot(111, label="2", frame_on=False)
+
+    ax.plot(x, function1, color="C0")
+    ax.set_xlabel("x label 1", color="C0")
+    ax.set_ylabel("y label 1" + str(step), color="C0")
+    ax.tick_params(axis='x', colors="C0")
+    ax.tick_params(axis='y', colors="C0")
+
+    ax2.scatter(row0, row1, color="C1")
+    ax2.xaxis.tick_top()
+    ax2.yaxis.tick_right()
+    ax2.set_xlabel('x label 2. Шаг = ' + str(step), color="C1")
+    ax2.set_ylabel('y label 2', color="C1")
+    ax2.xaxis.set_label_position('top')
+    ax2.yaxis.set_label_position('right')
+    ax2.tick_params(axis='x', colors="C1")
+    ax2.tick_params(axis='y', colors="C1")
 
     row_razn0 = []
     row_razn1 = []
