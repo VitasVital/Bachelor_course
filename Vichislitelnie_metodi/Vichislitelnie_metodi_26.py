@@ -24,7 +24,7 @@ def erf(x):
 
 def result1(func, step):
     xi = a
-    while(xi <= b + eps):
+    while(xi <= b - eps):
         res = erf(xi)
         func.append([xi, res])
         xi += step
@@ -112,10 +112,17 @@ def make_test(x, res2):
     return
 
 def more_tests():
-    for count in range(10, 100, 10):
+    for count in range(200, 300, 100):
         x = np.linspace(0, 2, count)
         res2 = result2(f, x)
         make_test(x, res2)
     return
 
 more_tests()
+
+def S():
+    return
+
+def result3():
+
+    return

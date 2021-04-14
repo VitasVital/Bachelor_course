@@ -9,6 +9,8 @@ a_l1_copy = [line.split() for line in f1]
 b_l1 = f2.readline().split()
 c1 = f3.readline().split()
 
+#два положительных в иксе
+
 for i in a_l1_copy:
     array = []
     for j in i:
@@ -21,6 +23,8 @@ c_new1 = np.dot(c1, -1)
 res_lin1 = linprog(c_new1, a_l1, b_l1)
 print(res_lin1)
 print(np.dot(res_lin1.fun, -1))
+
+print('-------------------------------------------------------------------------\nСвоё решение')
 
 f1.close()
 f2.close()
