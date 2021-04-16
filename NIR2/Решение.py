@@ -29,17 +29,37 @@ print('-------------------------------------------------------------------------
 
 def find_basis(a):
     ind = []
-    count = 0
-    for _a in a.T:
-        sum = _a @ np.ones(len(_a))
-        if (sum == 1 and sorted(_a)[len(_a) - 1] == 1):
-            ind.append(copy(count))
-        count += 1
+    for i in range(len(a)):
+        for j in range(len(a[i])):
+            if (a[i][j] == 1):
+                sum = a.T[j] @ np.ones(len(a))
+                if (sum == 1):
+                    ind.append([i, j])
+                    break
     return ind
 
-def Simplex(a, b, c):
-    bas = find_basis(a)
+def enter_additional_variables(a, basis):
+    add_column = []
+    for i in range(len(a)):
+        finded = False
+        for j in basis:
+            if (j[0] == i):
+                finded = True
+                break
+        if (finded == False):
+            add_column.append(i)
+    for i in add_column:
+        column = np.zeros(len(a))
+        column[i] += 1
+        a = np.column_stack((a, column))
+    return a
 
+def Simplex(a, b, c):
+    basis = find_basis(a)
+    print(basis)
+    if (len(basis) < len(a)):
+        a = enter_additional_variables(a, basis)
+    print(a)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
