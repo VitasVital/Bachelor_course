@@ -15,7 +15,7 @@ def erf(x):
     n = 0
     while(True):
         an = ((x ** (2 * n + 1)) / (math.factorial(n) * (2 * n + 1)))
-        if (an <= eps):
+        if (abs(an) <= eps):
             break
         Sn += ((-1) ** n) * an
         n += 1
@@ -24,7 +24,7 @@ def erf(x):
 
 def result1(func, step):
     xi = a
-    while(xi <= b - eps):
+    while(xi <= b):
         res = erf(xi)
         func.append([xi, res])
         xi += step
@@ -112,13 +112,24 @@ def make_test(x, res2):
     return
 
 def more_tests():
-    for count in range(200, 300, 100):
+    for count in range(100, 200, 100):
         x = np.linspace(0, 2, count)
         res2 = result2(f, x)
+        for j in res2:
+            print(j)
         make_test(x, res2)
     return
 
 more_tests()
+# _x = np.linspace(0, 2, 10)
+# funsin = []
+# for i in _x:
+#     res = np.sin(np.pi * i)
+#     print(i, ' ', res)
+#     funsin.append(res)
+# plt.figure()
+# plt.plot(_x, funsin)
+# plt.show()
 
 def S():
     return
