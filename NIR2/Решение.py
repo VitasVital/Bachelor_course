@@ -38,7 +38,7 @@ def find_basis(a):
                     break
     return ind
 
-def enter_additional_variables(a, basis):
+def enter_additional_variables(a, c, basis):
     add_column = []
     for i in range(len(a)):
         finded = False
@@ -51,15 +51,45 @@ def enter_additional_variables(a, basis):
     for i in add_column:
         column = np.zeros(len(a))
         column[i] += 1
+        basis.append([i, len(a[0])])
         a = np.column_stack((a, column))
-    return a
+        c = np.append(c, 0)
+    return a, c, basis
+
+#Оптимальность. Все дельта должны быть отрицательными
+def check_optimality(delta):
+    for i in delta:
+        if i > 0:
+            return False
+    return True
+
+#Допустимость. Все b (А0) должны быть неотрицательными
+def check_validity(b):
+    for i in b:
+        if i < 0:
+            return False
+    return True
+
+def calculate_delta():
+    return
+
+def iteration(a, b, c, basis):
+    A0 = b
+    C = []
+    basis.sort(key = lambda basis: basis[0])
+    for i in basis:
+        C.append(c[i[1]])
+    print(C)
+    return
 
 def Simplex(a, b, c):
-    basis = find_basis(a)
-    print(basis)
-    if (len(basis) < len(a)):
-        a = enter_additional_variables(a, basis)
+    added_basis = find_basis(a)
+    if (len(added_basis) < len(a)):
+        a, c, basis = enter_additional_variables(a, c, added_basis)
     print(a)
+    print(basis)
+    print(c)
+    iteration(a, b, c, basis)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
