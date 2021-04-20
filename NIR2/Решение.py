@@ -70,26 +70,86 @@ def check_validity(b):
             return False
     return True
 
-def calculate_delta():
+def calculate_delta(a, c, A0, C):
+    delta = []
+    res0 = A0 @ C.T
+    delta.append(res0)
+    for _c in range(len(c)):
+        res = a.T[_c] @ C - c[_c]
+        delta.append(res)
+    return np.array(delta)
+
+def find_k(delta):
+    res = 1
+    for i in range(2, len(delta)):
+        if (delta[i] > delta[res]):
+            res = i
+    return res
+
+def step3(ak):
+    res = 0
+    for i in range(len(ak)):
+        if (ak[i] > ak[res]):
+            res = i
+    return res
+
+def step4(A0, ak):
+    l = 0
+    teta0 = A0[0] / ak[0]
+    for i in range(1, len(A0)):
+        teta = A0[i] / ak[i]
+        if (teta < teta0):
+            teta = i
+            teta0 = teta
+    return l
+
+def update_delta(delta, a, a1, k):
+    return
+
+def update_a(a, a1, k):
+
     return
 
 def iteration(a, b, c, basis):
     A0 = b
     C = []
-    basis.sort(key = lambda basis: basis[0])
     for i in basis:
-        C.append(c[i[1]])
-    print(C)
+        C.append(c[i])
+    print('C = ', C)
+    print('A0 =', A0)
+    C = np.array(C)
+    delta = calculate_delta(a, c, A0, C)
+    print('delta = ', delta)
+    k = find_k(delta)
+    print('k = ', k)
+    print('Оптимальность ', check_optimality(delta))
+    step_3 = step3(a.T[k])
+    print('step3 ', step_3)
+    print('basis ', basis)
+    step_4 = step4(A0, a.T[k])
+    print('step4 ', step_4)
+    basis[step_4] = k
+    print('basis ', basis)
+    C[step_4] = c[k]
+    print('C = ', C)
+    al = a[step_4]
+    a = update_a(a, al, k)
+    delta = update_delta(delta, a, al, k)
     return
 
 def Simplex(a, b, c):
     added_basis = find_basis(a)
+    basis = []
     if (len(added_basis) < len(a)):
         a, c, basis = enter_additional_variables(a, c, added_basis)
-    print(a)
-    print(basis)
-    print(c)
-    iteration(a, b, c, basis)
+    print('a = ', a)
+    print('basis = ', basis)
+    _basis = []
+    for i in basis:
+        _basis.append(i[1])
+    print(_basis)
+    print('c = ', c)
+    iteration(a, b, c, _basis)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
