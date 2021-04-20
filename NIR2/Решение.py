@@ -70,10 +70,8 @@ def check_validity(b):
             return False
     return True
 
-def calculate_delta(a, c, A0, C):
+def calculate_delta(a, c, C):
     delta = []
-    res0 = A0 @ C.T
-    delta.append(res0)
     for _c in range(len(c)):
         res = a.T[_c] @ C - c[_c]
         delta.append(res)
@@ -108,24 +106,25 @@ def update_delta(delta, al, k):
     print(al)
     print(k)
     for j in range(len(delta) - 1):
-        delta[j] = delta[j] - (al[j] / al[k + 1]) * delta[k + 1]
+        delta[j] = delta[j] - (al[j] / al[k]) * delta[k]
     return delta
 
-def update_a(a, al, A0, k):
-    # for i in range(len(a[0])):
-    #     for j in range(len(a.T[0])):
-
+def update_a(a, al, k):
+    for i in range(len(a[0])):
+        for j in range(len(a.T[0])):
+            if (k == i):
+                a[j, k] = al[j] / al[k]
+                continue
+            a[j, i] = a[j, i] - al[j] * (a[k, i] / al[k])
     return a
 
-def iteration(a, b, c, basis):
-    A0 = b
+def iteration(a, c, basis):
     C = []
     for i in basis:
         C.append(c[i])
     print('C = ', C)
-    print('A0 =', A0)
     C = np.array(C)
-    delta = calculate_delta(a, c, A0, C)
+    delta = calculate_delta(a, c, C)
     print('delta = ', delta)
     k = find_k(delta)
     print('k = ', k)
@@ -133,20 +132,17 @@ def iteration(a, b, c, basis):
     step_3 = step3(a.T[k])
     print('step3 ', step_3)
     print('basis ', basis)
-    step_4 = step4(A0, a.T[k])
+    step_4 = step4(a.T[0], a.T[k])
     print('step4 ', step_4)
     basis[step_4] = k
     print('basis ', basis)
     C[step_4] = c[k]
     print('C = ', C)
-    al = np.insert(a[step_4], 0, A0[step_4])
-    #a = np.insert(a, 0, A0.T)
-    a = np.column_stack(a, 0, A0.T)
-    a = update_a(a, al, A0, k)
+    a = update_a(a, a[step_4], k)
     print('updated a ', a)
-    # delta = update_delta(delta, al, k)
-    # print('update delta ', delta)
-    return
+    delta = update_delta(delta, a[step_4], k)
+    print('update delta ', delta)
+    return a, delta, basis
 
 def Simplex(a, b, c):
     added_basis = find_basis(a)
@@ -166,7 +162,19 @@ def Simplex(a, b, c):
         for j in range(len(a_new.T[0])):
             a_new[j][i] += a[j][i - 1]
     print(a_new)
-    #iteration(a, b, c, _basis)
+    isOptimal = False
+    isValid = False
+    count = 0
+    while (isOptimal == False and isValid == False):
+        print('count = ', count)
+        a_new, delta, _basis = iteration(a_new, c, _basis)
+        isOptimal = check_optimality(delta)
+        isValid = check_validity(a_new.T[0])
+        count += 1
+    print(a_new)
+    print(delta)
+    print(basis)
+    print(count)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
