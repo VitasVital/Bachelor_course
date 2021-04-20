@@ -103,12 +103,19 @@ def step4(A0, ak):
             teta0 = teta
     return l
 
-def update_delta(delta, a, a1, k):
-    return
+def update_delta(delta, al, k):
+    print(delta)
+    print(al)
+    print(k)
+    for j in range(len(delta) - 1):
+        delta[j] = delta[j] - (al[j] / al[k + 1]) * delta[k + 1]
+    return delta
 
-def update_a(a, a1, k):
+def update_a(a, al, A0, k):
+    # for i in range(len(a[0])):
+    #     for j in range(len(a.T[0])):
 
-    return
+    return a
 
 def iteration(a, b, c, basis):
     A0 = b
@@ -132,9 +139,13 @@ def iteration(a, b, c, basis):
     print('basis ', basis)
     C[step_4] = c[k]
     print('C = ', C)
-    al = a[step_4]
-    a = update_a(a, al, k)
-    delta = update_delta(delta, a, al, k)
+    al = np.insert(a[step_4], 0, A0[step_4])
+    #a = np.insert(a, 0, A0.T)
+    a = np.column_stack(a, 0, A0.T)
+    a = update_a(a, al, A0, k)
+    print('updated a ', a)
+    # delta = update_delta(delta, al, k)
+    # print('update delta ', delta)
     return
 
 def Simplex(a, b, c):
@@ -149,7 +160,13 @@ def Simplex(a, b, c):
         _basis.append(i[1])
     print(_basis)
     print('c = ', c)
-    iteration(a, b, c, _basis)
+    a_new = np.zeros((len(a.T[0]), len(a[0]) + 1))
+    a_new.T[0] += b
+    for i in range(1, len(a_new[0])):
+        for j in range(len(a_new.T[0])):
+            a_new[j][i] += a[j][i - 1]
+    print(a_new)
+    #iteration(a, b, c, _basis)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
