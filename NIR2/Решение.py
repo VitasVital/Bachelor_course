@@ -79,26 +79,40 @@ def calculate_delta(a, c, C):
 
 def find_k(delta):
     res = 1
-    for i in range(2, len(delta)):
+    for i in range(1, len(delta)):
         if (delta[i] > delta[res]):
             res = i
     return res
 
-def step3(ak):
-    res = 0
+# def step3(ak):
+#     res = 0
+#     for i in range(len(ak)):
+#         if (ak[i] > ak[res]):
+#             res = i
+#     return res
+
+def step3(ak, basis):
+    res = []
     for i in range(len(ak)):
-        if (ak[i] > ak[res]):
-            res = i
+        if (ak[i] > 0):
+            res.append(basis[i])
     return res
 
-def step4(A0, ak):
+def step4(A0, ak, basis, step_3):
     l = 0
-    teta0 = A0[0] / ak[0]
-    for i in range(1, len(A0)):
-        teta = A0[i] / ak[i]
-        if (teta < teta0):
-            teta = i
-            teta0 = teta
+    teta0 = 0
+    first_teta = False
+    for i in range(0, len(A0)):
+        if (basis[i] in step_3 == False):
+            continue
+        if (first_teta == False):
+            teta0 = A0[i] / ak[i]
+            l = basis[i]
+            first_teta = True
+            continue
+        if (teta0 > A0[i] / ak[i]):
+            teta0 = A0[i] / ak[i]
+            l = basis[i]
     return l
 
 def update_delta(delta, al, k):
@@ -115,10 +129,11 @@ def update_a(a, al, k):
             if (k == i):
                 a[j, k] = al[j] / al[k]
                 continue
-            a[j, i] = a[j, i] - al[j] * (a[k, i] / al[k])
+            a[j, i] = a[j, i] - al[j] * (a[i, k] / al[k])
     return a
 
 def iteration(a, c, basis):
+    print('start-----------------------------------')
     C = []
     for i in basis:
         C.append(c[i])
@@ -128,12 +143,11 @@ def iteration(a, c, basis):
     print('delta = ', delta)
     k = find_k(delta)
     print('k = ', k)
-    print('Оптимальность ', check_optimality(delta))
-    step_3 = step3(a.T[k])
+    step_3 = step3(a.T[k], basis)
     print('step3 ', step_3)
-    print('basis ', basis)
-    step_4 = step4(a.T[0], a.T[k])
+    step_4 = step4(a.T[0], a.T[k], basis, step_3)
     print('step4 ', step_4)
+    #доделать
     basis[step_4] = k
     print('basis ', basis)
     C[step_4] = c[k]
@@ -142,6 +156,7 @@ def iteration(a, c, basis):
     print('updated a ', a)
     delta = update_delta(delta, a[step_4], k)
     print('update delta ', delta)
+    print('stop-----------------------------------')
     return a, delta, basis
 
 def Simplex(a, b, c):
@@ -151,9 +166,7 @@ def Simplex(a, b, c):
         a, c, basis = enter_additional_variables(a, c, added_basis)
     print('a = ', a)
     print('basis = ', basis)
-    _basis = []
-    for i in basis:
-        _basis.append(i[1])
+    _basis = np.array(basis).T[1]
     print(_basis)
     print('c = ', c)
     a_new = np.zeros((len(a.T[0]), len(a[0]) + 1))
@@ -171,10 +184,6 @@ def Simplex(a, b, c):
         isOptimal = check_optimality(delta)
         isValid = check_validity(a_new.T[0])
         count += 1
-    print(a_new)
-    print(delta)
-    print(basis)
-    print(count)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
