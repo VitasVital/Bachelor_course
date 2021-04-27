@@ -126,6 +126,30 @@ def update_a(a, al, k, l):
                 continue
             a_new[i, j] = a[i, j] - al[j] * (a[i, k] / al[k])
     return a_new
+#доделать
+def help_table(a, delta):
+    ind = 0
+    for i in range(len(a.T[0])):
+        if a.T[0, i] < 0:
+            ind = i
+    res = []
+    max = 0
+    maxind = 0
+    max_finded = False
+    for i in range(1, len(a[0])):
+        if (a[ind, i] != 0):
+            res.append(delta[i] / a[ind, i])
+            if (max_finded == False):
+                max = delta[i] / a[ind, i]
+                maxind = i
+                max_finded = True
+                continue
+            if (max < delta[i] / a[ind, i]):
+                max = delta[i] / a[ind, i]
+                maxind = i
+        else:
+            res.append(0)
+    return [res, maxind]
 
 def iteration(a, c, basis, delta, C):
     print('\nstart-----------------------------------')
@@ -172,12 +196,15 @@ def Simplex(a, b, c):
     while (isOptimal == False or isValid == False):
         count += 1
         print('count = ', count)
+        if (isValid == False):
+            dvoistvenniy = help_table(a_new, delta)
+            break
         a_new, delta, _basis, C = iteration(a_new, c, _basis, delta, C)
         isOptimal = check_optimality(delta)
         isValid = check_validity(a_new.T[0])
         print('Optimal ', isOptimal, ' valid ', isValid)
-        if (isValid == False):
-            break
+        # if (count == 7):
+        #     break
     print('result a =', a_new)
     print('result delta =', delta)
     print('result basis =', _basis)
