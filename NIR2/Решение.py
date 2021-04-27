@@ -72,8 +72,9 @@ def check_validity(b):
 
 def calculate_delta(a, c, C):
     delta = []
+    delta.append(a.T[0] @ C)
     for _c in range(len(c)):
-        res = a.T[_c] @ C - c[_c]
+        res = a.T[_c + 1] @ C - c[_c]
         delta.append(res)
     return np.array(delta)
 
@@ -84,13 +85,6 @@ def find_k(delta):
             res = i
     return res
 
-# def step3(ak):
-#     res = 0
-#     for i in range(len(ak)):
-#         if (ak[i] > ak[res]):
-#             res = i
-#     return res
-
 def step3(ak, basis):
     res = []
     for i in range(len(ak)):
@@ -100,6 +94,7 @@ def step3(ak, basis):
 
 def step4(A0, ak, basis, step_3):
     l = 0
+    ind = 0
     teta0 = 0
     first_teta = False
     for i in range(0, len(A0)):
@@ -113,23 +108,29 @@ def step4(A0, ak, basis, step_3):
         if (teta0 > A0[i] / ak[i]):
             teta0 = A0[i] / ak[i]
             l = basis[i]
-    return l
+            ind = i
+    return l, ind
 
 def update_delta(delta, al, k):
     print(delta)
     print(al)
     print(k)
-    for j in range(len(delta) - 1):
-        delta[j] = delta[j] - (al[j] / al[k]) * delta[k]
+    for j in range(len(delta)):
+        new_delta = delta[j] - (al[j] / al[k]) * delta[k]
+        delta[j] = new_delta
     return delta
 
 def update_a(a, al, k):
+    print('up a ', a)
+    print('up al ', al)
     for i in range(len(a[0])):
         for j in range(len(a.T[0])):
             if (k == i):
-                a[j, k] = al[j] / al[k]
+                a_new = al[j] / al[k]
+                a[j, i] = a_new
                 continue
-            a[j, i] = a[j, i] - al[j] * (a[i, k] / al[k])
+            a_new = a[j, i] - al[i] * (a[k, i] / al[k])
+            a[j, i] = a_new
     return a
 
 def iteration(a, c, basis):
@@ -147,17 +148,16 @@ def iteration(a, c, basis):
     print('step3 ', step_3)
     step_4 = step4(a.T[0], a.T[k], basis, step_3)
     print('step4 ', step_4)
-    #доделать
-    basis[step_4] = k
+    basis[step_4[1]] = step_4[0]
     print('basis ', basis)
-    C[step_4] = c[k]
+    C[step_4[1]] = c[k]
     print('C = ', C)
-    a = update_a(a, a[step_4], k)
+    new_a = update_a(a, a[step_4[1]], k)
     print('updated a ', a)
-    delta = update_delta(delta, a[step_4], k)
+    delta = update_delta(delta, a[step_4[1]], k)
     print('update delta ', delta)
     print('stop-----------------------------------')
-    return a, delta, basis
+    return new_a, delta, basis
 
 def Simplex(a, b, c):
     added_basis = find_basis(a)
@@ -178,12 +178,17 @@ def Simplex(a, b, c):
     isOptimal = False
     isValid = False
     count = 0
-    while (isOptimal == False and isValid == False):
+    while (isOptimal == False or isValid == False):
         print('count = ', count)
         a_new, delta, _basis = iteration(a_new, c, _basis)
         isOptimal = check_optimality(delta)
         isValid = check_validity(a_new.T[0])
+        print(isOptimal, ' ', isValid)
         count += 1
+    print('result a =', a_new)
+    print('result delta =', delta)
+    print('result basis =', _basis)
+    print('result count =', count)
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
