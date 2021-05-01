@@ -132,24 +132,25 @@ def help_table(a, delta):
     for i in range(len(a.T[0])):
         if a.T[0, i] < 0:
             ind = i
+            break
     res = []
-    max = 0
-    maxind = 0
-    max_finded = False
+    min = 0
+    minind = 0
+    min_finded = False #минимальный по модулю
     for i in range(1, len(a[0])):
         if (a[ind, i] != 0):
             res.append(delta[i] / a[ind, i])
-            if (max_finded == False):
-                max = delta[i] / a[ind, i]
-                maxind = i
-                max_finded = True
+            if (min_finded == False):
+                min = delta[i] / a[ind, i]
+                minind = i
+                min_finded = True
                 continue
-            if (max < delta[i] / a[ind, i]):
-                max = delta[i] / a[ind, i]
-                maxind = i
+            if (abs(min) > abs(delta[i] / a[ind, i]) and delta[i] / a[ind, i] != 0):
+                min = delta[i] / a[ind, i]
+                minind = i
         else:
             res.append(0)
-    return [res, maxind]
+    return [res, minind, ind]
 
 def iteration(a, c, basis, delta, C):
     print('\nstart-----------------------------------')
@@ -197,8 +198,14 @@ def Simplex(a, b, c):
         count += 1
         print('count = ', count)
         if (isValid == False):
+            #доделать
             dvoistvenniy = help_table(a_new, delta)
-            break
+            print('двойственный ', dvoistvenniy)
+            new_a = update_a(a_new, a_new[dvoistvenniy[2]], dvoistvenniy[1], dvoistvenniy[2])
+            print('updated a двйосвенный ', new_a)
+            delta = update_delta(delta, new_a[dvoistvenniy[2]], dvoistvenniy[1])
+            print('update delta двойсвенный ', delta)
+            #break
         a_new, delta, _basis, C = iteration(a_new, c, _basis, delta, C)
         isOptimal = check_optimality(delta)
         isValid = check_validity(a_new.T[0])
