@@ -56,7 +56,7 @@ def enter_additional_variables(a, c, basis):
         c = np.append(c, 0)
     return a, c, basis
 
-#Оптимальность. Все дельта должны быть отрицательными
+#Оптимальность. Все дельта должны быть неположительными
 def check_optimality(delta):
     for i in delta:
         if i > 0:
@@ -109,7 +109,7 @@ def step4(A0, ak, basis, step_3):
             teta0 = A0[i] / ak[i]
             l = basis[i]
             ind = i
-    return l, ind
+    return [l, ind]
 
 def update_delta(delta, al, k):
     new_delta = []
@@ -161,8 +161,8 @@ def iteration(a, c, basis, delta, C):
     step_4 = step4(a.T[0], a.T[k], basis, step_3)
     print('step4 ', step_4)
     basis[step_4[1]] = k
-    print('basis ', basis)
-    C[step_4[1]] = c[k]
+    print('new basis ', basis)
+    C[step_4[1]] = c[k - 1]
     print('C = ', C)
     new_a = update_a(a, a[step_4[1]], k, step_4[1])
     print('updated a ', a)
@@ -187,35 +187,34 @@ def Simplex(a, b, c):
         for j in range(len(a_new.T[0])):
             a_new[j][i] += a[j][i - 1]
     print(a_new)
-    isOptimal = False
-    isValid = False
     count = 0
     C = []
     for i in _basis:
         C.append(c[i])
     delta = calculate_delta(a_new, c, C)
+    isOptimal = check_optimality(delta)
+    isValid = check_validity(a_new.T[0])
     while (isOptimal == False or isValid == False):
         count += 1
         print('count = ', count)
         if (isValid == False):
-            #доделать
             dvoistvenniy = help_table(a_new, delta)
             print('двойственный ', dvoistvenniy)
             new_a = update_a(a_new, a_new[dvoistvenniy[2]], dvoistvenniy[1], dvoistvenniy[2])
             print('updated a двйосвенный ', new_a)
             delta = update_delta(delta, new_a[dvoistvenniy[2]], dvoistvenniy[1])
             print('update delta двойсвенный ', delta)
-            #break
+            count += 1
         a_new, delta, _basis, C = iteration(a_new, c, _basis, delta, C)
         isOptimal = check_optimality(delta)
         isValid = check_validity(a_new.T[0])
         print('Optimal ', isOptimal, ' valid ', isValid)
-        # if (count == 7):
-        #     break
     print('result a =', a_new)
+    print('result a0 =', a_new.T[0])
     print('result delta =', delta)
     print('result basis =', _basis)
     print('result count =', count)
+    print('F = ', delta[0])
     return
 
 Simplex(np.array(a_l1), np.array(b_l1), np.array(c_new1))
