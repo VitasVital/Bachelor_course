@@ -4,7 +4,6 @@ import matplotlib.pyplot as plt
 
 a = 0.0
 b = 2.0
-#h = 0.2
 h = (b - a) / 10
 eps = 10 ** (-6)
 
@@ -112,28 +111,58 @@ def make_test(x, res2):
     return
 
 def more_tests():
-    for count in range(100, 200, 100):
-        x = np.linspace(0, 2, count)
-        res2 = result2(f, x)
-        for j in res2:
-            print(j)
-        make_test(x, res2)
+    x = np.linspace(0, 2, 100)
+    res2 = result2(f, x)
+    for j in res2:
+        print(j)
+    make_test(x, res2)
     return
 
 more_tests()
-# _x = np.linspace(0, 2, 10)
-# funsin = []
-# for i in _x:
-#     res = np.sin(np.pi * i)
-#     print(i, ' ', res)
-#     funsin.append(res)
+
+c = 0.0
+d = 2.0
+eps_1 = 10 ** (-4)
+
+def fi(num):
+    res = (2 / np.sqrt(np.pi)) * np.exp((-1) * num ** 2)
+    return res
+
+def S(z, hN):
+    res = (hN / 2) * (fi(z + (hN / 2) * (1 - 1 / np.sqrt(3))) + fi(z + (hN / 2) * (1 + 1 / np.sqrt(3))))
+    return res
+
+def result3(x):
+    S_res = []
+    for _x in range(len(x)):
+        N = 1
+        hN = (x[_x - 1] - x[_x]) / N
+        N_2 = N * 2
+        hN_2 = (x[_x - 1] - x[_x]) / N_2
+        flag = True
+        while (flag):
+            S_res_N = 0
+            for i in range(N):
+                zi = c + i * hN
+                S_res_N += S(zi, hN)
+            S_res_2N = 0
+            for i in range(N_2):
+                zi = c + i * hN_2
+                S_res_2N += S(zi, hN_2)
+            if (abs(S_res_N - S_res_2N) <= eps_1):
+                S_res.append(S_res_N)
+                flag = False
+            else:
+                N += 1
+                hN = (c - d) / N
+                # print('S_res_N = ', S_res_N)
+                # print('S_res_2N = ', S_res_2N)
+    return S_res
+
+res3 = result3(np.array(f).T[0])
+print(res3)
+
+# x = np.linspace(0, 2, len(res3))
 # plt.figure()
-# plt.plot(_x, funsin)
+# plt.plot(x, res3)
 # plt.show()
-
-def S():
-    return
-
-def result3():
-
-    return

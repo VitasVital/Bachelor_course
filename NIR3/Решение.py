@@ -36,16 +36,6 @@ def grad_F(x):
     res2 = 6 * x[1] - 3 * x[0] - 6
     return np.array([res1, res2])
 
-# def gradient(_x0):
-#     x = _x0
-#     _F = F(x)
-#     while (abs(_F) > eps):
-#         new_x = x - teta * grad_F(x)
-#         _F = F(new_x)
-#         x = new_x
-#     print(x)
-#     return
-
 def find_lambda(grad, x):
     lamb = (2 * grad[0] * x[0] + 6 * x[1] + grad[0] - 6 * grad[1] - 3 * grad[1] * x[0] - 3 * grad[0] * x[1]) / (6 * grad[0] * grad[1] - 2 * grad[0] ** 2 - 6 * grad[1])
     return lamb
