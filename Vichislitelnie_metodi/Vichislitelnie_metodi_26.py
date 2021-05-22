@@ -124,8 +124,8 @@ c = 0.0
 d = 2.0
 eps_1 = 10 ** (-4)
 
-def fi(num):
-    res = (2 / np.sqrt(np.pi)) * np.exp((-1) * num ** 2)
+def fi(t):
+    res = (2 / np.sqrt(np.pi)) * np.exp((-1) * t ** 2)
     return res
 
 def S(z, hN):
@@ -134,8 +134,8 @@ def S(z, hN):
 
 def result3(x):
     S_res = []
-    for _x in range(len(x)):
-        N = 1
+    for _x in range(1, len(x)):
+        N = 10
         hN = (x[_x - 1] - x[_x]) / N
         N_2 = N * 2
         hN_2 = (x[_x - 1] - x[_x]) / N_2
@@ -153,16 +153,19 @@ def result3(x):
                 S_res.append(S_res_N)
                 flag = False
             else:
-                N += 1
-                hN = (c - d) / N
+                N += 10
+                hN = (x[_x - 1] - x[_x]) / N
+                N_2 = N * 2
+                hN_2 = (x[_x - 1] - x[_x]) / N_2
                 # print('S_res_N = ', S_res_N)
                 # print('S_res_2N = ', S_res_2N)
     return S_res
 
 res3 = result3(np.array(f).T[0])
 print(res3)
+print(sum(res3))
 
-# x = np.linspace(0, 2, len(res3))
-# plt.figure()
-# plt.plot(x, res3)
-# plt.show()
+x = np.linspace(0, 2, len(res3))
+plt.figure()
+plt.plot(x, res3)
+plt.show()
