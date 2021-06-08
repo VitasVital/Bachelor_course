@@ -1,6 +1,7 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
+import pandas as pd
 
 a = 0.0
 b = 2.0
@@ -27,6 +28,14 @@ def result1(func, step):
         res = erf(xi)
         func.append([xi, res])
         xi += step
+    df = pd.DataFrame(func)
+    df.to_excel('./res1.xlsx')
+    plt.figure()
+    plt.title('График erf(x).\n Шаг = ' + str(step))
+    plt.plot(np.array(func).T[0], np.array(func).T[1])
+    for i, txt in enumerate(np.array(func).T[1]):
+        plt.annotate(np.array(func).T[1, i], (np.array(func).T[0, i], np.array(func).T[1, i]))
+    plt.show()
 
 result1(f, h)
 
@@ -82,22 +91,27 @@ def make_test(x, res2):
     fig = plt.figure()
     ax = fig.add_subplot(111, label="1")
     ax2 = fig.add_subplot(111, label="2", frame_on=False)
+    plt.title('erf(x) по Тейлору')
 
-    ax.plot(x, function1, color="C0")
+    ax.plot(x, function1, color="C0", label = ['Запрограммированный'])
     ax.set_xlabel("x label 1", color="C0")
     ax.set_ylabel("y label 1" + str(step), color="C0")
     ax.tick_params(axis='x', colors="C0")
     ax.tick_params(axis='y', colors="C0")
+    ax.legend(loc=(0.0, 0.1))
 
-    ax2.scatter(row0, row1, color="C1")
+    ax2.scatter(row0, row1, color="C1", label = ['Встроенный'])
     ax2.xaxis.tick_top()
     ax2.yaxis.tick_right()
-    ax2.set_xlabel('x label 2. Шаг = ' + str(step), color="C1")
+    ax2.set_xlabel('x label 2. Шаг разбиения = ' + str(step), color="C1")
     ax2.set_ylabel('y label 2', color="C1")
     ax2.xaxis.set_label_position('top')
     ax2.yaxis.set_label_position('right')
     ax2.tick_params(axis='x', colors="C1")
     ax2.tick_params(axis='y', colors="C1")
+    ax2.legend(loc=(0.0, 0.2))
+    for i, txt in enumerate(row1):
+        ax2.annotate(row1[i], (x[i], row1[i]))
 
     row_razn0 = []
     row_razn1 = []
@@ -105,16 +119,18 @@ def make_test(x, res2):
         row_razn0.append(i[0])
         row_razn1.append(i[3])
     plt.figure()
-    plt.title('Разница между своей и встроенной функцией.\n Шаг = ' + str(step))
+    plt.title('График погрешности для равномерно распределенных узлов.\n Шаг h = ' + str(step))
     plt.plot(row_razn0, row_razn1)
     plt.show()
     return
 
 def more_tests():
-    x = np.linspace(0, 2, 100)
+    x = np.linspace(0, 2, 20)
     res2 = result2(f, x)
     for j in res2:
         print(j)
+    df = pd.DataFrame(res2)
+    df.to_excel('./res2.xlsx')
     make_test(x, res2)
     return
 
@@ -135,10 +151,10 @@ def S(z, hN):
 def result3(x):
     S_res = []
     for _x in range(1, len(x)):
-        N = 10
-        hN = (x[_x - 1] - x[_x]) / N
+        N = 1
+        hN = (x[_x] - x[_x - 1]) / N
         N_2 = N * 2
-        hN_2 = (x[_x - 1] - x[_x]) / N_2
+        hN_2 = (x[_x] - x[_x - 1]) / N_2
         flag = True
         while (flag):
             S_res_N = 0
@@ -150,20 +166,21 @@ def result3(x):
                 zi = c + i * hN_2
                 S_res_2N += S(zi, hN_2)
             if (abs(S_res_N - S_res_2N) <= eps_1):
-                S_res.append(S_res_N)
+                S_res.append([x[_x], S_res_N])
                 flag = False
             else:
-                N += 10
-                hN = (x[_x - 1] - x[_x]) / N
+                N += 1
+                hN = (x[_x] - x[_x - 1]) / N
                 N_2 = N * 2
-                hN_2 = (x[_x - 1] - x[_x]) / N_2
+                hN_2 = (x[_x] - x[_x - 1]) / N_2
                 # print('S_res_N = ', S_res_N)
                 # print('S_res_2N = ', S_res_2N)
     return S_res
 
 res3 = result3(np.array(f).T[0])
 print(res3)
-print(sum(res3))
+df = pd.DataFrame(res3)
+df.to_excel('./res3.xlsx')
 
 x = np.linspace(0, 2, len(res3))
 plt.figure()

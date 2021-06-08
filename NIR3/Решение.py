@@ -2,7 +2,7 @@ import numpy as np
 from scipy.optimize import minimize
 
 
-def func(x): return (x[0] ** 2 + 1.5 * x[1] ** 2 - 2 * x[0] * x[1] + 4 * x[0] - 8 * x[1])
+def func(x): return (x[0] ** 2 + 3 * x[1] ** 2 - 3 * x[0] * x[1] - 6 * x[1])
 
 
 def func_deriv(x):
@@ -21,14 +21,10 @@ print(res)
 
 print('---------------------------------------------------------------------------------------')
 
-eps = 10 ** (-2)
-
-teta = 0.2
-
 x0 = np.array([1, 1])
 
 def F(x):
-    res = x[0] ** 2 + 3 * x[1] ** 2 - 3 * x[0] * x[1] - 6 * x[1]
+    res = x[0] ** 2 + 3 * x[1] ** 2 - 3 * x[0] * x[1] + x[0] - 6 * x[1]
     return res
 
 def grad_F(x):
@@ -36,33 +32,36 @@ def grad_F(x):
     res2 = 6 * x[1] - 3 * x[0] - 6
     return np.array([res1, res2])
 
-def find_lambda(grad, x):
-    lamb = (2 * grad[0] * x[0] + 6 * x[1] + grad[0] - 6 * grad[1] - 3 * grad[1] * x[0] - 3 * grad[0] * x[1]) / (6 * grad[0] * grad[1] - 2 * grad[0] ** 2 - 6 * grad[1])
-    return lamb
+def a(x):
+    return 2 * x[0] - 3 * x[1] + 1
 
-def gradient(_x0):
-    x = _x0
-    s0 = -1 * grad_F(x)
-    lamb = find_lambda(s0, x)
-    x_new = x + lamb * s0
-    print('lamb = ', lamb)
-    return x_new
+def b(x):
+    return 6 * x[1] - 3 * x[0] - 6
+
+def find_lambda(x):
+    lamb = (2 * a(x) * x[0] - 3 * a(x) * x[1] + a(x) - 3 * b(x) * x[0] + 6 * b(x) * x[1] - 6 * b(x)) / (2 * a(x) ** 2 - 6 * a(x) * b(x) + 6 * b(x) ** 2)
+    return lamb
 
 def start_gradient(_x0):
     x = _x0
-    _F = F(x)
     count = 0
-    while(abs(_F) > eps):
-        x_new = gradient(x)
-        _F_new = F(x_new)
-        x = x_new
-        count += 1
-        print(_F)
-        print(x)
-        print(count)
-        if (_F_new == _F):
+    while (True):
+        grad = grad_F(x)
+        if (grad[0] == 0 and grad[1] == 0):
             break
-        _F = _F_new
+        s = (-1) * grad
+        lamb = find_lambda(x)
+        x_new = x + lamb * s
+        x = x_new
+        _F_new = F(x_new)
+        count += 1
+        print(x)
+        print(_F_new)
+        print(count)
     return
 
 start_gradient(x0)
+
+my_res = minimize(F, [1.0, 1.0], jac=grad_F)
+
+print(my_res)
