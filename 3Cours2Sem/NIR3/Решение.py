@@ -21,7 +21,9 @@ print(res)
 
 print('---------------------------------------------------------------------------------------')
 
-x0 = np.array([1, 1])
+x0 = np.array([4, 3])
+
+eps = 10 ** (-8)
 
 def F(x):
     res = x[0] ** 2 + 3 * x[1] ** 2 - 3 * x[0] * x[1] + x[0] - 6 * x[1]
@@ -47,7 +49,7 @@ def start_gradient(_x0):
     count = 0
     while (True):
         grad = grad_F(x)
-        if (grad[0] == 0 and grad[1] == 0):
+        if (abs(grad[0]) < eps and abs(grad[1]) < eps):
             break
         s = (-1) * grad
         lamb = find_lambda(x)
