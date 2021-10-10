@@ -38,11 +38,11 @@ for i in range(len(new_array)):
 
 print(text_without_string)
 
-operators = ['{', '[', '(', '"', '.', ';', '==', '|=', '^=', '>=', '<=', '>=', '+=', '-=', '*=', '/=', '%=', '&=', '++', '--', '&&', '||', '!', '~', '<<', '>>',
+operators = ['{', '[', '(', '"', '.', ';', '==', '|=', '^=', '>=', '<=', '>=', '+=', '-=', '*=', '/=', '%=', '&=', '++', '--', '&&', '||', '~', '<<', '>>',
              'sizeof', 'TypeOf', 'new', 'ReadLine', 'Parse', 'WriteLine', 'if', 'for', 'while', '?:', 'is'
              'switch', 'do', 'foreach', 'break', 'continue', 'goto', 'return', 'yield', 'throw', 'try'
              'await', 'fixed', 'lock']
-operators_single = ['|', '^', '>', '<', '+', '-', '*', '/', '%', '=', '&']
+operators_single = ['|', '^', '>', '<', '+', '-', '*', '/', '%', '=', '&', '!']
 operators_count = []
 operators_single_count = []
 
@@ -61,24 +61,46 @@ for i in operators_single:
     operators_single_count.append([i, count])
 
 operators_count += operators_single_count
-print(operators_count)
+print('Операторы ', operators_count)
 
-initializing_variables = ['=', 'new']
 operands = []
-for i in initializing_variables:
-    for j in range(len(new_array)):
-        for q in range(len(new_array[j]) - 1):
-            if i == new_array[j][q]:
-                print(i)
-                position = q - 1
-                operand = ''
-                while new_array[j][position] == ' ':
-                    position -= 1
-                while new_array[j][position] != ' ':
-                    operand += new_array[j][position]
-                #if operand in operands == False:
+
+for j in range(len(new_array)):
+    for q in range(len(new_array[j]) - 1):
+        if new_array[j][q] == '=' and (new_array[j][q - 1] in operators_single) == False:
+            position = q - 1
+            operand = ''
+            while new_array[j][position] == ' ':
+                position -= 1
+            while new_array[j][position] != ' ':
+                operand += new_array[j][position]
+                position -= 1
+                if (position == -1):
+                    break
+            operand = operand[::-1]
+            if (operand in operands) == False:
                 operands.append(operand)
 
-print(operands)
+operands_count = []
+for i in operands:
+    operands_count.append([i, text_without_string.count(i)])
+print('Операнды ', operands_count)
+
+operators_res = []
+for i in operators_count:
+    if i[1] != 0:
+        operators_res.append(i)
+
+N = len(operators_res) * np.log(len(operators_res)) + len(operands_count) * np.log(len(operands_count)) #Теоритическая длина программы
+print('Теоритическая длина программы ', N)
+N1 = 0 #общее число операторов
+for i in operators_res:
+    N1 += i[1]
+N2 = 0 #общее число операндов
+for i in operands_count:
+    N2 += i[1]
+
+V = (N1 + N2) * np.log(len(operators_res) + len(operands_count)) #Объём программы
+print('Объём программы ', V)
 
 f.close()
