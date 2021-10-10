@@ -2,9 +2,10 @@ import numpy as np
 import math
 import matplotlib.pyplot as plt
 import pandas as pd
+import re
+import string
+import copy
 
-
-operators = ['{', '[', '(', '"', '.']
 f = open('program.txt', 'r')
 
 array = [row.strip() for row in f]
@@ -27,22 +28,57 @@ for i in range(len(new_array) - 1): #удаление всех string в стр�
             new_array[i][j] = False
         elif (start_symbol == True):
             new_array[i][j] = False
-    # while(False in new_array[i]):
-    #     new_array[i].remove(False)
 
+text_without_string = ""
 
+for i in range(len(new_array)):
+    for j in range(len(new_array[i])):
+        text_without_string += str(new_array[i][j])
+    text_without_string += '\n'
+
+print(text_without_string)
+
+operators = ['{', '[', '(', '"', '.', ';', '==', '|=', '^=', '>=', '<=', '>=', '+=', '-=', '*=', '/=', '%=', '&=', '++', '--', '&&', '||', '!', '~', '<<', '>>',
+             'sizeof', 'TypeOf', 'new', 'ReadLine', 'Parse', 'WriteLine', 'if', 'for', 'while', '?:', 'is'
+             'switch', 'do', 'foreach', 'break', 'continue', 'goto', 'return', 'yield', 'throw', 'try'
+             'await', 'fixed', 'lock']
+operators_single = ['|', '^', '>', '<', '+', '-', '*', '/', '%', '=', '&']
 operators_count = []
-for oper in operators:
+operators_single_count = []
+
+for i in operators:
+    operators_count.append([i, text_without_string.count(i)])
+
+new_array_single = copy.deepcopy(new_array)
+for i in operators_single:
     count = 0
-    for i in new_array:
-        for j in i:
-            if j == oper:
+    for j in range(len(new_array_single)):
+        for q in range(len(new_array_single[j]) - 1):
+            if i == new_array_single[j][q] and i != new_array_single[j][q + 1]:
                 count += 1
-                #j = False #нужно подумать об этом
-    operators_count.append([oper, count])
+                new_array_single[j][q] = False
+                new_array_single[j][q + 1] = False
+    operators_single_count.append([i, count])
+
+operators_count += operators_single_count
 print(operators_count)
 
-for i in new_array:
-    print(i)
+initializing_variables = ['=', 'new']
+operands = []
+for i in initializing_variables:
+    for j in range(len(new_array)):
+        for q in range(len(new_array[j]) - 1):
+            if i == new_array[j][q]:
+                print(i)
+                position = q - 1
+                operand = ''
+                while new_array[j][position] == ' ':
+                    position -= 1
+                while new_array[j][position] != ' ':
+                    operand += new_array[j][position]
+                #if operand in operands == False:
+                operands.append(operand)
+
+print(operands)
 
 f.close()
