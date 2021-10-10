@@ -6,7 +6,7 @@ import re
 import string
 import copy
 
-f = open('program.txt', 'r')
+f = open('text_of_program.txt', 'r')
 
 array = [row.strip() for row in f]
 for i in array:
