@@ -71,7 +71,6 @@ namespace InformationSecurityAPI.Shifrovanie
                 }
             }
 
-            //если криптограмма, то расшифровка, иначе зашифровка
             letters = textRequest2.language == 2 ? letter : letter2;
 
             BigInteger big_key = BigInteger.Parse(textRequest2.key);
@@ -79,7 +78,6 @@ namespace InformationSecurityAPI.Shifrovanie
             int key = (int)big_key;
 
 
-            //шифрование или расшифровка слова
             string new_word = "";
             if (!textRequest2.is_cryptogram)
             {
@@ -129,7 +127,6 @@ namespace InformationSecurityAPI.Shifrovanie
                 }
             }
 
-            //перевод в верхний регистр
             lower_word = "";
             for (int i = 0; i < new_word.Length; i++)
             {

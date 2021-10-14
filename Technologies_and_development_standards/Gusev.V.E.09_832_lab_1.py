@@ -6,7 +6,7 @@ import re
 import string
 import copy
 
-f = open('text_of_program.txt', 'r')
+f = open('text_of_program.txt', 'r', encoding='utf-8')
 
 array = [row.strip() for row in f]
 for i in array:
@@ -22,7 +22,6 @@ for i in range(len(new_array) - 1): #удаление всех string в стр�
     for j in range(len(new_array[i]) - 1):
         if (start_symbol == False and new_array[i][j] == '"'):
             start_symbol = True
-            #new_array[i][j] = False
         elif (start_symbol == True and new_array[i][j] == '"'):
             start_symbol = False
             new_array[i][j] = False
