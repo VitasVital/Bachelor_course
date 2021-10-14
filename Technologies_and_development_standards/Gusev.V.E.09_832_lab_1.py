@@ -1,9 +1,4 @@
 import numpy as np
-import math
-import matplotlib.pyplot as plt
-import pandas as pd
-import re
-import string
 import copy
 
 f = open('text_of_program.txt', 'r', encoding='utf-8')
