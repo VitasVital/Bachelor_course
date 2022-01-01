@@ -1,9 +1,10 @@
 import numpy as np
-from random import randint
+import random
 
 N = 10
 
-A = np.array([randint(-10, 10) for i in range(N)], dtype=np.float64)
+#A = np.array([random.randint(-10, 10) for i in range(N)], dtype=np.float64)
+A = np.array([random.uniform(-10, 10) for i in range(N)], dtype=np.float64)
 
 print('Сгенерированный массив А\n', A)
 

@@ -32,7 +32,8 @@ for i in range(len(new_array)):
 
 print(text_without_string)
 
-operators = ['{', '[', '(', '"', '.', ';', '==', '|=', '^=', '>=', '<=', '>=', '+=', '-=', '*=', '/=', '%=', '&=', '++', '--', '&&', '||', '~', '<<', '>>',
+operators = ['{', '[', '(', '"', '.', ';', '==', '|=', '^=', '>=', '<=', '>=', '+=', '-=',
+             '*=', '/=', '%=', '&=', '++', '--', '&&', '||', '~', '<<', '>>',
              'sizeof', 'TypeOf', 'new', 'ReadLine', 'Parse', 'WriteLine', 'if', 'for', 'while', '?:', 'is'
              'switch', 'do', 'foreach', 'break', 'continue', 'goto', 'return', 'yield', 'throw', 'try'
              'await', 'fixed', 'lock']
@@ -86,7 +87,7 @@ for i in operators_count:
         operators_res.append(i)
 
 N = len(operators_res) * np.log(len(operators_res)) + len(operands_count) * np.log(len(operands_count)) #Теоритическая длина программы
-print('Теоритическая длина программы ', N)
+print('Теоретическая длина программы ', N)
 N1 = 0 #общее число операторов
 for i in operators_res:
     N1 += i[1]
