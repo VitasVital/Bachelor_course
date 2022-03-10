@@ -31,6 +31,8 @@ def find_sheply():
     V_k = request.json['V_k']
     V_k = V_k.split()
     V_k_int = [int(x) for x in V_k]
+    if (gm3.additivnost(N, V_k) == False):
+        return jsonify(False)
     result = gm3.find_Sheply(N, V_k_int)
     return jsonify(result)
 

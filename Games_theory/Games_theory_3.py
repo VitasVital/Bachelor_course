@@ -49,10 +49,24 @@ def get_all_random_v_K_json(N):
         str1 = ', '.join(str(e) for e in list_k[i])
         list_k[i] = str1
 
-    list_v_k = str(rn.randrange(100, 600))
+    list_v_k = str(0)
 
-    for i in range(1, len(list_k)):
-        list_v_k += (' ' + str(rn.randrange(100, 600)))
+    # rand_value = 100
+    # for i in range(1, len(list_k)):
+    #     list_v_k += (' ' + str(rn.randrange(rand_value, rand_value + 100)))
+    #     rand_value += 100
+
+    rand_value = 100
+    sum = 0
+    for i in range(N):
+        rand_number = rand_value + 100
+        list_v_k += (' ' + str(rn.randrange(rand_value, rand_number)))
+        sum += rand_number
+
+    rand_value += sum
+    for i in range(N + 1, len(list_k)):
+        list_v_k += (' ' + str(rn.randrange(rand_value, rand_value + 100)))
+        rand_value += 100
 
     return list_v_k
 
@@ -100,6 +114,15 @@ def start_function():
     return sum_row
 
 
+def additivnost(N, V_k):
+    list_k = get_all_K(N)
+    for i in range(N + 1, len(list_k)):
+        sum = 0
+        for e in list_k[i]:
+            sum += int(V_k[e])
+        if (sum > int(V_k[i])):
+            return False
+    return True
 
 def find_Sheply(N, V_k):
     k = get_all_K(N)
@@ -145,6 +168,3 @@ def find_Sheply(N, V_k):
     list_to_dictionary.append(data_set)
 
     return list_to_dictionary
-
-
-print(get_all_random_v_K_json(3))
