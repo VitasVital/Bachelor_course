@@ -16,6 +16,12 @@ def laplace(input_x, input_mu, input_var):
     b = np.sqrt(input_var / 2)
     return np.exp(-np.abs(input_x - input_mu) / b) / (2 * b)
 
+def Ga(input_x, a, b):
+    return (b ** a * input_x ** (a - 1) * np.exp(-input_x * b)) / math.gamma(a)
+
+def IG(input_x, a, b):
+    return (b ** a * input_x ** (-(a + 1)) * np.exp(-b / input_x)) / math.gamma(a)
+
 def task1():
     mu = 0
     var = 3
@@ -30,13 +36,33 @@ def task1():
     plt.step(x, y_laplace)
 
     plt.show()
-
-def task2():
-    res1 = uniform(0, 1, (1000, 10000))
-    print(res1)
-    res = np.mean(res1)
-    print(res)
     return
 
-# task1()
+def task2():
+    x = np.linspace(0.46, 0.54, 1000)
+    y = np.mean(uniform(0, 1, (1000, 10000)), axis=0)
+    average_y = np.mean(y)
+    var_y = np.sqrt(np.var(y))
+    y_normal = normal_distribution(x, average_y, var_y)
+    plt.hist(y, bins=100, density=True)
+    plt.step(x, y_normal)
+    plt.show()
+    return
+
+def task3():
+    x = np.linspace(0.1, 20, 10000)
+    a = 2
+    b = 2
+
+    Y = 1 / np.random.gamma(a, 1 / b, 1000)
+    ig = IG(x, a, b)
+
+    plt.hist(Y, bins=100, label='Y гистограмма', density=True)
+    plt.step(x, ig, label='IG')
+    plt.legend()
+    plt.show()
+    return
+
+task1()
 task2()
+task3()
