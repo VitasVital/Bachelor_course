@@ -31,9 +31,10 @@ def task1():
     y_student = student(x, mu, var, nu)
     y_laplace = laplace(x, mu, var)
 
-    plt.step(x, y_normal)
-    plt.step(x, y_student)
-    plt.step(x, y_laplace)
+    plt.step(x, y_normal, label='Нормальное')
+    plt.step(x, y_student, label='Стьюдент')
+    plt.step(x, y_laplace, label='Лаплас')
+    plt.legend()
 
     plt.show()
     return
