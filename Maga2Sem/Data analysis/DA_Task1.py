@@ -31,6 +31,7 @@ def task1():
     y_student = student(x, mu, var, nu)
     y_laplace = laplace(x, mu, var)
 
+    plt.title('Задание 1')
     plt.step(x, y_normal, label='Нормальное')
     plt.step(x, y_student, label='Стьюдент')
     plt.step(x, y_laplace, label='Лаплас')
@@ -45,6 +46,8 @@ def task2():
     average_y = np.mean(y)
     var_y = np.sqrt(np.var(y))
     y_normal = normal_distribution(x, average_y, var_y)
+
+    plt.title('Задание 2')
     plt.hist(y, bins=100, density=True)
     plt.step(x, y_normal)
     plt.show()
@@ -58,6 +61,7 @@ def task3():
     Y = 1 / np.random.gamma(a, 1 / b, 1000)
     ig = IG(x, a, b)
 
+    plt.title('Задание 3')
     plt.hist(Y, bins=100, label='Y гистограмма', density=True)
     plt.step(x, ig, label='IG')
     plt.legend()
