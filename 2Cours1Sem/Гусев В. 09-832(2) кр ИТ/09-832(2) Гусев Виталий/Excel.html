@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Excel</title>
+    <style type="text/css">
+  html,body,h3{
+  	margin:0;
+	padding:0;
+	background:url(bg-menu.gif);
+	background-repeat:repeat-y
+	}
+  /* убираем отступ у тега body,
+  задаем фоновое изображение, размножающееся по вертикали */
+
+  #header{
+  padding-left:600px;
+  padding-top:50px;
+  	height:150px;
+	min-width:600px;
+	background:#FFEF97
+	}
+  /* высота 150 px, минимальная ширина 600 px, цвет фона */
+
+  #menu{
+  padding-top:10px;
+  padding-left:10px;
+  	height:750px;
+  	width:250px;
+	float:left;
+	#background:#B0E0E6
+	}
+  /* ширина 250 px, этот блок обтекает с левой стороны
+  следующий блок, цвет фона */
+
+  #info{
+  padding:20px;
+  	min-width:350px;
+	margin-left:250px;
+	background:#778899
+	}
+  /* минимальная ширина 350 px, отступ слева 250 px */
+
+  #footer{
+  	height:43px;
+ 	min-width:600px;
+  	background:#BC8F8F;
+	}
+</style>
+</head>
+<body>
+<div id="body"></div>
+<div id="header">
+    <A href="Main.html">Main</A>
+    <A href="Word.html">Word</A>
+    <A href="Excel.html">Excel</A>
+    <A href="Access.html">Access</A>
+</div>
+<div id="menu">
+    <h3>Меню разделов</h3>
+    <ol>
+            <li>
+                <A href="#excel_1">Вычисление интеграла</A>
+            </li>
+            <li>
+                <A href="#excel_2">Построение графика функции</A>
+            </li>
+            <li>
+                <A href="#excel_3">Двоичное представление числа</A>
+            </li>
+        </ol>
+</div>
+<div id="info">
+    <A name =excel_1></A>
+    <h2>Вычисление интеграла</h2>
+    =((3*A4^3+2*A4^2+4*A4+6)*dx)+B3
+    <A name =excel_2></A>
+    <h2>Построение графика функции</h2>
+    <IMG src="graph.jpg">
+    <A name =excel_3></A>
+    <h2>Двоичное представление числа</h2>
+    <IMG src="page.jpg">
+</div>
+</body>
+</html>

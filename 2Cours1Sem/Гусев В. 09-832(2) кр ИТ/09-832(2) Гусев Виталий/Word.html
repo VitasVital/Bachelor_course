@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Word</title>
+    <style type="text/css">
+  html,body,h3{
+  	margin:0;
+	padding:0;
+	background:url(bg-menu.gif);
+	background-repeat:repeat-y
+	}
+  /* убираем отступ у тега body,
+  задаем фоновое изображение, размножающееся по вертикали */
+
+  #header{
+  padding-left:600px;
+  padding-top:50px;
+  	height:150px;
+	min-width:600px;
+	background:#FFEF97
+	}
+  /* высота 150 px, минимальная ширина 600 px, цвет фона */
+
+  #menu{
+  padding-top:10px;
+  padding-left:10px;
+  	height:750px;
+  	width:250px;
+	float:left;
+	#background:#B0E0E6
+	}
+  /* ширина 250 px, этот блок обтекает с левой стороны
+  следующий блок, цвет фона */
+
+  #info{
+  padding:20px;
+  	min-width:350px;
+	margin-left:250px;
+	background:#778899
+	}
+  /* минимальная ширина 350 px, отступ слева 250 px */
+
+  #footer{
+  	height:43px;
+ 	min-width:600px;
+  	background:#BC8F8F;
+	}
+</style>
+</head>
+<body>
+<div id="body"></div>
+<div id="header">
+    <A href="Main.html">Main</A>
+    <A href="Word.html">Word</A>
+    <A href="Excel.html">Excel</A>
+    <A href="Access.html">Access</A>
+</div>
+<div id="menu">
+    <h3>Меню разделов</h3>
+    <ol>
+            <li>
+                <A href="#word_1">Код</A>
+            </li>
+            <li>
+                <A href="#word_2">Формула</A>
+            </li>
+            <li>
+                <A href="#word_3">Список литературы</A>
+            </li>
+        </ol>
+</div>
+<div id="info">
+    <A name =word_1></A>
+    <h2>Код</h2>
+<pre><code>
+#define N 25
+using namespace std;
+int main()
+{
+srand (time(NULL));
+int a[N];
+for (int i=0; i< i++) {
+a[i]=rand()%100;
+cout<< a[i] << " ";
+}
+cout << endl;
+int k=-1;
+for (int i=0; i< i++) {
+    for (int j=i; j>=0; j--) {
+        if (a[i]<) {
+            k=j;
+        }
+    }
+    if (k!=-1) {
+    for (int j=i; j>k; j--) {
+        swap (a[j], a[j-1]);
+    }
+    }
+    k=-1;
+}
+for (int i=0; i< i++) {
+    cout << a[i] << " ";
+}
+    }"
+</code>
+</pre>
+    <A name =word_2></A>
+    <h2>Формула</h2>
+(a+b)^2=a^2+2*a*b+b^2
+    <A name =word_3></A>
+    <h2>Список литературы</h2>
+    <A href="https://lumpics.ru/as-in-word-to-make-a-list-of-references/#i-4">Что-то из литературы</A>
+</div>
+</body>
+</html>

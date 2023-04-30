@@ -1,0 +1,9 @@
+Warning[205] C:\R_PIC\PROB19\PROB19.ASM 2 : Found directive in column 1. (__CONFIG)
+Message[302] C:\R_PIC\PROB19\PROB19.ASM 44 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\R_PIC\PROB19\PROB19.ASM 46 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[302] C:\R_PIC\PROB19\PROB19.ASM 48 : Register in operand not in bank 0.  Ensure that bank bits are correct.
+Message[305] C:\R_PIC\PROB19\PROB19.ASM 122 : Using default destination of 1 (file).
+Message[305] C:\R_PIC\PROB19\PROB19.ASM 128 : Using default destination of 1 (file).
+Message[305] C:\R_PIC\PROB19\PROB19.ASM 132 : Using default destination of 1 (file).
+Message[305] C:\R_PIC\PROB19\PROB19.ASM 312 : Using default destination of 1 (file).
+Message[305] C:\R_PIC\PROB19\PROB19.ASM 347 : Using default destination of 1 (file).

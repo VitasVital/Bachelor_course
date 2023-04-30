@@ -1,0 +1,110 @@
+MPLINK 4.48, Linker
+Linker Map File - Created Sun Feb 09 18:00:38 2020
+
+                                 Section Info
+                  Section       Type    Address   Location Size(Bytes)
+                ---------  ---------  ---------  ---------  ---------
+                   .org_0       code   0x000000    program   0x000000
+                   .org_1       code   0x000000    program   0x000002
+                   .org_2       code   0x000004    program   0x000226
+    .config_2007_PROB19.O       code   0x002007    program   0x000002
+
+
+
+                              Program Memory Usage 
+                               Start         End      
+                           ---------   ---------      
+                            0x000000    0x000000      
+                            0x000004    0x000116      
+                            0x002007    0x002007      
+            277 out of 1093 program addresses used, program memory utilization is 25%
+
+
+
+                              Symbols - Sorted by Name
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                       m1   0x0000b7    program     static C:\r_pic\prob19\prob19.asm
+                      m10   0x0000c9    program     static C:\r_pic\prob19\prob19.asm
+                      m11   0x0000cb    program     static C:\r_pic\prob19\prob19.asm
+                      m12   0x0000cd    program     static C:\r_pic\prob19\prob19.asm
+                      m13   0x0000cf    program     static C:\r_pic\prob19\prob19.asm
+                      m14   0x0000d1    program     static C:\r_pic\prob19\prob19.asm
+                      m15   0x0000d3    program     static C:\r_pic\prob19\prob19.asm
+                      m16   0x0000d5    program     static C:\r_pic\prob19\prob19.asm
+                      m17   0x0000d7    program     static C:\r_pic\prob19\prob19.asm
+                      m18   0x0000d9    program     static C:\r_pic\prob19\prob19.asm
+                      m19   0x0000db    program     static C:\r_pic\prob19\prob19.asm
+                       m2   0x0000b9    program     static C:\r_pic\prob19\prob19.asm
+                      m20   0x0000dd    program     static C:\r_pic\prob19\prob19.asm
+                      m21   0x0000df    program     static C:\r_pic\prob19\prob19.asm
+                      m22   0x0000e1    program     static C:\r_pic\prob19\prob19.asm
+                      m23   0x0000e3    program     static C:\r_pic\prob19\prob19.asm
+                       m3   0x0000bb    program     static C:\r_pic\prob19\prob19.asm
+                      m33   0x0000e5    program     static C:\r_pic\prob19\prob19.asm
+                      m34   0x000112    program     static C:\r_pic\prob19\prob19.asm
+                       m4   0x0000bd    program     static C:\r_pic\prob19\prob19.asm
+                       m5   0x0000bf    program     static C:\r_pic\prob19\prob19.asm
+                      m50   0x0000eb    program     static C:\r_pic\prob19\prob19.asm
+                      m51   0x00010a    program     static C:\r_pic\prob19\prob19.asm
+                      m52   0x00010d    program     static C:\r_pic\prob19\prob19.asm
+                      m53   0x00010f    program     static C:\r_pic\prob19\prob19.asm
+                      m54   0x0000f8    program     static C:\r_pic\prob19\prob19.asm
+                      m55   0x000106    program     static C:\r_pic\prob19\prob19.asm
+                      m56   0x0000fe    program     static C:\r_pic\prob19\prob19.asm
+                       m6   0x0000c1    program     static C:\r_pic\prob19\prob19.asm
+                      m60   0x000111    program     static C:\r_pic\prob19\prob19.asm
+                      m61   0x0000ef    program     static C:\r_pic\prob19\prob19.asm
+                      m62   0x0000f0    program     static C:\r_pic\prob19\prob19.asm
+                       m7   0x0000c3    program     static C:\r_pic\prob19\prob19.asm
+                       m8   0x0000c5    program     static C:\r_pic\prob19\prob19.asm
+                       m9   0x0000c7    program     static C:\r_pic\prob19\prob19.asm
+                   srvint   0x00004b    program     static C:\r_pic\prob19\prob19.asm
+                    start   0x000005    program     static C:\r_pic\prob19\prob19.asm
+                   update   0x00004a    program     static C:\r_pic\prob19\prob19.asm
+
+
+
+                              Symbols - Sorted by Address
+                     Name    Address   Location    Storage File                     
+                ---------  ---------  ---------  --------- ---------                
+                    start   0x000005    program     static C:\r_pic\prob19\prob19.asm
+                   update   0x00004a    program     static C:\r_pic\prob19\prob19.asm
+                   srvint   0x00004b    program     static C:\r_pic\prob19\prob19.asm
+                       m1   0x0000b7    program     static C:\r_pic\prob19\prob19.asm
+                       m2   0x0000b9    program     static C:\r_pic\prob19\prob19.asm
+                       m3   0x0000bb    program     static C:\r_pic\prob19\prob19.asm
+                       m4   0x0000bd    program     static C:\r_pic\prob19\prob19.asm
+                       m5   0x0000bf    program     static C:\r_pic\prob19\prob19.asm
+                       m6   0x0000c1    program     static C:\r_pic\prob19\prob19.asm
+                       m7   0x0000c3    program     static C:\r_pic\prob19\prob19.asm
+                       m8   0x0000c5    program     static C:\r_pic\prob19\prob19.asm
+                       m9   0x0000c7    program     static C:\r_pic\prob19\prob19.asm
+                      m10   0x0000c9    program     static C:\r_pic\prob19\prob19.asm
+                      m11   0x0000cb    program     static C:\r_pic\prob19\prob19.asm
+                      m12   0x0000cd    program     static C:\r_pic\prob19\prob19.asm
+                      m13   0x0000cf    program     static C:\r_pic\prob19\prob19.asm
+                      m14   0x0000d1    program     static C:\r_pic\prob19\prob19.asm
+                      m15   0x0000d3    program     static C:\r_pic\prob19\prob19.asm
+                      m16   0x0000d5    program     static C:\r_pic\prob19\prob19.asm
+                      m17   0x0000d7    program     static C:\r_pic\prob19\prob19.asm
+                      m18   0x0000d9    program     static C:\r_pic\prob19\prob19.asm
+                      m19   0x0000db    program     static C:\r_pic\prob19\prob19.asm
+                      m20   0x0000dd    program     static C:\r_pic\prob19\prob19.asm
+                      m21   0x0000df    program     static C:\r_pic\prob19\prob19.asm
+                      m22   0x0000e1    program     static C:\r_pic\prob19\prob19.asm
+                      m23   0x0000e3    program     static C:\r_pic\prob19\prob19.asm
+                      m33   0x0000e5    program     static C:\r_pic\prob19\prob19.asm
+                      m50   0x0000eb    program     static C:\r_pic\prob19\prob19.asm
+                      m61   0x0000ef    program     static C:\r_pic\prob19\prob19.asm
+                      m62   0x0000f0    program     static C:\r_pic\prob19\prob19.asm
+                      m54   0x0000f8    program     static C:\r_pic\prob19\prob19.asm
+                      m56   0x0000fe    program     static C:\r_pic\prob19\prob19.asm
+                      m55   0x000106    program     static C:\r_pic\prob19\prob19.asm
+                      m51   0x00010a    program     static C:\r_pic\prob19\prob19.asm
+                      m52   0x00010d    program     static C:\r_pic\prob19\prob19.asm
+                      m53   0x00010f    program     static C:\r_pic\prob19\prob19.asm
+                      m60   0x000111    program     static C:\r_pic\prob19\prob19.asm
+                      m34   0x000112    program     static C:\r_pic\prob19\prob19.asm
+
+

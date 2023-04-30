@@ -1,0 +1,638 @@
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  1
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+                      00001          LIST P=16F84
+Warning[205]: Found directive in column 1. (__CONFIG)
+2007   3FFA           00002 __CONFIG _WDT_OFF & _HS_OSC
+                      00003          #include <P16F84.INC>
+                      00001         LIST
+                      00002 
+                      00003 ;==========================================================================
+                      00004 ;  MPASM PIC16F84 processor include
+                      00005 ; 
+                      00006 ;  (c) Copyright 1999-2013 Microchip Technology, All rights reserved
+                      00007 ;==========================================================================
+                      00008 
+                      00206         LIST
+  00000020            00004 d1nl     EQU   0x20
+  00000021            00005 d1nm     EQU   0x21
+  00000022            00006 d1nn     equ   0x22
+  00000023            00007 nang     equ   0x23
+  00000024            00008 zn0      equ   0x24
+  00000025            00009 zn1      equ   0x25
+  00000026            00010 ch0      equ   0x26
+  00000027            00011 ch1      equ   0x27
+  00000028            00012 ch2      equ   0x28
+  00000029            00013 ch3      equ   0x29
+  0000002A            00014 r1       equ   0x2A
+  00000030            00015 ch4      equ   0x30
+  00000031            00016 ch5      equ   0x31
+  00000032            00017 ch6      equ   0x32
+  00000033            00018 ch7      equ   0x33
+  00000034            00019 ch8      equ   0x34
+  00000035            00020 ch9      equ   0x35
+  00000036            00021 ch10     equ   0x36
+  00000037            00022 ch11      equ   0x37
+  00000038            00023 ch12      equ   0x38
+  00000039            00024 ch13      equ   0x39
+  00000040            00025 ch14      equ   0x40
+  00000041            00026 ch15      equ   0x41
+  00000042            00027 ch16      equ   0x42
+  00000043            00028 ch17      equ   0x43
+  00000044            00029 ch18      equ   0x44
+  00000045            00030 ch19      equ   0x45
+  00000046            00031 ch20      equ   0x46
+  00000047            00032 ch21      equ   0x47
+  00000048            00033 ch22      equ   0x48
+  00000049            00034 cr        equ   0x49
+  0000004A            00035 r2        equ   0x4A
+                      00036 ;programma probnaja iz prob09.asm 04.04.05
+                      00037 ;popitka  dobavl.gotovogo faila
+0000                  00038          org   0x00
+0000   2805           00039          goto  start
+0004                  00040          org   0x04
+0004   284B           00041          goto  srvint
+0005                  00042 start   
+0005   1683           00043          bsf   STATUS,RP0
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  2
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0006   0186           00044          CLRF  TRISB
+0007   301C           00045          movlw 0x1c
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+0008   0085           00046          movwf TRISA
+0009   3007           00047          movlw B'00000111'
+Message[302]: Register in operand not in bank 0.  Ensure that bank bits are correct.
+000A   0081           00048          movwf OPTION_REG
+000B   1283           00049          bcf   STATUS,RP0
+000C   3080           00050          movlw 0x80
+000D   00A3           00051          movwf nang
+000E   0186           00052          clrf  PORTB
+000F   0185           00053          clrf  PORTA
+0010   01A0           00054          clrf  d1nl
+0011   01A1           00055          clrf  d1nm
+0012   01A2           00056          clrf  d1nn
+0013   01AA           00057          clrf  r1
+0014   01CA           00058          clrf  r2
+0015   303F           00059          movlw 0x3F
+0016   00A6           00060          movwf ch0
+0017   00C9           00061          movwf cr
+0018   3006           00062          movlw 0x06
+0019   00A7           00063          movwf ch1
+001A   305B           00064          movlw 0x5B
+001B   00A8           00065          movwf ch2
+001C   304F           00066          movlw 0x4F
+001D   00A9           00067          movwf ch3
+001E   3066           00068          movlw 0x66
+001F   00B0           00069          movwf ch4
+0020   306D           00070          movlw 0x6D
+0021   00B1           00071          movwf ch5
+0022   307D           00072          movlw 0x7D
+0023   00B2           00073          movwf ch6
+0024   3007           00074          movlw 0x07
+0025   00B3           00075          movwf ch7
+0026   307F           00076          movlw 0x7F
+0027   00B4           00077          movwf ch8
+0028   306F           00078          movlw 0x6F
+0029   00B5           00079          movwf ch9
+002A   3077           00080          movlw 0x77
+002B   00B6           00081          movwf ch10
+002C   307F           00082          movlw 0x7F
+002D   00B7           00083          movwf ch11
+002E   3039           00084          movlw 0x39
+002F   00B8           00085          movwf ch12
+0030   303F           00086          movlw 0x3F
+0031   00B9           00087          movwf ch13
+0032   3079           00088          movlw 0x79
+0033   00C0           00089          movwf ch14
+0034   3071           00090          movlw 0x71
+0035   00C1           00091          movwf ch15
+0036   303D           00092          movlw 0x3D
+0037   00C2           00093          movwf ch16
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  3
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0038   3076           00094          movlw 0x76
+0039   00C3           00095          movwf ch17
+003A   3030           00096          movlw 0x30
+003B   00C4           00097          movwf ch18
+003C   3038           00098          movlw 0x38
+003D   00C5           00099          movwf ch19
+003E   303F           00100          movlw 0x3F
+003F   00C6           00101          movwf ch20
+0040   3073           00102          movlw 0x73
+0041   00C7           00103          movwf ch21
+0042   306D           00104          movlw 0x6D
+0043   00C8           00105          movwf ch22
+0044   30A0           00106          movlw B'10100000'
+0045   008B           00107          movwf INTCON
+0046   30FF           00108          movlw B'11111111'
+                      00109          ;movwf d1nm
+0047   0086           00110          movwf PORTB
+0048   1003           00111          bcf STATUS,0
+0049   0823           00112          movfw nang
+                      00113          ;movwf PORTA
+004A                  00114 update: 
+004A   284A           00115          goto  update
+                      00116 ;obslug preriv
+004B   00A4           00117 srvint   movwf zn0
+004C   0E03           00118          swapf STATUS,W
+004D   00A5           00119          movwf zn1
+004E   110B           00120          bcf   INTCON,T0IF
+                      00121          ;tut d1nn pociklim v m34 
+Message[305]: Using default destination of 1 (file).
+004F   0AA2           00122          incf  d1nn
+0050   0822           00123          movfw d1nn
+0051   3C10           00124          sublw 0x10
+0052   1D03           00125          btfss STATUS,2
+0053   2912           00126          goto  m34
+0054   01A2           00127          clrf  d1nn
+Message[305]: Using default destination of 1 (file).
+0055   0AA0           00128          incf  d1nl
+0056   0821           00129          movfw d1nm
+0057   3C03           00130          sublw 0x03
+0058   1D03           00131          btfss STATUS,2
+Message[305]: Using default destination of 1 (file).
+0059   0AA1           00132          incf d1nm
+005A   0820           00133          movfw d1nl
+005B   3C01           00134          sublw 0x01
+005C   1903           00135          btfsc STATUS,2
+005D   28B7           00136          goto  m1
+005E   0820           00137          movfw d1nl
+005F   3C02           00138          sublw 0x02
+0060   1903           00139          btfsc STATUS,2
+0061   28B9           00140          goto  m2
+0062   0820           00141          movfw d1nl
+0063   3C03           00142          sublw 0x03
+0064   1903           00143          btfsc STATUS,2
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  4
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0065   28BB           00144          goto  m3
+0066   0820           00145          movfw d1nl
+0067   3C04           00146          sublw 0x04
+0068   1903           00147          btfsc STATUS,2
+0069   28BD           00148          goto  m4
+006A   0820           00149          movfw d1nl
+006B   3C05           00150          sublw 0x05
+006C   1903           00151          btfsc STATUS,2
+006D   28BF           00152          goto  m5
+006E   0820           00153          movfw d1nl
+006F   3C06           00154          sublw 0x06
+0070   1903           00155          btfsc STATUS,2
+0071   28C1           00156          goto  m6
+0072   0820           00157          movfw d1nl
+0073   3C07           00158          sublw 0x07
+0074   1903           00159          btfsc STATUS,2
+0075   28C3           00160          goto  m7
+0076   0820           00161          movfw d1nl
+0077   3C08           00162          sublw 0x08
+0078   1903           00163          btfsc STATUS,2
+0079   28C5           00164          goto  m8
+007A   0820           00165          movfw d1nl
+007B   3C09           00166          sublw 0x09
+007C   1903           00167          btfsc STATUS,2
+007D   28C7           00168          goto  m9
+007E   0820           00169          movfw d1nl
+007F   3C0A           00170          sublw 0x0A
+0080   1903           00171          btfsc STATUS,2
+0081   28C9           00172          goto  m10
+0082   0820           00173          movfw d1nl
+0083   3C0B           00174          sublw 0x0B
+0084   1903           00175          btfsc STATUS,2
+0085   28CB           00176          goto  m11
+0086   0820           00177          movfw d1nl
+0087   3C0C           00178          sublw 0x0C
+0088   1903           00179          btfsc STATUS,2
+0089   28CD           00180          goto  m12
+008A   0820           00181          movfw d1nl
+008B   3C0D           00182          sublw 0x0D
+008C   1903           00183          btfsc STATUS,2
+008D   28CF           00184          goto  m13
+008E   0820           00185          movfw d1nl
+008F   3C0E           00186          sublw 0x0E
+0090   1903           00187          btfsc STATUS,2
+0091   28D1           00188          goto  m14
+0092   0820           00189          movfw d1nl
+0093   3C0F           00190          sublw 0x0F
+0094   1903           00191          btfsc STATUS,2
+0095   28D3           00192          goto  m15
+0096   0820           00193          movfw d1nl
+0097   3C10           00194          sublw 0x10
+0098   1903           00195          btfsc STATUS,2
+0099   28D5           00196          goto  m16
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  5
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+009A   0820           00197          movfw d1nl
+009B   3C11           00198          sublw 0x11
+009C   1903           00199          btfsc STATUS,2
+009D   28D7           00200          goto  m17
+009E   0820           00201          movfw d1nl
+009F   3C12           00202          sublw 0x12
+00A0   1903           00203          btfsc STATUS,2
+00A1   28D9           00204          goto  m18
+00A2   0820           00205          movfw d1nl
+00A3   3C13           00206          sublw 0x13
+00A4   1903           00207          btfsc STATUS,2
+00A5   28DB           00208          goto  m19
+00A6   0820           00209          movfw d1nl
+00A7   3C14           00210          sublw 0x14
+00A8   1903           00211          btfsc STATUS,2
+00A9   28DD           00212          goto  m20
+00AA   0820           00213          movfw d1nl
+00AB   3C15           00214          sublw 0x15
+00AC   1903           00215          btfsc STATUS,2
+00AD   28DF           00216          goto  m21
+00AE   0820           00217          movfw d1nl
+00AF   3C16           00218          sublw 0x16
+00B0   1903           00219          btfsc STATUS,2
+00B1   28E1           00220          goto  m22
+00B2   0820           00221          movfw d1nl
+00B3   3C17           00222          sublw 0x17
+00B4   1903           00223          btfsc STATUS,2
+00B5   28E3           00224          goto  m23                  
+00B6   28E5           00225          goto  m33
+00B7                  00226 m1:     
+00B7   0826           00227          movfw ch0
+00B8   28E5           00228          goto m33
+                      00229         
+00B9   0827           00230 m2:      movfw ch1
+00BA   28E5           00231          goto m33
+00BB                  00232 m3:      
+00BB   0828           00233          movfw ch2
+00BC   28E5           00234          goto m33
+00BD                  00235 m4:      
+00BD   0829           00236          movfw ch3
+00BE   28E5           00237          goto m33
+00BF                  00238 m5:      
+00BF   0830           00239          movfw ch4
+00C0   28E5           00240          goto m33
+00C1                  00241 m6:      
+00C1   0831           00242          movfw ch5
+00C2   28E5           00243          goto m33
+00C3                  00244 m7:      
+00C3   0832           00245          movfw ch6
+00C4   28E5           00246          goto m33
+00C5                  00247 m8:      
+00C5   0833           00248          movfw ch7
+00C6   28E5           00249          goto m33
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  6
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00C7                  00250 m9:      
+00C7   0834           00251          movfw ch8
+00C8   28E5           00252          goto m33
+00C9                  00253 m10:      
+00C9   0835           00254          movfw ch9
+00CA   28E5           00255          goto m33
+00CB                  00256 m11:      
+00CB   0836           00257          movfw ch10
+00CC   28E5           00258          goto m33
+00CD                  00259 m12:      
+00CD   0837           00260          movfw ch11
+00CE   28E5           00261          goto m33
+00CF                  00262 m13:      
+00CF   0838           00263          movfw ch12
+00D0   28E5           00264          goto m33
+00D1                  00265 m14:      
+00D1   0839           00266          movfw ch13
+00D2   28E5           00267          goto m33
+00D3                  00268 m15:      
+00D3   0840           00269          movfw ch14
+00D4   28E5           00270          goto m33
+00D5                  00271 m16:      
+00D5   0841           00272          movfw ch15
+00D6   28E5           00273          goto m33
+00D7                  00274 m17:      
+00D7   0842           00275          movfw ch16
+00D8   28E5           00276          goto m33
+00D9                  00277 m18:      
+00D9   0843           00278          movfw ch17
+00DA   28E5           00279          goto m33
+00DB                  00280 m19:      
+00DB   0844           00281          movfw ch18
+00DC   28E5           00282          goto m33
+00DD                  00283 m20:      
+00DD   0845           00284          movfw ch19
+00DE   28E5           00285          goto m33
+00DF                  00286 m21:      
+00DF   0846           00287          movfw ch20
+00E0   28E5           00288          goto m33
+00E1                  00289 m22:      
+00E1   0847           00290          movfw ch21
+00E2   28E5           00291          goto m33
+00E3                  00292 m23:      
+00E3   0848           00293          movfw ch22
+00E4   01A0           00294          clrf d1nl
+00E5                  00295 m33:
+00E5   0086           00296          movwf PORTB
+00E6   0821           00297          movfw d1nm
+00E7   3C03           00298          sublw 0x03
+00E8   1903           00299          btfsc STATUS,2
+00E9   28EB           00300          goto  m50
+00EA   2912           00301          goto  m34     
+00EB                  00302 m50:     
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  7
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+00EB   184A           00303          btfsc r2,0
+00EC   28EF           00304          goto m61   
+00ED   144A           00305          bsf   r2,0
+00EE   28F0           00306          goto m62
+00EF                  00307 m61:     
+00EF   104A           00308          bcf   r2,0
+00F0                  00309 m62:
+00F0   1C4A           00310          btfss r2,0
+00F1   2911           00311          goto m60 
+Message[305]: Using default destination of 1 (file).
+00F2   0AAA           00312          incf r1
+00F3   082A           00313          movfw r1
+00F4   3C08           00314          sublw 0x08
+00F5   1C03           00315          btfss STATUS,0
+00F6   28F8           00316          goto m54
+00F7   2906           00317          goto m55
+00F8                  00318 m54:
+00F8   082A           00319          movfw r1
+00F9   3C09           00320          sublw 0x09
+00FA   1D03           00321          btfss STATUS,2 
+00FB   28FE           00322          goto  m56
+00FC   0827           00323          movfw  ch1
+00FD   00C9           00324          movwf  cr
+00FE                  00325 m56:
+00FE   082A           00326          movfw r1
+00FF   3C11           00327          sublw 0x11 
+0100   1D03           00328          btfss STATUS,2
+0101   2906           00329          goto  m55
+0102   0826           00330          movfw  ch0
+0103   00C9           00331          movwf  cr
+0104   3001           00332          movlw 0x01
+0105   00AA           00333          movwf r1                  
+0106                  00334 m55:
+0106   1405           00335          bsf PORTA,0
+0107   1849           00336          btfsc cr,0
+0108   290D           00337          goto m52
+0109   290A           00338          goto m51
+010A                  00339 m51:
+010A   1085           00340          bcf PORTA,1             
+010B   1003           00341          bcf STATUS,0
+010C   290F           00342          goto  m53
+010D                  00343 m52:
+010D   1485           00344          bsf PORTA,1
+010E   1403           00345          bsf STATUS,0 
+010F                  00346 m53:         
+Message[305]: Using default destination of 1 (file).
+010F   0CC9           00347          rrf cr
+0110   2912           00348          goto m34
+0111                  00349 m60:     
+0111   1005           00350          bcf PORTA,0
+0112                  00351 m34:     
+0112   0E25           00352          swapf zn1,W
+0113   0083           00353          movwf STATUS
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  8
+
+
+LOC  OBJECT CODE     LINE SOURCE TEXT
+  VALUE
+
+0114   0EA4           00354          swapf zn0,1
+0115   0E24           00355          swapf zn0,W 
+                      00356 
+0116   0009           00357          retfie
+                      00358          END
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE  9
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+C                                 00000000
+DC                                00000001
+EEADR                             00000009
+EECON1                            00000088
+EECON2                            00000089
+EEDATA                            00000008
+EEIE                              00000006
+EEIF                              00000004
+F                                 00000001
+FSR                               00000004
+GIE                               00000007
+INDF                              00000000
+INTCON                            0000000B
+INTE                              00000004
+INTEDG                            00000006
+INTF                              00000001
+IRP                               00000007
+NOT_PD                            00000003
+NOT_RBPU                          00000007
+NOT_TO                            00000004
+OPTION_REG                        00000081
+PCL                               00000002
+PCLATH                            0000000A
+PORTA                             00000005
+PORTB                             00000006
+PS0                               00000000
+PS1                               00000001
+PS2                               00000002
+PSA                               00000003
+RA0                               00000000
+RA1                               00000001
+RA2                               00000002
+RA3                               00000003
+RA4                               00000004
+RB0                               00000000
+RB1                               00000001
+RB2                               00000002
+RB3                               00000003
+RB4                               00000004
+RB5                               00000005
+RB6                               00000006
+RB7                               00000007
+RBIE                              00000003
+RBIF                              00000000
+RD                                00000000
+RP0                               00000005
+RP1                               00000006
+STATUS                            00000003
+T0CS                              00000005
+T0IE                              00000005
+T0IF                              00000002
+T0SE                              00000004
+TMR0                              00000001
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE 10
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+TMR0IE                            00000005
+TMR0IF                            00000002
+TRISA                             00000085
+TRISA0                            00000000
+TRISA1                            00000001
+TRISA2                            00000002
+TRISA3                            00000003
+TRISA4                            00000004
+TRISB                             00000086
+TRISB0                            00000000
+TRISB1                            00000001
+TRISB2                            00000002
+TRISB3                            00000003
+TRISB4                            00000004
+TRISB5                            00000005
+TRISB6                            00000006
+TRISB7                            00000007
+W                                 00000000
+WR                                00000001
+WREN                              00000002
+WRERR                             00000003
+Z                                 00000002
+_CONFIG                           00002007
+_CP_OFF                           00003FFF
+_CP_ON                            0000000F
+_FOSC_EXTRC                       00003FFF
+_FOSC_HS                          00003FFE
+_FOSC_LP                          00003FFC
+_FOSC_XT                          00003FFD
+_HS_OSC                           00003FFE
+_IDLOC0                           00002000
+_IDLOC1                           00002001
+_IDLOC2                           00002002
+_IDLOC3                           00002003
+_LP_OSC                           00003FFC
+_PWRTE_OFF                        00003FFF
+_PWRTE_ON                         00003FF7
+_RC_OSC                           00003FFF
+_WDTE_OFF                         00003FFB
+_WDTE_ON                          00003FFF
+_WDT_OFF                          00003FFB
+_WDT_ON                           00003FFF
+_XT_OSC                           00003FFD
+__16F84                           00000001
+__DEBUG                           1
+ch0                               00000026
+ch1                               00000027
+ch10                              00000036
+ch11                              00000037
+ch12                              00000038
+ch13                              00000039
+ch14                              00000040
+ch15                              00000041
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE 11
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+ch16                              00000042
+ch17                              00000043
+ch18                              00000044
+ch19                              00000045
+ch2                               00000028
+ch20                              00000046
+ch21                              00000047
+ch22                              00000048
+ch3                               00000029
+ch4                               00000030
+ch5                               00000031
+ch6                               00000032
+ch7                               00000033
+ch8                               00000034
+ch9                               00000035
+cr                                00000049
+d1nl                              00000020
+d1nm                              00000021
+d1nn                              00000022
+m1                                000000B7
+m10                               000000C9
+m11                               000000CB
+m12                               000000CD
+m13                               000000CF
+m14                               000000D1
+m15                               000000D3
+m16                               000000D5
+m17                               000000D7
+m18                               000000D9
+m19                               000000DB
+m2                                000000B9
+m20                               000000DD
+m21                               000000DF
+m22                               000000E1
+m23                               000000E3
+m3                                000000BB
+m33                               000000E5
+m34                               00000112
+m4                                000000BD
+m5                                000000BF
+m50                               000000EB
+m51                               0000010A
+m52                               0000010D
+m53                               0000010F
+m54                               000000F8
+m55                               00000106
+m56                               000000FE
+m6                                000000C1
+m60                               00000111
+m61                               000000EF
+m62                               000000F0
+m7                                000000C3
+m8                                000000C5
+MPASM  5.50                        PROB19.ASM   2-9-2020  18:00:36         PAGE 12
+
+
+SYMBOL TABLE
+  LABEL                             VALUE 
+
+m9                                000000C7
+nang                              00000023
+r1                                0000002A
+r2                                0000004A
+srvint                            0000004B
+start                             00000005
+update                            0000004A
+zn0                               00000024
+zn1                               00000025
+
+
+MEMORY USAGE MAP ('X' = Used,  '-' = Unused)
+
+0000 : X---XXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0040 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0080 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+00C0 : XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX XXXXXXXXXXXXXXXX
+0100 : XXXXXXXXXXXXXXXX XXXXXXX--------- ---------------- ----------------
+2000 : -------X-------- ---------------- ---------------- ----------------
+
+All other memory blocks unused.
+
+Program Memory Words Used:   276
+Program Memory Words Free:   748
+
+
+Errors   :     0
+Warnings :     1 reported,     0 suppressed
+Messages :     8 reported,     0 suppressed
+
+

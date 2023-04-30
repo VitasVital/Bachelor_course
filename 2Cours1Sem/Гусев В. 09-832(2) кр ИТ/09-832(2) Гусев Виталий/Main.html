@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+    <style type="text/css">
+  html,body,h3{
+  	margin:0;
+	padding:0;
+	background:url(bg-menu.gif);
+	background-repeat:repeat-y
+	}
+  /* убираем отступ у тега body,
+  задаем фоновое изображение, размножающееся по вертикали */
+
+  #header{
+  padding-left:600px;
+  padding-top:50px;
+  	height:150px;
+	min-width:600px;
+	background:#FFEF97
+	}
+  /* высота 150 px, минимальная ширина 600 px, цвет фона */
+
+  #menu{
+  padding-top:10px;
+  padding-left:10px;
+  	height:750px;
+  	width:250px;
+	float:left;
+	#background:#B0E0E6
+	}
+  /* ширина 250 px, этот блок обтекает с левой стороны
+  следующий блок, цвет фона */
+
+  #info{
+  padding:20px;
+  	min-width:350px;
+	margin-left:250px;
+	background:#778899
+	}
+  /* минимальная ширина 350 px, отступ слева 250 px */
+
+  #footer{
+  	height:43px;
+ 	min-width:600px;
+  	background:#BC8F8F;
+	}
+</style>
+</head>
+<body>
+<div id="body"></div>
+<div id="header">
+    <A href="Main.html">Main</A>
+    <A href="Word.html">Word</A>
+    <A href="Excel.html">Excel</A>
+    <A href="Access.html">Access</A>
+</div>
+<div id="menu">
+    <h3>Меню разделов</h3>
+    <ol>
+            <li>
+                <A href="#info">Оглавление</A>
+            </li>
+    </ol>
+</div>
+<div id="info">
+    <h2>Гусев Виталий Евгеньевич 09-832(2)</h2>
+    <h3>Кр по ИТ</h3>
+    <pre>
+        Оглавление
+1.	Word	2
+1.1	Код	2
+1.2	Формула	3
+2.	Excel	4
+2.1	Вычисление интеграла	4
+2.2	Построение графика функции	4
+2.3	Двоичное представление числа	5
+3.	Access	7
+3.1	Структура данных	7
+    </pre>
+</div>
+</body>
+</html>

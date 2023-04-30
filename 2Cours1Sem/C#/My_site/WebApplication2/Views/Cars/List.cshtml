@@ -1,0 +1,11 @@
+﻿<h1>Все автомобили</h1><!--Из CarsController через ViewResult List()-->
+<h3>@Model.currCategory</h3>
+@{ 
+    foreach (var car in Model.allCars)
+    {
+        <div>
+            <h2>Модель: @car.name</h2>
+            <p>Цена: @car.price.ToString("c")</p><!--будет переведен в денежную форму-->
+        </div>
+    }
+}
