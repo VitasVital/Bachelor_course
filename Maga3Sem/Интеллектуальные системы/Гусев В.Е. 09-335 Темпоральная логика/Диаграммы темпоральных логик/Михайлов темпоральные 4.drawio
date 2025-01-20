@@ -1,0 +1,215 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 Safari/537.36" version="26.0.6">
+  <diagram name="Страница — 1" id="MfmmzXRaUREnEQT_HFqd">
+    <mxGraphModel dx="1434" dy="746" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fk-1AsTx806Ikf02iE31-6" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fk-1AsTx806Ikf02iE31-1" target="fk-1AsTx806Ikf02iE31-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-1" value="&lt;b&gt;S1&lt;/b&gt;&lt;div&gt;&lt;b&gt;Вставка карты в банкомат&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="284" y="30" width="120" height="90" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-7" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fk-1AsTx806Ikf02iE31-2" target="fk-1AsTx806Ikf02iE31-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-8" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fk-1AsTx806Ikf02iE31-2" target="fk-1AsTx806Ikf02iE31-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-13" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fk-1AsTx806Ikf02iE31-2" target="fk-1AsTx806Ikf02iE31-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-2" value="&lt;b&gt;S3&lt;/b&gt;&lt;div&gt;&lt;b&gt;Ввод пинкода&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="284" y="150" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-3" target="fk-1AsTx806Ikf02iE31-1" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-3" value="&lt;b&gt;S2&lt;/b&gt;&lt;div&gt;&lt;b&gt;Возвращение карты&lt;/b&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="90" y="120" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-9" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="1" source="fk-1AsTx806Ikf02iE31-4" target="fk-1AsTx806Ikf02iE31-5" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-4" target="fk-1AsTx806Ikf02iE31-2" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-4" value="&lt;b&gt;S4&lt;/b&gt;&lt;div&gt;&lt;b&gt;Ошибка ввода пинкода&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="450" y="120" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-28" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-5" target="fk-1AsTx806Ikf02iE31-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="690" y="20" />
+              <mxPoint x="150" y="20" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-5" value="&lt;b&gt;S5&lt;/b&gt;&lt;div&gt;&lt;b&gt;Блокировка карты&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;CardBlocked&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="630" y="120" width="120" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-12" target="fk-1AsTx806Ikf02iE31-3" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-30" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-12" target="fk-1AsTx806Ikf02iE31-15" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-12" target="fk-1AsTx806Ikf02iE31-17" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-12" target="fk-1AsTx806Ikf02iE31-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-12" value="&lt;b&gt;S6&lt;/b&gt;&lt;div&gt;&lt;b&gt;Открытие меню&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="284" y="250" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-31" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-15" target="fk-1AsTx806Ikf02iE31-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-15" value="&lt;b&gt;S7&lt;/b&gt;&lt;div&gt;&lt;b&gt;Оплата счёта&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="360" width="120" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-16" target="fk-1AsTx806Ikf02iE31-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-16" value="&lt;b&gt;S9&lt;/b&gt;&lt;div&gt;&lt;b&gt;Снятие денег со счёта&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="660" y="286.25" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-17" target="fk-1AsTx806Ikf02iE31-28" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-17" value="&lt;b&gt;S8&lt;/b&gt;&lt;div&gt;&lt;b&gt;Пополнение счёта&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="310" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-27" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-59" target="fk-1AsTx806Ikf02iE31-26" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-21" target="fk-1AsTx806Ikf02iE31-23" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-70" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-21" target="fk-1AsTx806Ikf02iE31-12" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="660" y="430" />
+              <mxPoint x="630" y="430" />
+              <mxPoint x="630" y="300" />
+              <mxPoint x="430" y="300" />
+              <mxPoint x="430" y="325" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-21" value="&lt;b&gt;S14&lt;/b&gt;&lt;div&gt;&lt;b&gt;Указание суммы&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="660" y="410" width="120" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-23" target="fk-1AsTx806Ikf02iE31-21" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-23" value="&lt;div&gt;&lt;b&gt;S15&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Ошибка указания суммы&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="827" y="350" width="120" height="141.88" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-44" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-26" target="fk-1AsTx806Ikf02iE31-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-26" value="&lt;b&gt;S19&lt;/b&gt;&lt;div&gt;&lt;b&gt;Выдача&amp;nbsp; наличных денег&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;MoneyReceived&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BalanceChanged&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BankResponse&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="660" y="670" width="120" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-42" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="dDWNQDVlqyrd8NBQg2Ad-4" target="fk-1AsTx806Ikf02iE31-41" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-28" target="fk-1AsTx806Ikf02iE31-37" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-28" value="&lt;b&gt;S12&lt;/b&gt;&lt;div&gt;&lt;b&gt;Пополнение банкомата&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;наличными деньгами&amp;nbsp;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="440" width="120" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-30" target="dDWNQDVlqyrd8NBQg2Ad-4" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-30" target="dDWNQDVlqyrd8NBQg2Ad-6" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-30" value="&lt;b&gt;S10&lt;/b&gt;&lt;div&gt;&lt;b&gt;Ввод номера счёта&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="210" y="490" width="120" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-37" target="fk-1AsTx806Ikf02iE31-28" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-37" value="&lt;b&gt;S13&lt;/b&gt;&lt;div&gt;&lt;b&gt;Ошибка пополнения банкомата&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="440" width="120" height="135" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-41" target="fk-1AsTx806Ikf02iE31-43" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-41" value="&lt;b&gt;S21&lt;/b&gt;&lt;div&gt;&lt;b&gt;Перевод денег на счёт&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;MoneyCredited&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BalanceChanged&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BankResponse&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="340" y="777.5" width="120" height="152.5" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-63" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-43" target="fk-1AsTx806Ikf02iE31-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="590" y="990" />
+              <mxPoint x="20" y="990" />
+              <mxPoint x="20" y="145" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-43" value="&lt;b&gt;S22&lt;/b&gt;&lt;div&gt;&lt;b&gt;Печать чека&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;PrintingReceipt&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f1 f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="530" y="797.5" width="120" height="112.5" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-60" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-21" target="fk-1AsTx806Ikf02iE31-59" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="560" y="550" as="sourcePoint" />
+            <mxPoint x="560" y="720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-71" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-59" target="fk-1AsTx806Ikf02iE31-64" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-59" value="&lt;b&gt;S16&lt;/b&gt;&lt;div&gt;&lt;b&gt;Отправка запроса на снятие денег&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BankRequest&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="660" y="532" width="120" height="105" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-26" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-64" target="fk-1AsTx806Ikf02iE31-3" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="940" y="580" />
+              <mxPoint x="960" y="580" />
+              <mxPoint x="960" y="10" />
+              <mxPoint x="120" y="10" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fk-1AsTx806Ikf02iE31-64" value="&lt;b&gt;S17&lt;/b&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&lt;b&gt;Ошибка запроса на снятие денег&lt;/b&gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;i style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BankResponse&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="820" y="520.75" width="120" height="149.25" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="fk-1AsTx806Ikf02iE31-28" target="dDWNQDVlqyrd8NBQg2Ad-4" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="270" y="725" as="sourcePoint" />
+            <mxPoint x="270" y="890" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="dDWNQDVlqyrd8NBQg2Ad-4" target="dDWNQDVlqyrd8NBQg2Ad-19" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-4" value="&lt;b&gt;S18&lt;/b&gt;&lt;div&gt;&lt;b&gt;Отправка запроса на зачисление денег&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BankRequest&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="500" y="617.5" width="120" height="132.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-25" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" parent="1" source="dDWNQDVlqyrd8NBQg2Ad-6" target="fk-1AsTx806Ikf02iE31-30" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-6" value="&lt;b&gt;S11&lt;/b&gt;&lt;div&gt;&lt;b&gt;Ошибка указания номера счёта&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="40" y="490" width="120" height="127.5" as="geometry" />
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-24" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="dDWNQDVlqyrd8NBQg2Ad-19" target="fk-1AsTx806Ikf02iE31-43" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="190" y="970" />
+              <mxPoint x="560" y="970" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dDWNQDVlqyrd8NBQg2Ad-19" value="&lt;div&gt;&lt;b&gt;S20&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;Ошибка зачисления денег&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;CardInTerminal&lt;/i&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;Authorized&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;div&gt;&lt;i&gt;ErrorOperation&lt;/i&gt;&lt;/div&gt;&lt;/div&gt;&lt;div&gt;&lt;i&gt;BankResponse&lt;/i&gt;&lt;i&gt;&lt;/i&gt;&lt;/div&gt;&lt;div&gt;f2&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+          <mxGeometry x="130" y="637" width="120" height="163" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
