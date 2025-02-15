@@ -1,6 +1,14 @@
 import numpy as np
 from scipy.spatial.distance import sqeuclidean
 
+# функция вычисления Манхэттенского расстояния
+def ManhattanDistance(input_points):
+    result_function = np.zeros((len(input_points), len(input_points)))
+    for i in range(0, len(input_points)):
+        for j in range(0, i):
+            result_function[i, j] = np.abs(input_points[j, 0] - input_points[i, 0]) + np.abs(input_points[j, 1] - input_points[i, 1])
+    return result_function
+
 class HierarchicalAgglomerativeClustering:
     def __init__(self, n_clusters=2, linkage='_min_distance'):
         self.n_clusters = n_clusters
@@ -67,37 +75,50 @@ class HierarchicalAgglomerativeClustering:
     #для устранения пропусков в последовательности;
     @staticmethod
     def _update_labels(labels, min_cdist_idxs):
+        # assign a cluster number to labels
         labels[labels == min_cdist_idxs[1]] = min_cdist_idxs[0]
         labels[labels > min_cdist_idxs[1]] -= 1
 
         return labels
     
     # функция предсказания
-    def fit_predict(self, X):
-        labels = np.arange(len(X))
-        clusters = [[x] for x in X]
+    def fit_predict(self, points):
+        clusters = ManhattanDistance(points)
+        labels = np.arange(len(points))
+        print('Манхэттенское расстояние\n', clusters)
+        
+        clusters_points = [[point] for point in points]
         step = 0
-
         while len(clusters) > self.n_clusters:
-            min_cdist, min_cdist_idxs = np.inf, []  #равно бесконечности и пустому списку
-
             print("\nШаг ", step)
-            print("Матрица Dn расстояний между кластерами")
-            for i in range(len(clusters) - 1):
-                for j in range(i + 1, len(clusters)):
-                    cdist = self.calculate_cdist(clusters[i], clusters[j])
-
-                    if cdist < min_cdist:
-                        min_cdist = cdist
-                        min_cdist_idxs = (i, j)
-
-            labels = self._update_labels(labels, min_cdist_idxs)
-            clusters[min_cdist_idxs[0]].extend(clusters.pop(min_cdist_idxs[1]))
+            minDistance_i = 1
+            minDistance_j = 0
+            for i in range(1, len(clusters) - 1):
+                for j in range(0, i):
+                    if clusters[i, j] < clusters[minDistance_i, minDistance_j]:
+                        minDistance_i = i
+                        minDistance_j = j
+            minDistance = clusters[minDistance_i, minDistance_j]
+            for i in range(0, len(clusters)):
+                minDistance_i_i = clusters[minDistance_i][i] if clusters[minDistance_i][i] != 0 else clusters[i][minDistance_i]
+                minDistance_j_j = clusters[minDistance_j][i] if clusters[minDistance_j][i] != 0 else clusters[i][minDistance_j]
+                clusters[minDistance_i, i] = min(minDistance_i_i, minDistance_j_j)
+                clusters[minDistance_j, i] = min(minDistance_i_i, minDistance_j_j)
+                clusters[i, minDistance_i] = min(minDistance_i_i, minDistance_j_j)
+                clusters[i, minDistance_j] = min(minDistance_i_i, minDistance_j_j)
+            clusters_points[minDistance_i].append(clusters_points[minDistance_j])
+            clusters_points.pop(minDistance_j)
+            clusters = np.delete(clusters, (minDistance_j), axis=0) # удаление строки
+            clusters = np.delete(clusters, (minDistance_j), axis=1) # удаление колонки
+            labels = self._update_labels(labels, (minDistance_i, minDistance_j))
+            for clusters_point in clusters_points:
+                print(clusters_point)
 
             print("n = len(clusters) = ", len(clusters))
             print("Номера кластеров для точек: ", np.array(labels))
-            print("Минимальное рассояние между кластерами равно ", min_cdist)
-            print("И это расстояние между кластерами в D: ", min_cdist_idxs)
+            print("Минимальное рассояние между кластерами равно ", minDistance)
+            print("И это расстояние между кластерами в D: ", (minDistance_i, minDistance_j))
+            print('Матрица Db расстояний между кластерами', clusters)
             step+=1
 
         return np.array(labels)
