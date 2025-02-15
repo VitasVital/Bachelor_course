@@ -60,7 +60,11 @@ class HierarchicalAgglomerativeClustering:
                 distances.append(sqeuclidean(i, j))
         print(distances)
         return np.median(distances)
-
+    
+    #метки с минимальным расстоянием, то есть ближайшие кластеры объединяются в новый следующим образом:
+    #всем объектам одного кластера присваиваются метки другого, после чего все новые метки,
+    #которые больше меток другого кластера, уменьшаются на 1, то есть их нумерация сдвигается влево
+    #для устранения пропусков в последовательности;
     @staticmethod
     def _update_labels(labels, min_cdist_idxs):
         labels[labels == min_cdist_idxs[1]] = min_cdist_idxs[0]
