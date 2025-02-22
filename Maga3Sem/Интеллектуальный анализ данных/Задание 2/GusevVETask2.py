@@ -1,5 +1,4 @@
 import numpy as np
-from scipy.spatial.distance import sqeuclidean
 import copy
 
 # функция вычисления Манхэттенского расстояния
