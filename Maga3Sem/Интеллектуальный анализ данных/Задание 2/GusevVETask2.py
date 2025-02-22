@@ -1,5 +1,4 @@
 import numpy as np
-import copy
 
 # функция вычисления Манхэттенского расстояния
 def ManhattanDistance(input_points):
