@@ -144,12 +144,10 @@ class HierarchicalAgglomerativeClustering:
         for i in range(0, len(self.clusters)):
             distance_i_i = self.clusters[distance_i][i] if self.clusters[distance_i][i] != 0 else self.clusters[i][distance_i]
             distance_j_j = self.clusters[distance_j][i] if self.clusters[distance_j][i] != 0 else self.clusters[i][distance_j]
-            clusters_points_i_len = len(self.clusters_points[distance_i])
-            clusters_points_j_len = len(self.clusters_points[distance_j])
-            self.clusters[distance_i, i] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
-            self.clusters[distance_j, i] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
-            self.clusters[i, distance_i] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
-            self.clusters[i, distance_j] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
+            self.clusters[distance_i, i] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
+            self.clusters[distance_j, i] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
+            self.clusters[i, distance_i] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
+            self.clusters[i, distance_j] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
         self.clusters_points[distance_i].append(self.clusters_points[distance_j])
         self.clusters_points.pop(distance_j)
         self.clusters = np.delete(self.clusters, (distance_j), axis=0) # удаление строки
@@ -164,7 +162,7 @@ class HierarchicalAgglomerativeClustering:
         print("И это расстояние между кластерами в D: ", (distance_i, distance_j))
         print('Матрица Dn расстояний между кластерами\n', self.clusters)
     
-    # Метод 2. Медианное расстояние между всеми парами объектов из двух кластеров (сделать)
+    # (сделать) Метод 2. Медианное расстояние между всеми парами объектов из двух кластеров
     @staticmethod
     def _method2_distance(self):
         distance_i = 1
