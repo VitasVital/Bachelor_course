@@ -1,4 +1,5 @@
 import numpy as np
+import copy
 
 # функция вычисления Манхэттенского расстояния
 def ManhattanDistance(input_points):
@@ -33,28 +34,28 @@ class HierarchicalAgglomerativeClustering:
         
     # метод односвязной кластеризации
     @staticmethod
-    def _min_distance(self, distance_i, i):
-        return np.min(self.clusters_list_distances[distance_i][i])
+    def _min_distance(distances):
+        return np.min(distances)
     
     # метод полносвязной кластеризации
     @staticmethod
-    def _max_distance(self, distance_i, i):
-        return np.max(self.clusters_list_distances[distance_i][i])
+    def _max_distance(distances):
+        return np.max(distances)
     
     # метод среднего расстояния
     @staticmethod
-    def _avg_distance(self, distance_i, i):
-        return np.average(self.clusters_list_distances[distance_i][i])
+    def _avg_distance(distances):
+        return np.average(distances)
     
     # Метод 1. Полусумма минимального и максимального расстояния между объектами из двух кластеров 
     @staticmethod
-    def _method1_distance(self, distance_i, i):
-        return (np.max(self.clusters_list_distances[distance_i][i]) + np.min(self.clusters_list_distances[distance_i][i])) / 2
+    def _method1_distance(distances):
+        return (np.max(distances) + np.min(distances)) / 2
     
     # Метод 2. Медианное расстояние между всеми парами объектов из двух кластеров
     @staticmethod
-    def _method2_distance(self, distance_i, i):
-        return np.median(self.clusters_list_distances[distance_i][i])
+    def _method2_distance(distances):
+        return np.median(distances)
 
     @staticmethod
     def _calculate_distance(self):
@@ -70,7 +71,7 @@ class HierarchicalAgglomerativeClustering:
         for i in range(0, len(self.clusters)):
             self.clusters_list_distances[distance_i][i].extend(self.clusters_list_distances[distance_j][i])
             self.clusters_list_distances[i][distance_i].extend(self.clusters_list_distances[distance_j][i]) # добавление новых дистаций в кластер
-            calculated_distance = self.calculate_cdist(self, distance_i, i) # вычисление расстояния выбранным методом
+            calculated_distance = self.calculate_cdist(self.clusters_list_distances[distance_i][i]) # вычисление расстояния выбранным методом
             self.clusters[distance_i][i] = calculated_distance
             self.clusters[i][distance_i] = calculated_distance
         
@@ -86,9 +87,21 @@ class HierarchicalAgglomerativeClustering:
         self.clusters_points.pop(distance_j)
 
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
+
+        for clusters_point in self.clusters_points:
+            for i in range(len(self.clusters_main)):
+                distances = []
+                for point in clusters_point:
+                    distances.append(self.clusters_main[point[0]][i])
+                if len(distances) > 1:
+                    for point in clusters_point:
+                        self.clusters_copy[point[0]][i] = self.calculate_cdist(distances)
+                        self.clusters_copy[i][point[0]] = self.calculate_cdist(distances)
+        print(self.clusters_copy)
+        self.clusters_copy = copy.copy(self.clusters_main)
+
         for clusters_point in self.clusters_points:
             print(clusters_point)
-
         print("n = len(clusters) = ", len(self.clusters))
         print("Номера кластеров для точек: ", np.array(self.labels))
         print("Рассояние между кластерами равно равно ", distance)
@@ -99,6 +112,8 @@ class HierarchicalAgglomerativeClustering:
     # функция предсказания
     def fit_predict(self, points):
         self.clusters = ManhattanDistance(points)
+        self.clusters_main = copy.copy(self.clusters)
+        self.clusters_copy = copy.copy(self.clusters)
         self.clusters_list_distances = []
         for i in range(len(self.clusters)):
             empty_lists = [[] for _ in range(len(self.clusters))]
@@ -124,7 +139,7 @@ class HierarchicalAgglomerativeClustering:
 points = np.array([[2, 2, 4, 4, 5, 5, 7, 7],
              [1, 5, 3, 6, 4, 5, 2, 5]]).T
 print(points)
-ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_min_distance')
+ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_method2_distance')
 ac_pred_res = ac.fit_predict(points)
 print('\nРезультат предсказания', ac_pred_res)
 # _min_distance
