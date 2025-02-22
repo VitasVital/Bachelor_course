@@ -97,7 +97,15 @@ class HierarchicalAgglomerativeClustering:
                     for point in clusters_point:
                         self.clusters_copy[point[0]][i] = self.calculate_cdist(distances)
                         self.clusters_copy[i][point[0]] = self.calculate_cdist(distances)
-        print(self.clusters_copy)
+        for i in range(len(self.clusters_copy)):
+            self.clusters_copy[i][i] = 0
+        print('Нестянутая матрица\n', self.clusters_copy)
+        
+        self.clusters_difference = copy.copy(self.clusters_main)
+        for i in range(len(self.clusters_difference)):
+            for j in range(len(self.clusters_difference)):
+                self.clusters_difference[i][j] -= self.clusters_copy[i][j]
+        print('Разность исходной матрицы расстояний между наблюдениями (точками) и нестянутой матрицей расстояний\n', self.clusters_difference)
         self.clusters_copy = copy.copy(self.clusters_main)
 
         for clusters_point in self.clusters_points:
@@ -139,7 +147,7 @@ class HierarchicalAgglomerativeClustering:
 points = np.array([[2, 2, 4, 4, 5, 5, 7, 7],
              [1, 5, 3, 6, 4, 5, 2, 5]]).T
 print(points)
-ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_method2_distance')
+ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_min_distance')
 ac_pred_res = ac.fit_predict(points)
 print('\nРезультат предсказания', ac_pred_res)
 # _min_distance
