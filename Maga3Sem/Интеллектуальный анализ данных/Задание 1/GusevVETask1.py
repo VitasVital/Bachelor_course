@@ -7,7 +7,7 @@ excel_path = 'C:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Maga3Se
 def ManhattanDistance(input_points):
     result_function = np.zeros((len(input_points), len(input_points)))
     for i in range(0, len(input_points)):
-        for j in range(0, i):
+        for j in range(0, len(input_points)):
             result_function[i, j] = np.abs(input_points[j, 0] - input_points[i, 0]) + np.abs(input_points[j, 1] - input_points[i, 1])
     return result_function
 
@@ -15,15 +15,15 @@ def ManhattanDistance(input_points):
 def HamingDistance(input_points):
     result_function = np.zeros((len(input_points), len(input_points)))
     for i in range(0, len(input_points)):
-        for j in range(0, i):
-            result_function[i, j] = np.sign(input_points[j, 0] - input_points[i, 0]) + np.sign(input_points[j, 1] - input_points[i, 1])
+        for j in range(0, len(input_points)):
+            result_function[i, j] = np.abs(np.sign(input_points[j, 0] - input_points[i, 0])) + np.abs(np.sign(input_points[j, 1] - input_points[i, 1]))
     return result_function
 
 # функция вычисления Евклидова расстояния
 def EuclideanDistance(input_points):
     result_function = np.zeros((len(input_points), len(input_points)))
     for i in range(0, len(input_points)):
-        for j in range(0, i):
+        for j in range(0, len(input_points)):
             result_function[i, j] = np.sqrt((input_points[j, 0] - input_points[i, 0])**2 + (input_points[j, 1] - input_points[i, 1])**2)
     return result_function
 
