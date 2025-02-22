@@ -50,17 +50,32 @@ class HierarchicalAgglomerativeClustering:
                     distance_i = i
                     distance_j = j
         distance = self.clusters[distance_i, distance_j]
+        point_nums = []
+        for point in self.clusters_points[distance_i]:
+            point_nums.append(point[0])
+        for point in self.clusters_points[distance_j]:
+            point_nums.append(point[0])
+        point_nums.sort()
+        min_distances_in_clusters = []
+        for j in range(0, len(self.clusters_copy)):
+            distances_in_clusters = []
+            for point_num in point_nums:
+                distance_in_cluster = self.clusters_copy[point_num][j] if self.clusters_copy[point_num][j] != 0 else self.clusters_copy[j][point_num]
+                distances_in_clusters.append(distance_in_cluster)
+            min_distances_in_clusters.append(np.min(distances_in_clusters))
+
+        self.clusters = copy.copy(self.clusters_copy)
         for i in range(0, len(self.clusters)):
-            distance_i_i = self.clusters[distance_i][i] if self.clusters[distance_i][i] != 0 else self.clusters[i][distance_i]
-            distance_j_j = self.clusters[distance_j][i] if self.clusters[distance_j][i] != 0 else self.clusters[i][distance_j]
-            self.clusters[distance_i, i] = min(distance_i_i, distance_j_j)
-            self.clusters[distance_j, i] = min(distance_i_i, distance_j_j)
-            self.clusters[i, distance_i] = min(distance_i_i, distance_j_j)
-            self.clusters[i, distance_j] = min(distance_i_i, distance_j_j)
+            self.clusters[distance_i, i] = min_distances_in_clusters[i]
+            self.clusters[i, distance_i] = min_distances_in_clusters[i]
+        
+        point_nums = [i for i in point_nums if i != distance_i]
+        self.clusters = np.delete(self.clusters, point_nums, axis=0) # удаление строки
+        self.clusters = np.delete(self.clusters, point_nums, axis=1) # удаление колонки
+
+
         self.clusters_points[distance_i].extend(self.clusters_points[distance_j])
         self.clusters_points.pop(distance_j)
-        self.clusters = np.delete(self.clusters, (distance_j), axis=0) # удаление строки
-        self.clusters = np.delete(self.clusters, (distance_j), axis=1) # удаление колонки
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
         for clusters_point in self.clusters_points:
             print(clusters_point)
@@ -68,7 +83,7 @@ class HierarchicalAgglomerativeClustering:
         self.ClearClusters(self)
         print("n = len(clusters) = ", len(self.clusters))
         print("Номера кластеров для точек: ", np.array(self.labels))
-        print("Минимальное рассояние между кластерами равно ", distance)
+        print("Минимальное рассояние между кластерами равно равно ", distance)
         print("И это расстояние между кластерами в D: ", (distance_i, distance_j))
         print('Матрица Dn расстояний между кластерами\n', self.clusters)
         
@@ -80,21 +95,35 @@ class HierarchicalAgglomerativeClustering:
         distance_j = 0
         for i in range(1, len(self.clusters) - 1):
             for j in range(0, i):
-                if self.clusters[i, j] < self.clusters[distance_i, distance_j]:
+                if self.clusters[i, j] > self.clusters[distance_i, distance_j]:
                     distance_i = i
                     distance_j = j
         distance = self.clusters[distance_i, distance_j]
+        point_nums = []
+        for point in self.clusters_points[distance_i]:
+            point_nums.append(point[0])
+        for point in self.clusters_points[distance_j]:
+            point_nums.append(point[0])
+        point_nums.sort()
+        max_distances_in_clusters = []
+        for j in range(0, len(self.clusters_copy)):
+            distances_in_clusters = []
+            for point_num in point_nums:
+                distance_in_cluster = self.clusters_copy[point_num][j] if self.clusters_copy[point_num][j] != 0 else self.clusters_copy[j][point_num]
+                distances_in_clusters.append(distance_in_cluster)
+            max_distances_in_clusters.append(np.max(distances_in_clusters))
+
+        self.clusters = copy.copy(self.clusters_copy)
         for i in range(0, len(self.clusters)):
-            distance_i_i = self.clusters[distance_i][i] if self.clusters[distance_i][i] != 0 else self.clusters[i][distance_i]
-            distance_j_j = self.clusters[distance_j][i] if self.clusters[distance_j][i] != 0 else self.clusters[i][distance_j]
-            self.clusters[distance_i, i] = max(distance_i_i, distance_j_j)
-            self.clusters[distance_j, i] = max(distance_i_i, distance_j_j)
-            self.clusters[i, distance_i] = max(distance_i_i, distance_j_j)
-            self.clusters[i, distance_j] = max(distance_i_i, distance_j_j)
+            self.clusters[distance_i, i] = max_distances_in_clusters[i]
+            self.clusters[i, distance_i] = max_distances_in_clusters[i]
+        
+        point_nums = [i for i in point_nums if i != distance_i]
+        self.clusters = np.delete(self.clusters, point_nums, axis=0) # удаление строки
+        self.clusters = np.delete(self.clusters, point_nums, axis=1) # удаление колонки
+
         self.clusters_points[distance_i].extend(self.clusters_points[distance_j])
         self.clusters_points.pop(distance_j)
-        self.clusters = np.delete(self.clusters, (distance_j), axis=0) # удаление строки
-        self.clusters = np.delete(self.clusters, (distance_j), axis=1) # удаление колонки
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
         for clusters_point in self.clusters_points:
             print(clusters_point)
@@ -117,19 +146,31 @@ class HierarchicalAgglomerativeClustering:
                     distance_i = i
                     distance_j = j
         distance = self.clusters[distance_i, distance_j]
+        point_nums = []
+        for point in self.clusters_points[distance_i]:
+            point_nums.append(point[0])
+        for point in self.clusters_points[distance_j]:
+            point_nums.append(point[0])
+        point_nums.sort()
+        min_distances_in_clusters = []
+        for j in range(0, len(self.clusters_copy)):
+            distances_in_clusters = []
+            for point_num in point_nums:
+                distance_in_cluster = self.clusters_copy[point_num][j] if self.clusters_copy[point_num][j] != 0 else self.clusters_copy[j][point_num]
+                distances_in_clusters.append(distance_in_cluster)
+            min_distances_in_clusters.append(np.average(distances_in_clusters))
+
+        self.clusters = copy.copy(self.clusters_copy)
         for i in range(0, len(self.clusters)):
-            distance_i_i = self.clusters[distance_i][i] if self.clusters[distance_i][i] != 0 else self.clusters[i][distance_i]
-            distance_j_j = self.clusters[distance_j][i] if self.clusters[distance_j][i] != 0 else self.clusters[i][distance_j]
-            clusters_points_i_len = len(self.clusters_points[distance_i])
-            clusters_points_j_len = len(self.clusters_points[distance_j])
-            self.clusters[distance_i, i] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
-            self.clusters[distance_j, i] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
-            self.clusters[i, distance_i] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
-            self.clusters[i, distance_j] = (distance_i_i * clusters_points_i_len + distance_j_j * clusters_points_j_len) / (clusters_points_i_len + clusters_points_j_len)
+            self.clusters[distance_i, i] = min_distances_in_clusters[i]
+            self.clusters[i, distance_i] = min_distances_in_clusters[i]
+        
+        point_nums = [i for i in point_nums if i != distance_i]
+        self.clusters = np.delete(self.clusters, point_nums, axis=0) # удаление строки
+        self.clusters = np.delete(self.clusters, point_nums, axis=1) # удаление колонки
+
         self.clusters_points[distance_i].extend(self.clusters_points[distance_j])
         self.clusters_points.pop(distance_j)
-        self.clusters = np.delete(self.clusters, (distance_j), axis=0) # удаление строки
-        self.clusters = np.delete(self.clusters, (distance_j), axis=1) # удаление колонки
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
         for clusters_point in self.clusters_points:
             print(clusters_point)
@@ -137,7 +178,7 @@ class HierarchicalAgglomerativeClustering:
         self.ClearClusters(self)
         print("n = len(clusters) = ", len(self.clusters))
         print("Номера кластеров для точек: ", np.array(self.labels))
-        print("Среднее рассояние между кластерами равно ", distance)
+        print("Среднее рассояние между кластерами равно равно ", distance)
         print("И это расстояние между кластерами в D: ", (distance_i, distance_j))
         print('Матрица Dn расстояний между кластерами\n', self.clusters)
     
@@ -152,17 +193,31 @@ class HierarchicalAgglomerativeClustering:
                     distance_i = i
                     distance_j = j
         distance = self.clusters[distance_i, distance_j]
+        point_nums = []
+        for point in self.clusters_points[distance_i]:
+            point_nums.append(point[0])
+        for point in self.clusters_points[distance_j]:
+            point_nums.append(point[0])
+        point_nums.sort()
+        min_distances_in_clusters = []
+        for j in range(0, len(self.clusters_copy)):
+            distances_in_clusters = []
+            for point_num in point_nums:
+                distance_in_cluster = self.clusters_copy[point_num][j] if self.clusters_copy[point_num][j] != 0 else self.clusters_copy[j][point_num]
+                distances_in_clusters.append(distance_in_cluster)
+            min_distances_in_clusters.append((np.max(distances_in_clusters) + np.min(distances_in_clusters)) / 2)
+
+        self.clusters = copy.copy(self.clusters_copy)
         for i in range(0, len(self.clusters)):
-            distance_i_i = self.clusters[distance_i][i] if self.clusters[distance_i][i] != 0 else self.clusters[i][distance_i]
-            distance_j_j = self.clusters[distance_j][i] if self.clusters[distance_j][i] != 0 else self.clusters[i][distance_j]
-            self.clusters[distance_i, i] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
-            self.clusters[distance_j, i] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
-            self.clusters[i, distance_i] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
-            self.clusters[i, distance_j] = (max(distance_i_i, distance_j_j) + min(distance_i_i, distance_j_j)) / 2
+            self.clusters[distance_i, i] = min_distances_in_clusters[i]
+            self.clusters[i, distance_i] = min_distances_in_clusters[i]
+        
+        point_nums = [i for i in point_nums if i != distance_i]
+        self.clusters = np.delete(self.clusters, point_nums, axis=0) # удаление строки
+        self.clusters = np.delete(self.clusters, point_nums, axis=1) # удаление колонки
+
         self.clusters_points[distance_i].extend(self.clusters_points[distance_j])
         self.clusters_points.pop(distance_j)
-        self.clusters = np.delete(self.clusters, (distance_j), axis=0) # удаление строки
-        self.clusters = np.delete(self.clusters, (distance_j), axis=1) # удаление колонки
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
         for clusters_point in self.clusters_points:
             print(clusters_point)
@@ -191,22 +246,27 @@ class HierarchicalAgglomerativeClustering:
         for point in self.clusters_points[distance_j]:
             point_nums.append(point[0])
         point_nums.sort()
-        for i in range(0, len(self.clusters)):
+        min_distances_in_clusters = []
+        for j in range(0, len(self.clusters_copy)):
             distances_in_clusters = []
-            for j in range(0, len(self.clusters_copy)):
-                for point_num in point_nums:
-                    distance_in_cluster = self.clusters_copy[point_num][j] if self.clusters_copy[point_num][j] != 0 else self.clusters_copy[j][point_num]
-                    distances_in_clusters.append(distance_in_cluster)
-            self.clusters[distance_i, i] = np.median(distances_in_clusters)
-            self.clusters[distance_j, i] = np.median(distances_in_clusters)
-            self.clusters[i, distance_i] = np.median(distances_in_clusters)
-            self.clusters[i, distance_j] = np.median(distances_in_clusters)
+            for point_num in point_nums:
+                distance_in_cluster = self.clusters_copy[point_num][j] if self.clusters_copy[point_num][j] != 0 else self.clusters_copy[j][point_num]
+                distances_in_clusters.append(distance_in_cluster)
+            min_distances_in_clusters.append(np.median(distances_in_clusters))
 
+        self.clusters = copy.copy(self.clusters_copy)
+        for i in range(0, len(self.clusters)):
+            self.clusters[distance_i, i] = min_distances_in_clusters[i]
+            self.clusters[i, distance_i] = min_distances_in_clusters[i]
+        
+        print(point_nums)
+        point_nums = [i for i in point_nums if i != distance_i]
+        print(point_nums)
+        self.clusters = np.delete(self.clusters, point_nums, axis=0) # удаление строки
+        self.clusters = np.delete(self.clusters, point_nums, axis=1) # удаление колонки
 
         self.clusters_points[distance_i].extend(self.clusters_points[distance_j])
         self.clusters_points.pop(distance_j)
-        self.clusters = np.delete(self.clusters, (distance_j), axis=0) # удаление строки
-        self.clusters = np.delete(self.clusters, (distance_j), axis=1) # удаление колонки
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
         for clusters_point in self.clusters_points:
             print(clusters_point)
@@ -239,6 +299,6 @@ class HierarchicalAgglomerativeClustering:
 points = np.array([[2, 2, 4, 4, 5, 5, 7, 7],
              [1, 5, 3, 6, 4, 5, 2, 5]]).T
 print(points)
-ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_method1_distance')
+ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_max_distance')
 ac_pred_res = ac.fit_predict(points)
 print('\nРезультат предсказания', ac_pred_res)
