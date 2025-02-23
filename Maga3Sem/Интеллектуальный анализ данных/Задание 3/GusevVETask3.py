@@ -110,6 +110,7 @@ class HierarchicalAgglomerativeClustering:
         print('Разность исходной матрицы расстояний между наблюдениями (точками) и нестянутой матрицей расстояний\n', self.clusters_difference)
         self.clusters_copy = copy.copy(self.clusters_main)
 
+        print("Точки кластеров")
         for clusters_point in self.clusters_points:
             print(clusters_point)
         print("n = len(clusters) = ", len(self.clusters))
@@ -159,9 +160,8 @@ print('\nРезультат предсказания', ac_pred_res)
 # _method2_distance
 
 linkage_matrix = linkage(points, method='ward', metric='euclidean')
-
 plt.figure(figsize=(10, 6))
-dendrogram(linkage_matrix, color_threshold=10)
+dendrogram(linkage_matrix, color_threshold=10) # построение дендограммы
 plt.xlabel("Sample Index")
 plt.ylabel("Distance")
 plt.title("Dendrogram")
