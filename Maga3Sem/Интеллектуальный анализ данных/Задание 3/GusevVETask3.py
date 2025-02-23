@@ -1,5 +1,7 @@
 import numpy as np
 import copy
+from scipy.cluster.hierarchy import linkage, dendrogram
+import matplotlib.pyplot as plt
 
 # функция вычисления Манхэттенского расстояния
 def ManhattanDistance(input_points):
@@ -88,7 +90,7 @@ class HierarchicalAgglomerativeClustering:
 
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
 
-        for clusters_point in self.clusters_points:
+        for clusters_point in self.clusters_points: # создание нестянутой матрицы
             for i in range(len(self.clusters_main)):
                 distances = []
                 for point in clusters_point:
@@ -101,7 +103,7 @@ class HierarchicalAgglomerativeClustering:
             self.clusters_copy[i][i] = 0
         print('Нестянутая матрица\n', self.clusters_copy)
         
-        self.clusters_difference = copy.copy(self.clusters_main)
+        self.clusters_difference = copy.copy(self.clusters_main) # разница матриц расстояний
         for i in range(len(self.clusters_difference)):
             for j in range(len(self.clusters_difference)):
                 self.clusters_difference[i][j] -= self.clusters_copy[i][j]
@@ -155,3 +157,12 @@ print('\nРезультат предсказания', ac_pred_res)
 # _avg_distance
 # _method1_distance
 # _method2_distance
+
+linkage_matrix = linkage(points, method='ward', metric='euclidean')
+
+plt.figure(figsize=(10, 6))
+dendrogram(linkage_matrix, color_threshold=10)
+plt.xlabel("Sample Index")
+plt.ylabel("Distance")
+plt.title("Dendrogram")
+plt.show()
