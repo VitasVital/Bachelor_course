@@ -32,9 +32,6 @@ df_orders = pd.read_excel(excel_path, index_col=None, header=None)
 points = np.array(df_orders)
 print(np.array(points))
 
-# points = np.array([[2, 2, 4, 4, 5, 5, 7, 7],
-#              [1, 5, 3, 6, 4, 5, 2, 5]]).T
-
 # вычисление Манхэттенского расстояния
 manhattanDistance = ManhattanDistance(points)
 # вычисление расстояния Хэмминга

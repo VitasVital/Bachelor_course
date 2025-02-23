@@ -86,9 +86,10 @@ class HierarchicalAgglomerativeClustering:
         self.clusters_points.pop(distance_j)
 
         self.labels = self._update_labels(self.labels, (distance_i, distance_j))
+
+        print("Точки кластеров")
         for clusters_point in self.clusters_points:
             print(clusters_point)
-
         print("n = len(clusters) = ", len(self.clusters))
         print("Номера кластеров для точек: ", np.array(self.labels))
         print("Рассояние между кластерами равно равно ", distance)
@@ -124,7 +125,7 @@ class HierarchicalAgglomerativeClustering:
 points = np.array([[2, 2, 4, 4, 5, 5, 7, 7],
              [1, 5, 3, 6, 4, 5, 2, 5]]).T
 print(points)
-ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_min_distance')
+ac = HierarchicalAgglomerativeClustering(n_clusters=2, linkage='_method2_distance')
 ac_pred_res = ac.fit_predict(points)
 print('\nРезультат предсказания', ac_pred_res)
 # _min_distance
