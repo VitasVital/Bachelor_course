@@ -101,14 +101,14 @@ class HierarchicalAgglomerativeClustering:
                         self.clusters_copy[i][point[0]] = self.calculate_cdist(distances)
         for i in range(len(self.clusters_copy)):
             self.clusters_copy[i][i] = 0
-        print('Нестянутая матрица\n', self.clusters_copy)
+        # print('Нестянутая матрица\n', self.clusters_copy)
         
         self.clusters_difference = copy.copy(self.clusters_main) # разница матриц расстояний
         for i in range(len(self.clusters_difference)):
             for j in range(len(self.clusters_difference)):
                 self.clusters_difference[i][j] -= self.clusters_copy[i][j]
         print('Разность исходной матрицы расстояний между наблюдениями (точками) и нестянутой матрицей расстояний\n', self.clusters_difference)
-        self.clusters_copy = copy.copy(self.clusters_main)
+        # self.clusters_copy = copy.copy(self.clusters_main)
 
         print("Точки кластеров")
         for clusters_point in self.clusters_points:
@@ -118,6 +118,9 @@ class HierarchicalAgglomerativeClustering:
         print("Рассояние между кластерами равно равно ", distance)
         print("И это расстояние между кластерами в D: ", (distance_i, distance_j))
         print('Матрица Dn расстояний между кластерами после вычислений\n', self.clusters)
+        print('Нестянутая матрица\n', self.clusters_copy)
+        
+        self.clusters_copy = copy.copy(self.clusters_main)
 
     
     # функция предсказания
