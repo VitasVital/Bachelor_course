@@ -50,8 +50,8 @@ def run_tests(seq, name="Последовательность"):
     stat2, p2 = chi_square_independence(seq, order=2)
     print(f"Хи-квадрат (независимость биграмм): stat={stat2:.4f}, p-value={p2:.4f}")
     # 3. Серии
-    runs, exp_runs = runs_test(seq)
-    print(f"Число серий: {runs}, ожидаемое (прибл.): {exp_runs:.2f}")
+    z, p_runs = runs_test(seq)
+    print(f"Тест серий: Z = {z:.4f}, p-value = {p_runs:.4f}")
     # 4. Автокорреляция (первые 20 лагов)
     acf = autocorrelation(seq, max_lag=20)
     print("Автокорреляция (первые 5 лагов):", [f"{acf[l]:.4f}" for l in range(1,6)])

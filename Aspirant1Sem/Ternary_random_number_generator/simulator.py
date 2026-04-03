@@ -132,15 +132,15 @@ class TRNGSimulator:
                 new_state = tuple(new_state_list)
                 # Проверка на однородные состояния
                 if new_state not in self.state_to_idx:
-                    # Это не должно происходить, но на случай сбросим?
+                    # Не меняем состояние, но всё равно обновляем таймер
+                    self.timers[k] = self._generate_delay()
                     continue
                 self.current_state_idx = self.state_to_idx[new_state]
             # Генерируем новую задержку для этого вентиля
             self.timers[k] = self._generate_delay()
-            # Сэмплирование по тактовому сигналу
-            if current_time - last_sample_time >= self.clock_D:
-                # Берём выход указанного вентиля
+            # Сэмплирование по тактовому сигналу (добавляем все пропущенные отсчёты)
+            while current_time - last_sample_time >= self.clock_D:
                 out_val = self.idx_to_state[self.current_state_idx][self.record_output]
                 sequence.append(out_val)
-                last_sample_time = current_time
+                last_sample_time += self.clock_D
         return sequence
