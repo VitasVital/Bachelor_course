@@ -11,8 +11,8 @@ class TRNGSimulator:
     Симулятор троичного генератора на основе джиттера.
     Поддерживает разные распределения задержек переключения вентилей.
     """
-    def __init__(self, N: int, gate_func: Callable[[int, int], int] = F1,
-                 delay_distribution: str = 'exponential', delay_params: dict = None):
+    def __init__(self, N: int, gate_func=F1, delay_distribution='exponential',
+             delay_params=None, clock_D: float = 8.0, record_output: int = 0):
         """
         :param N: число вентилей
         :param gate_func: логическая функция (F1 или F2)
@@ -23,6 +23,8 @@ class TRNGSimulator:
         self.gate_func = gate_func
         self.delay_distribution = delay_distribution
         self.delay_params = delay_params if delay_params else {}
+        self.clock_D = clock_D
+        self.record_output = record_output
 
         # Состояния и их индексы
         all_states = generate_all_states(N)
@@ -37,9 +39,14 @@ class TRNGSimulator:
         self._reset_timers()
 
     def _reset_timers(self):
-        """Инициализирует таймеры случайными значениями в соответствии с распределением."""
         for i in range(self.N):
-            self.timers[i] = self._generate_delay()
+            if self.delay_distribution == 'deterministic':
+                # Добавляем малый случайный сдвиг (0..epsilon) для начальной фазы
+                epsilon = self.delay_params.get('epsilon', 0.01)
+                base = self.delay_params.get('value', 1.0)
+                self.timers[i] = base + np.random.uniform(0, epsilon)
+            else:
+                self.timers[i] = self._generate_delay()
 
     def _generate_delay(self) -> float:
         """Генерирует случайную задержку согласно заданному распределению."""
@@ -99,16 +106,41 @@ class TRNGSimulator:
 
         return self.current_state_idx, new_state, dt
 
-    def run(self, num_steps: int, record_output: Optional[int] = None) -> List[int]:
-        """
-        Запускает моделирование на num_steps шагов.
-        Если record_output задан (номер вентиля), записывает последовательность его выходов.
-        Возвращает список троичных символов (-1,0,1) для указанного вентиля.
-        """
-        if record_output is None:
-            record_output = 0  # по умолчанию записываем выход первого вентиля
+    def run(self, num_steps: int) -> List[int]:
+        """Запускает моделирование на num_steps шагов, но выдаёт отсчёты через clock_D."""
         sequence = []
-        for _ in range(num_steps):
-            idx, state, _ = self.step()
-            sequence.append(state[record_output])
+        current_time = 0.0
+        last_sample_time = 0.0
+        # Инициализируем таймеры (уже есть в __init__, но нужно сохранить)
+        # Основной цикл по событиям
+        events = 0
+        while len(sequence) < num_steps:
+            # Находим вентиль с минимальным таймером
+            k = np.argmin(self.timers)
+            dt = self.timers[k]
+            # Продвигаем время
+            current_time += dt
+            self.timers -= dt
+            # Переключение вентиля
+            state = self.idx_to_state[self.current_state_idx]
+            a = state[k]
+            b = state[(k-1) % self.N]
+            new_out = self.gate_func(a, b)
+            if new_out != state[k]:
+                new_state_list = list(state)
+                new_state_list[k] = new_out
+                new_state = tuple(new_state_list)
+                # Проверка на однородные состояния
+                if new_state not in self.state_to_idx:
+                    # Это не должно происходить, но на случай сбросим?
+                    continue
+                self.current_state_idx = self.state_to_idx[new_state]
+            # Генерируем новую задержку для этого вентиля
+            self.timers[k] = self._generate_delay()
+            # Сэмплирование по тактовому сигналу
+            if current_time - last_sample_time >= self.clock_D:
+                # Берём выход указанного вентиля
+                out_val = self.idx_to_state[self.current_state_idx][self.record_output]
+                sequence.append(out_val)
+                last_sample_time = current_time
         return sequence

@@ -5,7 +5,7 @@ import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 from ternary_gate import F1, F2
-from transition_matrix import build_transition_matrix, stationary_distribution
+from transition_matrix import build_transition_matrix, stationary_distribution, compute_convergence_rate
 from simulator import TRNGSimulator
 from randomness_tests import chi_square_uniform, chi_square_independence, autocorrelation, runs_test
 
@@ -15,6 +15,8 @@ def run_theoretical_analysis(N, gate_func=F1):
     Q, states, _ = build_transition_matrix(N, gate_func)
     p = stationary_distribution(Q, N)
     print(f"Размерность пространства состояний: {len(states)}")
+    V = compute_convergence_rate(Q, N)
+    print(f"Параметр скорости сходимости V = {V:.4f} (чем меньше, тем быстрее сходимость)")
     print("Стационарное распределение (первые 10):")
     for i in range(min(10, len(p))):
         print(f"  {states[i]}: {p[i]:.4f}")
@@ -28,11 +30,14 @@ def run_theoretical_analysis(N, gate_func=F1):
         print(f"  {val}: {probs[val]:.4f}")
     return p, states
 
-def run_simulation(N, num_samples, delay_distr, gate_func=F1, record_output=0):
-    """Запускает дискретно-событийное моделирование."""
+def run_simulation(N, num_samples, delay_distr, gate_func, clock_D, output_gate, delay_params=None):
     print(f"\n=== Моделирование: N={N}, распределение={delay_distr}, выборок={num_samples} ===")
-    sim = TRNGSimulator(N, gate_func, delay_distribution=delay_distr)
-    seq = sim.run(num_samples, record_output=record_output)
+    if delay_params is None:
+        delay_params = {}
+    sim = TRNGSimulator(N=N, gate_func=gate_func, delay_distribution=delay_distr,
+                        delay_params=delay_params, clock_D=clock_D,
+                        record_output=output_gate)
+    seq = sim.run(num_samples)
     return seq
 
 def run_tests(seq, name="Последовательность"):
@@ -70,16 +75,31 @@ def main():
                         choices=["exponential","uniform","gamma","deterministic"],
                         help="Распределение задержек")
     parser.add_argument("--gate", type=str, default="F1", choices=["F1","F2"])
+    parser.add_argument("--clock_D", type=float, default=8.0, help="Тактовый интервал D")
+    parser.add_argument("--output_gate", type=int, default=0, help="Номер выходного вентиля (0..N-1)")
     parser.add_argument("--theoretical", action="store_true", help="Выполнить теоретический анализ")
-    parser.add_argument("--output", type=int, default=0, help="Номер выходного вентиля (0..N-1)")
     args = parser.parse_args()
 
     gate = F1 if args.gate == "F1" else F2
 
     if args.theoretical:
         run_theoretical_analysis(args.N, gate)
-    
-    seq = run_simulation(args.N, args.num_samples, args.delay_distr, gate, args.output)
+
+    # Параметры для распределений
+    delay_params = {}
+    if args.delay_distr == 'exponential':
+        delay_params = {'scale': 1.0}
+    elif args.delay_distr == 'uniform':
+        delay_params = {'low': 0.0, 'high': 2.0}
+    elif args.delay_distr == 'gamma':
+        delay_params = {'shape': 2.0, 'scale': 0.5}
+    elif args.delay_distr == 'deterministic':
+        delay_params = {'value': 1.0, 'epsilon': 0.01}
+
+    seq = run_simulation(N=args.N, num_samples=args.num_samples,
+                         delay_distr=args.delay_distr, gate_func=gate,
+                         clock_D=args.clock_D, output_gate=args.output_gate,
+                         delay_params=delay_params)
     results = run_tests(seq, f"N={args.N}, distr={args.delay_distr}")
     plot_autocorrelation(results["acf"], f"ACF для N={args.N}, {args.delay_distr}")
 
