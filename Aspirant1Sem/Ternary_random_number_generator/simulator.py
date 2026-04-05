@@ -4,7 +4,7 @@
 import numpy as np
 from typing import List, Tuple, Callable, Optional
 from ternary_gate import F1
-from state_manager import generate_all_states, exclude_homogeneous_states, state_index
+from state_manager import generate_all_states, exclude_homogeneous_states
 
 class TRNGSimulator:
     """
@@ -68,44 +68,6 @@ class TRNGSimulator:
         else:
             raise ValueError(f"Неизвестное распределение: {dist}")
 
-    def step(self) -> Tuple[int, Tuple[int, ...], float]:
-        """
-        Выполняет один шаг дискретно-событийного моделирования.
-        Находит вентиль с минимальным таймером, переключает его, обновляет таймеры.
-        Возвращает (индекс нового состояния, само состояние, прошедшее время).
-        """
-        # Находим вентиль с наименьшим временем
-        k = np.argmin(self.timers)
-        dt = self.timers[k]
-
-        # Обновляем все таймеры
-        self.timers -= dt
-
-        # Переключаем вентиль k
-        current_state = self.idx_to_state[self.current_state_idx]
-        a = current_state[k]
-        b = current_state[(k - 1) % self.N]
-        new_out = self.gate_func(a, b)
-        # Формируем новое состояние
-        new_state_list = list(current_state)
-        new_state_list[k] = new_out
-        new_state = tuple(new_state_list)
-
-        # Если новое состояние однородное и N>1, оно исключено из списка.
-        # В реальном устройстве такие состояния недостижимы, но в симуляции они могут возникнуть.
-        # Для корректности отобразим его в ближайшее достижимое? Согласно теории, переход в них невозможен.
-        # На практике в симуляции при N>1 такие состояния не должны появляться, если начальное состояние достижимо.
-        # Проверим:
-        if new_state not in self.state_to_idx:
-            # Это может случиться только при ошибке, но на всякий случай выбросим исключение
-            raise RuntimeError(f"Достигнуто недопустимое однородное состояние: {new_state}")
-        self.current_state_idx = self.state_to_idx[new_state]
-
-        # Генерируем новую задержку для переключившегося вентиля
-        self.timers[k] = self._generate_delay()
-
-        return self.current_state_idx, new_state, dt
-
     def run(self, num_steps: int) -> List[int]:
         """Запускает моделирование на num_steps шагов, но выдаёт отсчёты через clock_D."""
         sequence = []
@@ -113,7 +75,6 @@ class TRNGSimulator:
         last_sample_time = 0.0
         # Инициализируем таймеры (уже есть в __init__, но нужно сохранить)
         # Основной цикл по событиям
-        events = 0
         while len(sequence) < num_steps:
             # Находим вентиль с минимальным таймером
             k = np.argmin(self.timers)

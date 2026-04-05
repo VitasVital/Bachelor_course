@@ -59,7 +59,8 @@ def run_tests(seq, name="Последовательность"):
 
 def plot_autocorrelation(acf, title="Автокорреляционная функция"):
     plt.figure()
-    plt.stem(range(len(acf)), acf, basefmt=" ")
+    # plt.stem(range(len(acf)), acf, basefmt=" ") # убрал, чтобы в 0-ой позиции не было 1.
+    plt.stem(range(1, len(acf)), acf[1:], basefmt=" ")
     plt.xlabel("Лаг")
     plt.ylabel("Автокорреляция")
     plt.title(title)
@@ -84,6 +85,7 @@ def main():
 
     if args.theoretical:
         run_theoretical_analysis(args.N, gate)
+        return
 
     # Параметры для распределений
     delay_params = {}

@@ -41,9 +41,3 @@ def F2(a: int, b: int) -> int:
     s.discard(a)
     s.discard(b)
     return s.pop()
-
-def all_ternary_functions() -> dict:
-    """
-    Возвращает словарь доступных функций.
-    """
-    return {'F1': F1, 'F2': F2}
