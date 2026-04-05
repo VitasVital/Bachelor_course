@@ -17,21 +17,6 @@ def chi_square_uniform(sequence: list, categories=(-1,0,1)) -> tuple:
     p = 1 - chi2.cdf(stat, df)
     return stat, p
 
-def contingency_table(seq, order=2):
-    """
-    Строит таблицу сопряжённости для order-грамм.
-    order=2 -> биграммы, order=3 -> триграммы.
-    Возвращает словарь частот и список всех возможных кортежей.
-    """
-    from itertools import product
-    values = (-1,0,1)
-    all_grams = list(product(values, repeat=order))
-    freq = {gram: 0 for gram in all_grams}
-    for i in range(len(seq) - order + 1):
-        gram = tuple(seq[i:i+order])
-        freq[gram] += 1
-    return freq, all_grams
-
 def chi_square_independence(seq, order=2) -> tuple:
     """
     Проверка независимости между соседними символами (биграммы или триграммы).

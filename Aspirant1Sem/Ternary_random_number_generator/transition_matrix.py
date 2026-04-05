@@ -71,5 +71,5 @@ def compute_convergence_rate(Q: np.ndarray, N: int) -> float:
     mask = np.abs(eigvals - N) > 1e-6
     if not np.any(mask):
         return -np.inf
-    V = np.max(eigvals_real[mask])
+    V = np.max(eigvals_real[mask]) - N
     return V
