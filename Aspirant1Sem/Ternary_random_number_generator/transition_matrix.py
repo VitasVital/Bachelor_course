@@ -55,10 +55,6 @@ def stationary_distribution(Q: np.ndarray, N: int) -> np.ndarray:
     p, _, _, _ = lstsq(A_aug, b)
     return p
 
-def matrix_Matr(Q: np.ndarray, N: int) -> np.ndarray:
-    """Возвращает матрицу Matr = Q - N*I для дифференциального уравнения."""
-    return Q - N * np.eye(Q.shape[0])
-
 def compute_convergence_rate(Q: np.ndarray, N: int) -> float:
     """
     Вычисляет параметр V – скорость сходимости к стационарному распределению.
