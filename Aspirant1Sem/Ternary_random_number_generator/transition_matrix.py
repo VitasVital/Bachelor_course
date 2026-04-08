@@ -2,7 +2,7 @@
 # Построение матрицы переходов Q и вычисление стационарного распределения
 
 import numpy as np
-from scipy.linalg import eig, lstsq
+from scipy.linalg import eig, lstsq, expm
 from typing import Tuple, List, Callable
 from state_manager import generate_all_states, exclude_homogeneous_states, build_state_mapping
 
@@ -13,7 +13,10 @@ def build_transition_matrix(N: int, gate_func: Callable[[int, int], int]):
     Возвращает Q, список состояний (исключая однородные), и маппинг состояние->индекс.
     """
     all_states = generate_all_states(N)
-    states = exclude_homogeneous_states(all_states)
+    if N == 1:
+        states = all_states
+    else:
+        states = exclude_homogeneous_states(all_states)
     M = len(states)
     state_to_idx = build_state_mapping(states)
 
@@ -37,6 +40,10 @@ def build_transition_matrix(N: int, gate_func: Callable[[int, int], int]):
                 i_idx = state_to_idx[new_state]
                 Q[i_idx, j_idx] += 1
             # Если new_state оказался однородным (исключён), то переход в него невозможен
+    # Проверка: сумма элементов каждого столбца должна быть равна N
+    col_sums = Q.sum(axis=0)
+    if not np.allclose(col_sums, N):
+        raise ValueError(f"Ошибка: суммы столбцов Q = {col_sums}, ожидается {N}")
     return Q, states, state_to_idx
 
 def stationary_distribution(Q: np.ndarray, N: int) -> np.ndarray:
@@ -52,7 +59,9 @@ def stationary_distribution(Q: np.ndarray, N: int) -> np.ndarray:
     b = np.zeros(M + 1)
     b[-1] = 1.0
     # Решаем переопределённую систему
-    p, _, _, _ = lstsq(A_aug, b)
+    p, _, _, _ = np.linalg.lstsq(A_aug, b, rcond=None)
+    p = np.maximum(p, 0)
+    p = p / np.sum(p)
     return p
 
 def compute_convergence_rate(Q: np.ndarray, N: int) -> float:
@@ -69,3 +78,18 @@ def compute_convergence_rate(Q: np.ndarray, N: int) -> float:
         return -np.inf
     V = np.max(eigvals_real[mask]) - N
     return V
+
+def compute_delta(Q: np.ndarray, N: int, D: float) -> float:
+    """
+    Вычисляет расстояние δ между стационарной матрицей и exp(D * Matr).
+    δ = max_{u,v} |P_bar[u] - Astab(D)[u,v]|
+    """
+    M = Q.shape[0]
+    Matr = Q - N * np.eye(M)
+    Astab = expm(D * Matr)  # требуется import scipy.linalg
+    # Стационарное распределение (нормированный собственный вектор Q с собственным числом N)
+    p = stationary_distribution(Q, N)
+    # Стационарная матрица: каждый столбец = p
+    Stab = np.tile(p, (M, 1)).T  # размер M x M, столбцы одинаковые
+    delta = np.max(np.abs(Stab - Astab))
+    return delta

@@ -2,52 +2,36 @@
 # Набор тестов для троичных последовательностей
 
 import numpy as np
-from scipy.stats import chi2, norm
+from scipy.stats import chi2, norm, chi2_contingency, chisquare
 
-def chi_square_uniform(sequence: list, categories=(-1,0,1)) -> tuple:
+def chi_square_uniform(sequence, categories=(-1,0,1)):
     """
     Проверка равномерности распределения символов.
     Возвращает (статистика хи-квадрат, p-value).
     """
     observed = [sequence.count(v) for v in categories]
-    n = len(sequence)
-    expected = [n / len(categories)] * len(categories)
-    stat = sum((obs - exp)**2 / exp for obs, exp in zip(observed, expected))
-    df = len(categories) - 1
-    p = 1 - chi2.cdf(stat, df)
+    stat, p = chisquare(observed)
     return stat, p
 
 def chi_square_independence(seq, order=2) -> tuple:
     """
-    Проверка независимости между соседними символами (биграммы или триграммы).
-    Используется критерий хи-квадрат для таблицы сопряжённости.
-    Для order=2: таблица 3x3.
-    Для order=3: таблица 3x9 (предыдущие два символа -> следующий) или 27-мерная, но
-    проще использовать тест на основе энтропии или хи-квадрат для многомерной таблицы.
-    Здесь реализуем для биграмм (order=2) как в отчёте.
+    Проверка независимости между соседними символами (биграммы).
+    Использует scipy.stats.chi2_contingency для таблицы сопряжённости 3x3.
     """
     if order != 2:
         raise NotImplementedError("Для order>2 требуется более сложная обработка.")
-    values = (-1,0,1)
-    # Строим матрицу 3x3: строки - предыдущий символ, столбцы - следующий
-    cont = np.zeros((3,3), dtype=int)
-    for i in range(len(seq)-1):
+    
+    values = (-1, 0, 1)
+    # Строим матрицу сопряжённости 3x3
+    cont = np.zeros((3, 3), dtype=int)
+    for i in range(len(seq) - 1):
         row = values.index(seq[i])
         col = values.index(seq[i+1])
         cont[row, col] += 1
-    # Вычисляем ожидаемые частоты при независимости
-    row_sums = cont.sum(axis=1)
-    col_sums = cont.sum(axis=0)
-    total = cont.sum()
-    expected = np.outer(row_sums, col_sums) / total
-    stat = 0.0
-    for i in range(3):
-        for j in range(3):
-            if expected[i,j] > 0:
-                stat += (cont[i,j] - expected[i,j])**2 / expected[i,j]
-    df = (3-1)*(3-1)
-    p = 1 - chi2.cdf(stat, df)
-    return stat, p
+    
+    # Используем готовую функцию
+    chi2, p, dof, expected = chi2_contingency(cont)
+    return chi2, p
 
 def runs_test(seq):
     """
@@ -80,21 +64,18 @@ def runs_test(seq):
     p = 2 * (1 - norm.cdf(abs(z)))
     return z, p
 
-def autocorrelation(seq, max_lag=100) -> np.ndarray:
+def autocorrelation(seq, max_lag=100):
     """
     Вычисляет автокорреляционную функцию для троичной последовательности.
     Символы -1,0,1 интерпретируются как числа.
     """
-    n = len(seq)
-    mean = np.mean(seq)
-    var = np.var(seq)
+    x = np.array(seq, dtype=float)
+    x = x - np.mean(x)
+    var = np.var(x)
     if var == 0:
         return np.zeros(max_lag+1)
-    acf = np.zeros(max_lag+1)
-    for lag in range(max_lag+1):
-        if lag == 0:
-            acf[lag] = 1.0
-        else:
-            prod = [(seq[i] - mean)*(seq[i+lag] - mean) for i in range(n-lag)]
-            acf[lag] = np.mean(prod) / var
-    return acf
+    # Вычисляем автокорреляцию через корреляцию
+    corr = np.correlate(x, x, mode='full') / (len(x) * var)
+    # Берём только положительные лаги (lag 0 в центре)
+    acf = corr[len(x)-1 : len(x)+max_lag]
+    return acf  # acf[0] = 1.0

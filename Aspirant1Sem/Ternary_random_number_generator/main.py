@@ -5,7 +5,7 @@ import argparse
 import numpy as np
 import matplotlib.pyplot as plt
 from ternary_gate import F1, F2
-from transition_matrix import build_transition_matrix, stationary_distribution, compute_convergence_rate
+from transition_matrix import build_transition_matrix, stationary_distribution, compute_convergence_rate, compute_delta
 from simulator import TRNGSimulator
 from randomness_tests import chi_square_uniform, chi_square_independence, autocorrelation, runs_test
 
@@ -17,9 +17,13 @@ def run_theoretical_analysis(N, gate_func=F1):
     print(f"Размерность пространства состояний: {len(states)}")
     V = compute_convergence_rate(Q, N)
     print(f"Параметр скорости сходимости V = {V:.4f} (чем меньше, тем быстрее сходимость)")
-    print("Стационарное распределение (первые 10):")
-    for i in range(min(10, len(p))):
-        print(f"  {states[i]}: {p[i]:.4f}")
+    print(f"Стационарное распределение (все {len(p)} состояний):")
+    # Для N=3 выводим все 24, для больших N - только первые 20
+    max_display = 20 if len(p) > 20 else len(p)
+    for i in range(max_display):
+        print(f"  {states[i]}: {p[i]:.6f}")
+    if len(p) > max_display:
+        print(f"  ... и ещё {len(p)-max_display} состояний")
     # Проверим равномерность выходов первого вентиля
     from collections import defaultdict
     probs = defaultdict(float)
@@ -79,12 +83,20 @@ def main():
     parser.add_argument("--clock_D", type=float, default=8.0, help="Тактовый интервал D")
     parser.add_argument("--output_gate", type=int, default=0, help="Номер выходного вентиля (0..N-1)")
     parser.add_argument("--theoretical", action="store_true", help="Выполнить теоретический анализ")
+    parser.add_argument("--delta", action="store_true", help="Вычислить δ для разных D")
     args = parser.parse_args()
 
     gate = F1 if args.gate == "F1" else F2
 
     if args.theoretical:
         run_theoretical_analysis(args.N, gate)
+        return
+    
+    if args.delta:
+        Q, states, _ = build_transition_matrix(args.N, gate)
+        for D in [2,4,8,16]:
+            d = compute_delta(Q, args.N, D)
+            print(f"D={D:2d}, δ={d:.2e}")
         return
 
     # Параметры для распределений
