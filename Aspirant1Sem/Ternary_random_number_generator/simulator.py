@@ -76,13 +76,9 @@ class TRNGSimulator:
         # Инициализируем таймеры (уже есть в __init__, но нужно сохранить)
         # Основной цикл по событиям
         while len(sequence) < num_steps:
-            # Находим вентиль с минимальным таймером
             k = np.argmin(self.timers)
             dt = self.timers[k]
-            # Продвигаем время
-            current_time += dt
-            self.timers -= dt
-            # Переключение вентиля
+            # Проверяем, допустим ли переход, не продвигая время
             state = self.idx_to_state[self.current_state_idx]
             a = state[k]
             b = state[(k-1) % self.N]
@@ -91,22 +87,21 @@ class TRNGSimulator:
                 new_state_list = list(state)
                 new_state_list[k] = new_out
                 new_state = tuple(new_state_list)
-                # Проверка на однородные состояния
-                if new_state not in self.state_to_idx:
-                    # Переход в запрещённое состояние. По теории невозможен.
-                    # Пропускаем это событие: не меняем состояние и не обновляем таймер.
-                    # Вместо этого просто генерируем новую задержку и продолжаем.
-                    # Однако таймер уже уменьшен на dt, и событие уже произошло.
-                    # Правильнее: откатить таймер и выбрать другое событие?
-                    # Упрощённо: сбросим таймер этого вентиля на новое значение,
-                    # но состояние оставим прежним. Это может привести к потере времени.
-                    # Для надёжности лучше использовать предварительную проверку,
-                    # но оставим так с комментарием.
+                if new_state in self.state_to_idx:
+                    # Переход допустим, продвигаем время
+                    current_time += dt
+                    self.timers -= dt
+                    self.current_state_idx = self.state_to_idx[new_state]
+                    self.timers[k] = self._generate_delay()
+                else:
+                    # Переход в запрещённое состояние: не меняем время, просто новое время для k
                     self.timers[k] = self._generate_delay()
                     continue
-                self.current_state_idx = self.state_to_idx[new_state]
-            # Генерируем новую задержку для переключившегося вентиля
-            self.timers[k] = self._generate_delay()
+            else:
+                # Выход не изменился (не должно происходить по условию F1/F2)
+                current_time += dt
+                self.timers -= dt
+                self.timers[k] = self._generate_delay()
             # Сэмплирование по тактовому сигналу (добавляем все пропущенные отсчёты)
             while current_time - last_sample_time >= self.clock_D:
                 out_val = self.idx_to_state[self.current_state_idx][self.record_output]

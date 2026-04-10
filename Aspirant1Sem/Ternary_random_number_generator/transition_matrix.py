@@ -86,7 +86,7 @@ def compute_delta(Q: np.ndarray, N: int, D: float) -> float:
     """
     M = Q.shape[0]
     Matr = Q - N * np.eye(M)
-    Astab = expm(D * Matr)  # требуется import scipy.linalg
+    Astab = expm(D * Matr)
     # Стационарное распределение (нормированный собственный вектор Q с собственным числом N)
     p = stationary_distribution(Q, N)
     # Стационарная матрица: каждый столбец = p
