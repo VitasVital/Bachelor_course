@@ -22,3 +22,10 @@ def exclude_homogeneous_states(states: List[Tuple[int, ...]]) -> List[Tuple[int,
 def build_state_mapping(states: List[Tuple[int, ...]]) -> Dict[Tuple[int, ...], int]:
     """Создаёт словарь: состояние -> его порядковый номер (0..M-1)."""
     return {s: i for i, s in enumerate(states)}
+
+def article_index(state: Tuple[int, ...]) -> int:
+    """
+    Индекс состояния по формуле Ind(S) = Σ 3^k (s_k + 1)
+    (см. формулу (4) в статьях).
+    """
+    return sum((3 ** k) * (s + 1) for k, s in enumerate(state))

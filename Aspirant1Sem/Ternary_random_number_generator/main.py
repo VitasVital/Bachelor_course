@@ -8,6 +8,8 @@ from ternary_gate import F1, F2
 from transition_matrix import build_transition_matrix, stationary_distribution, compute_convergence_rate, compute_delta
 from simulator import TRNGSimulator
 from randomness_tests import chi_square_uniform, chi_square_independence, autocorrelation, runs_test
+from collections import defaultdict
+from state_manager import article_index
 
 def run_theoretical_analysis(N, gate_func=F1):
     """Вычисляет стационарное распределение через матрицу Q."""
@@ -17,21 +19,30 @@ def run_theoretical_analysis(N, gate_func=F1):
     print(f"Размерность пространства состояний: {len(states)}")
     V = compute_convergence_rate(Q, N)
     print(f"Параметр скорости сходимости V = {V:.4f} (чем меньше, тем быстрее сходимость)")
-    print(f"Стационарное распределение (все {len(p)} состояний):")
-    # Для N=3 выводим все 24, для больших N - только первые 20
-    max_display = 20 if len(p) > 20 else len(p)
+    # Сортировка состояний по индексу из статьи
+    sorted_pairs = sorted(zip(states, p), key=lambda x: article_index(x[0]))
+    sorted_states, sorted_p = zip(*sorted_pairs)
+    print(f"Стационарное распределение (все {len(sorted_p)} состояний, в порядке Ind(S)):")
+    max_display = 20 if len(sorted_p) > 20 else len(sorted_p)
     for i in range(max_display):
-        print(f"  {states[i]}: {p[i]:.6f}")
-    if len(p) > max_display:
-        print(f"  ... и ещё {len(p)-max_display} состояний")
+        print(f"  {sorted_states[i]}: {sorted_p[i]:.6f}")
+    if len(sorted_p) > max_display:
+        print(f"  ... и ещё {len(sorted_p)-max_display} состояний")
     # Проверим равномерность выходов первого вентиля
-    from collections import defaultdict
     probs = defaultdict(float)
     for s, prob in zip(states, p):
         probs[s[0]] += prob
     print("Распределение выходов первого вентиля:")
     for val in (-1,0,1):
         print(f"  {val}: {probs[val]:.4f}")
+    plt.figure(figsize=(10, 4))
+    plt.bar(range(len(sorted_p)), sorted_p, width=0.8)
+    plt.xlabel('Индекс состояния (порядок Ind(S))')
+    plt.ylabel('Вероятность')
+    plt.title(f'Стационарное распределение для N={N}')
+    plt.grid(True, axis='y')
+    plt.savefig(f'stationary_N{N}.png', dpi=150)
+    plt.show()
     return p, states
 
 def run_simulation(N, num_samples, delay_distr, gate_func, clock_D, output_gate, delay_params=None):
