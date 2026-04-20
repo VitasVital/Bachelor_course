@@ -95,7 +95,11 @@ def main():
     parser.add_argument("--output_gate", type=int, default=0, help="Номер выходного вентиля (0..N-1)")
     parser.add_argument("--theoretical", action="store_true", help="Выполнить теоретический анализ")
     parser.add_argument("--delta", action="store_true", help="Вычислить δ для разных D")
+    parser.add_argument("--seed", type=int, default=None, help="Seed для воспроизводимости")
     args = parser.parse_args()
+
+    if args.seed is not None:
+        np.random.seed(args.seed)
 
     gate = F1 if args.gate == "F1" else F2
 
