@@ -125,7 +125,7 @@ def main():
     parser.add_argument("--clock_D", type=float, default=8.0, help="Тактовый интервал D")
     parser.add_argument("--output_gate", type=int, default=0, help="Номер выходного вентиля (0..N-1)")
     parser.add_argument("--topology", type=str, default="ring",
-                        choices=["ring", "ring_omit_output", "parallel_single", "full_triplet"])
+                        choices=["ring", "ring_omit_output", "parallel_single"])
     parser.add_argument("--theoretical", action="store_true", help="Выполнить теоретический анализ")
     parser.add_argument("--delta", action="store_true", help="Вычислить δ для разных D")
     parser.add_argument("--seed", type=int, default=None, help="Seed для воспроизводимости")

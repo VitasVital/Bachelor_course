@@ -5,7 +5,7 @@ import numpy as np
 from simulator import TRNGSimulator
 from randomness_tests import (
     chi_square_uniform, chi_square_independence, runs_test, autocorrelation,
-    entropy, mutual_information, runs_length_distribution, run_nist_tests
+    entropy, mutual_information, runs_length_distribution
 )
 import matplotlib.pyplot as plt
 
@@ -27,9 +27,6 @@ def evaluate_topology(topology, N, num_samples, delay_distr, gate_func, clock_D,
     stats['mutual_info_lag1'] = mutual_information(seq, lag=1)
     stats['mutual_info_lag2'] = mutual_information(seq, lag=2)
     stats['runs_len_p'] = runs_length_distribution(seq)[1]
-    # NIST
-    nist_res = run_nist_tests(seq)
-    stats['nist'] = nist_res
     return stats, seq
 
 def compare_topologies():
