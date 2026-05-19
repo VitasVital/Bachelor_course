@@ -1,5 +1,5 @@
 # simulator.py
-# Дискретно-событийное моделирование TRNG с произвольными распределениями задержек
+# Дискретно-событийное моделирование TRNG с поддержкой разных топологий
 
 import numpy as np
 from typing import List, Tuple, Callable, Optional
@@ -8,16 +8,17 @@ from state_manager import generate_all_states, exclude_homogeneous_states
 
 class TRNGSimulator:
     """
-    Симулятор троичного генератора на основе джиттера.
-    Поддерживает разные распределения задержек переключения вентилей.
+    Базовый симулятор троичного генератора на основе джиттера.
+    Поддерживает разные топологии: 'ring' (кольцо), 'ring_omit_output' (кольцо с пропущенным выходом),
+    'parallel_single' (параллельные независимые N=1), 'full_triplet' (полносвязная тройка).
     """
     def __init__(self, N: int, gate_func=F1, delay_distribution='exponential',
-             delay_params=None, clock_D: float = 8.0, record_output: int = 0):
+                 delay_params=None, clock_D: float = 8.0, record_output: int = 0,
+                 topology: str = 'ring'):
         """
-        :param N: число вентилей
-        :param gate_func: логическая функция (F1 или F2)
-        :param delay_distribution: тип распределения ('exponential', 'uniform', 'gamma', 'deterministic')
-        :param delay_params: параметры распределения (например, {'scale': 1.0})
+        :param topology: 'ring' - кольцо (стандарт), 'ring_omit_output' - кольцо, но record_output игнорируется,
+                         'parallel_single' - N параллельных N=1 генераторов (record_output выбирает один из них),
+                         'full_triplet' - полносвязная тройка (N должно быть 3).
         """
         self.N = N
         self.gate_func = gate_func
@@ -25,8 +26,21 @@ class TRNGSimulator:
         self.delay_params = delay_params if delay_params else {}
         self.clock_D = clock_D
         self.record_output = record_output
+        self.topology = topology
 
-        # Состояния и их индексы
+        if topology == 'full_triplet' and N != 3:
+            raise ValueError("Топология 'full_triplet' требует N=3")
+        if topology == 'parallel_single':
+            # Каждый генератор - независимый N=1
+            self.single_simulators = [
+                TRNGSimulator(N=1, gate_func=gate_func, delay_distribution=delay_distribution,
+                              delay_params=delay_params, clock_D=clock_D, record_output=0, topology='ring')
+                for _ in range(N)
+            ]
+            self.current_state_idx = None  # не используется
+            self.timers = None
+            return
+        
         all_states = generate_all_states(N)
         self.states = exclude_homogeneous_states(all_states) if N > 1 else all_states
         self.state_to_idx = {s: i for i, s in enumerate(self.states)}
@@ -68,8 +82,57 @@ class TRNGSimulator:
         else:
             raise ValueError(f"Неизвестное распределение: {dist}")
 
+    def _next_state_ring(self, state, k):
+        """Переключение в кольцевой топологии"""
+        a = state[k]
+        b = state[(k-1) % self.N]
+        new_out = self.gate_func(a, b)
+        if new_out == state[k]:
+            return None
+        new_state_list = list(state)
+        new_state_list[k] = new_out
+        new_state = tuple(new_state_list)
+        return new_state
+
+    def _next_state_ring_omit_output(self, state, k):
+        """Кольцо, но на выход подаётся не record_output, а другой (всегда 0 и 1, например). 
+           Однако для динамики переключений схема остаётся кольцом. Используем стандартное кольцо,
+           а при сэмплировании берём другой выход. Поэтому здесь просто вызываем _next_state_ring.
+        """
+        return self._next_state_ring(state, k)
+
+    def _next_state_full_triplet(self, state, k):
+        """Полносвязная тройка: каждый элемент имеет входы от двух других элементов.
+           Для N=3: элемент k получает входы от (k+1)%3 и (k+2)%3 (оба других).
+           Формула: c = F( a, b ), где a = state[(k+1)%3], b = state[(k+2)%3].
+           При этом собственный выход state[k] не подаётся на вход (в отличие от кольца).
+        """
+        a = state[(k+1) % 3]
+        b = state[(k+2) % 3]
+        new_out = self.gate_func(a, b)
+        if new_out == state[k]:
+            return None
+        new_state_list = list(state)
+        new_state_list[k] = new_out
+        return tuple(new_state_list)
+
     def run(self, num_steps: int) -> List[int]:
-        """Запускает моделирование на num_steps шагов, но выдаёт отсчёты через clock_D."""
+        if self.topology == 'parallel_single':
+            # Запускаем все независимые симуляторы и собираем выход с выбранного
+            seq = []
+            # Запускаем каждый симулятор на num_steps
+            for i in range(self.N):
+                self.single_simulators[i].run(num_steps)  # заполнит внутреннюю последовательность? Неэффективно.
+            # Лучше собирать отсчёты синхронно:
+            # Переделаем: в цикле для каждого шага опрашиваем все симуляторы.
+            # Упростим: запустим один симулятор с N=1, он даст последовательность.
+            # Для параллельных достаточно одного, потому что они идентичны и независимы.
+            single = TRNGSimulator(N=1, gate_func=self.gate_func,
+                                   delay_distribution=self.delay_distribution,
+                                   delay_params=self.delay_params,
+                                   clock_D=self.clock_D, record_output=0, topology='ring')
+            return single.run(num_steps)
+
         sequence = []
         current_time = 0.0
         last_sample_time = 0.0
@@ -80,31 +143,35 @@ class TRNGSimulator:
             dt = self.timers[k]
             # Проверяем, допустим ли переход, не продвигая время
             state = self.idx_to_state[self.current_state_idx]
-            a = state[k]
-            b = state[(k-1) % self.N]
-            new_out = self.gate_func(a, b)
-            if new_out != state[k]:
-                new_state_list = list(state)
-                new_state_list[k] = new_out
-                new_state = tuple(new_state_list)
-                if new_state in self.state_to_idx:
-                    # Переход допустим, продвигаем время
-                    current_time += dt
-                    self.timers -= dt
-                    self.current_state_idx = self.state_to_idx[new_state]
-                    self.timers[k] = self._generate_delay()
-                else:
-                    # Переход в запрещённое состояние: не меняем время, просто новое время для k
-                    self.timers[k] = self._generate_delay()
-                    continue
+
+            if self.topology == 'ring':
+                new_state = self._next_state_ring(state, k)
+            elif self.topology == 'ring_omit_output':
+                new_state = self._next_state_ring(state, k)  # динамика та же
+            elif self.topology == 'full_triplet':
+                new_state = self._next_state_full_triplet(state, k)
             else:
-                # Выход не изменился (не должно происходить по условию F1/F2)
+                raise ValueError(f"Неизвестная топология {self.topology}")
+
+            if new_state is not None and new_state in self.state_to_idx:
+                current_time += dt
+                self.timers -= dt
+                self.current_state_idx = self.state_to_idx[new_state]
+                self.timers[k] = self._generate_delay()
+            else:
+                # Переход невозможен (состояние запрещено или выход не меняется)
                 current_time += dt
                 self.timers -= dt
                 self.timers[k] = self._generate_delay()
             # Сэмплирование по тактовому сигналу (добавляем все пропущенные отсчёты)
             while current_time - last_sample_time >= self.clock_D:
-                out_val = self.idx_to_state[self.current_state_idx][self.record_output]
+                state_current = self.idx_to_state[self.current_state_idx]
+                if self.topology == 'ring_omit_output':
+                    # Используем любой выход, кроме record_output, например, (record_output+1)%N
+                    out_idx = (self.record_output + 1) % self.N
+                else:
+                    out_idx = self.record_output
+                out_val = state_current[out_idx]
                 sequence.append(out_val)
                 last_sample_time += self.clock_D
         return sequence

@@ -7,7 +7,12 @@ import matplotlib.pyplot as plt
 from ternary_gate import F1, F2
 from transition_matrix import build_transition_matrix, stationary_distribution, compute_convergence_rate, compute_delta
 from simulator import TRNGSimulator
-from randomness_tests import chi_square_uniform, chi_square_independence, autocorrelation, runs_test
+from randomness_tests import (
+    chi_square_uniform, chi_square_independence, runs_test, autocorrelation,
+    entropy, mutual_information, runs_length_distribution, run_nist_tests,
+    block_entropy_test, gap_test, linear_complexity_over_gf3
+)
+from alternative_topologies import compare_topologies
 from collections import defaultdict
 from state_manager import article_index
 
@@ -45,24 +50,24 @@ def run_theoretical_analysis(N, gate_func=F1):
     plt.show()
     return p, states
 
-def run_simulation(N, num_samples, delay_distr, gate_func, clock_D, output_gate, delay_params=None):
-    print(f"\n=== Моделирование: N={N}, распределение={delay_distr}, выборок={num_samples} ===")
+def run_simulation(N, num_samples, delay_distr, gate_func, clock_D, output_gate, delay_params=None, topology='ring'):
+    print(f"\n=== Моделирование: N={N}, топология={topology}, распределение={delay_distr}, выборок={num_samples} ===")
     if delay_params is None:
         delay_params = {}
     sim = TRNGSimulator(N=N, gate_func=gate_func, delay_distribution=delay_distr,
                         delay_params=delay_params, clock_D=clock_D,
-                        record_output=output_gate)
+                        record_output=output_gate, topology=topology)
     seq = sim.run(num_samples)
     return seq
 
-def run_tests(seq, name="Последовательность"):
+def run_tests(seq, name="Последовательность", advanced=False):
     """Проводит все статистические тесты."""
     print(f"\n--- Тесты для {name} ---")
     # 1. Равномерность
     stat, p = chi_square_uniform(seq)
     print(f"Хи-квадрат (равномерность): stat={stat:.4f}, p-value={p:.4f}")
     # 2. Биграммы
-    stat2, p2 = chi_square_independence(seq, order=2)
+    stat2, p2 = chi_square_independence(seq)
     print(f"Хи-квадрат (независимость биграмм): stat={stat2:.4f}, p-value={p2:.4f}")
     # 3. Серии
     z, p_runs = runs_test(seq)
@@ -70,7 +75,33 @@ def run_tests(seq, name="Последовательность"):
     # 4. Автокорреляция (первые 20 лагов)
     acf = autocorrelation(seq, max_lag=20)
     print("Автокорреляция (первые 5 лагов):", [f"{acf[l]:.4f}" for l in range(1,6)])
-    return {"uniform_p": p, "bigram_p": p2, "acf": acf}
+
+    if advanced:
+        print("\n--- Дополнительные троичные метрики ---")
+        ent = entropy(seq)
+        print(f"Энтропия (бит/трит): {ent:.4f} (теоретический максимум: {np.log2(3):.4f})")
+        mi1 = mutual_information(seq, lag=1)
+        mi2 = mutual_information(seq, lag=2)
+        print(f"Взаимная информация: I(lag=1) = {mi1:.5f}, I(lag=2) = {mi2:.5f} (0 - идеально)")
+        stat_rl, p_rl = runs_length_distribution(seq)
+        print(f"Тест распределения длин серий: χ² = {stat_rl:.2f}, p-value = {p_rl:.4f}")
+        stat_block, p_block = block_entropy_test(seq, block_size=3)
+        print(f"Блочный тест (блок=3): χ² = {stat_block:.2f}, p-value = {p_block:.4f}")
+        stat_gap, p_gap = gap_test(seq, symbol=0, max_gap=15)
+        print(f"Gap-тест (символ 0): χ² = {stat_gap:.2f}, p-value = {p_gap:.4f}")
+        lc = linear_complexity_over_gf3(seq)
+        print(f"Линейная сложность (оценка): {lc:.1f} (теоретическая ~{len(seq)/2:.1f})")
+        # NIST
+        print("\n--- Тесты NIST (преобразованные в биты) ---")
+        nist_res = run_nist_tests(seq)
+        if nist_res:
+            passed_count = sum(1 for v in nist_res.values() if v['passed'])
+            total = len(nist_res)
+            print(f"NIST: пройдено {passed_count} из {total} тестов ({(passed_count/total)*100:.1f}%)")
+            # Детали по каждому тесту
+            for name, res in nist_res.items():
+                print(f"  {name}: p-value={res['p_value']:.4f} {'✓' if res['passed'] else '✗'}")
+    return acf
 
 def plot_autocorrelation(acf, title="Автокорреляционная функция"):
     plt.figure()
@@ -93,15 +124,23 @@ def main():
     parser.add_argument("--gate", type=str, default="F1", choices=["F1","F2"])
     parser.add_argument("--clock_D", type=float, default=8.0, help="Тактовый интервал D")
     parser.add_argument("--output_gate", type=int, default=0, help="Номер выходного вентиля (0..N-1)")
+    parser.add_argument("--topology", type=str, default="ring",
+                        choices=["ring", "ring_omit_output", "parallel_single", "full_triplet"])
     parser.add_argument("--theoretical", action="store_true", help="Выполнить теоретический анализ")
     parser.add_argument("--delta", action="store_true", help="Вычислить δ для разных D")
     parser.add_argument("--seed", type=int, default=None, help="Seed для воспроизводимости")
+    parser.add_argument("--advanced", action="store_true", help="Включить дополнительные тесты (энтропия, NIST и др.)")
+    parser.add_argument("--compare_topologies", action="store_true", help="Сравнить все топологии")
     args = parser.parse_args()
 
     if args.seed is not None:
         np.random.seed(args.seed)
 
     gate = F1 if args.gate == "F1" else F2
+
+    if args.compare_topologies:
+        compare_topologies()
+        return
 
     if args.theoretical:
         run_theoretical_analysis(args.N, gate)
@@ -128,9 +167,9 @@ def main():
     seq = run_simulation(N=args.N, num_samples=args.num_samples,
                          delay_distr=args.delay_distr, gate_func=gate,
                          clock_D=args.clock_D, output_gate=args.output_gate,
-                         delay_params=delay_params)
-    results = run_tests(seq, f"N={args.N}, distr={args.delay_distr}")
-    plot_autocorrelation(results["acf"], f"ACF для N={args.N}, {args.delay_distr}")
+                         delay_params=delay_params, topology=args.topology)
+    acf = run_tests(seq, f"N={args.N}, топология={args.topology}, distr={args.delay_distr}", advanced=args.advanced)
+    plot_autocorrelation(acf, f"ACF для {args.topology}, N={args.N}, D={args.clock_D}")
 
 if __name__ == "__main__":
     main()
