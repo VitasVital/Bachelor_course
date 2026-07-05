@@ -1,7 +1,7 @@
 # Fdb version 4
-["pdflatex"] 1783233166.08846 "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Латыпов материалы/159_2_phys_mat_9_translation.tex" "159_2_phys_mat_9_translation.pdf" "159_2_phys_mat_9_translation" 1783233167.03256 0
-  "159_2_phys_mat_9_translation.aux" 1783233166 7718 43401d40184f04fd2a6766adf955cdee "pdflatex"
-  "159_2_phys_mat_9_translation.tex" 1783233154 56583 d3765a201a1f59ee5b3ef46bafe5117e ""
+["pdflatex"] 1783234574.38245 "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Латыпов материалы/159_2_phys_mat_9_translation.tex" "159_2_phys_mat_9_translation.pdf" "159_2_phys_mat_9_translation" 1783234575.6406 0
+  "159_2_phys_mat_9_translation.aux" 1783234575 8063 98c17e3fa648742cd5379dc4cc40fd41 "pdflatex"
+  "159_2_phys_mat_9_translation.tex" 1783234557 63904 fd5539255c657e5ad74689fac6aa146a ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -34,6 +34,7 @@
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1247596667 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1247596667 32587 65067f817f408bc71a7312f3d9828a9b ""
   "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1247596667 32626 5abc8bb2f28aa647d4c70f8ea38cc0d3 ""
+  "C:/Program Files/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1247596673 31764 459c573c03a4949a528c2cc7f557e217 ""
   "C:/Program Files/MiKTeX/tex/context/base/mkii/supp-pdf.mkii" 1580390158 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "C:/Program Files/MiKTeX/tex/generic/babel/babel.sty" 1765441417 146654 eaac99efd6386094bb8a3980e34ec87b ""
   "C:/Program Files/MiKTeX/tex/generic/babel/locale/ru/babel-ru.ini" 1765441425 7236 d2ba37d6c6c398ec011cd9ab143215bb ""
@@ -95,7 +96,14 @@
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/tfm/lh/lh-t2a/larm2074.tfm" 1783231408 3264 c29ba0a7d68c56f5a738fbe91d6d9e9d ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/tfm/lh/lh-t2a/lati1200.tfm" 1783231419 3512 f3a56cfe95a159371df20f73d1eb107d ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1783231363 13323481 a330ab8b9f97997ee7e5e050de7f2cd1 ""
-  "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Латыпов материалы/159_2_phys_mat_9_translation.tex" 1783233154 56583 d3765a201a1f59ee5b3ef46bafe5117e ""
+  "Fig1.png" 1783233981 4471 44f8c7cc9d4ff7e1f199ed898abc1196 ""
+  "Fig2.png" 1783234072 49784 7f811020631855529c48ceff123b3652 ""
+  "Fig3Design1.png" 1783234124 5724 3d66541fc0746d4969a520ba26575780 ""
+  "Fig4Design1ab.png" 1783234168 34442 e581f4817243e1d083b4fe477bf3d656 ""
+  "Fig5Design2.png" 1783234190 5819 273865611be70846ec29d42d007dc013 ""
+  "Fig6Design2ab.png" 1783234213 33432 786e6007acfa886b2a39e6e7bdb05a81 ""
+  "Fig7.png" 1783234235 8533 4aa09fe60b6484379d4979d59978daa5 ""
+  "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Латыпов материалы/159_2_phys_mat_9_translation.tex" 1783234557 63904 fd5539255c657e5ad74689fac6aa146a ""
   (generated)
   "159_2_phys_mat_9_translation.aux"
   "159_2_phys_mat_9_translation.log"
