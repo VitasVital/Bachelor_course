@@ -15,6 +15,8 @@ from randomness_tests import (
 from alternative_topologies import compare_topologies
 from collections import defaultdict
 from state_manager import article_index
+from paths import OUTPUT_DIR, ensure_output_dir
+ensure_output_dir()
 
 def run_theoretical_analysis(N, gate_func=F1):
     """Вычисляет стационарное распределение через матрицу Q."""
@@ -46,7 +48,7 @@ def run_theoretical_analysis(N, gate_func=F1):
     plt.ylabel('Вероятность')
     plt.title(f'Стационарное распределение для N={N}')
     plt.grid(True, axis='y')
-    plt.savefig(f'stationary_N{N}.png', dpi=150)
+    plt.savefig(OUTPUT_DIR / f'stationary_N{N}.png', dpi=150)
     plt.show()
     return p, states
 
@@ -111,7 +113,7 @@ def plot_autocorrelation(acf, title="Автокорреляционная фун
     plt.ylabel("Автокорреляция")
     plt.title(title)
     plt.grid(True)
-    plt.savefig("autocorr.png")
+    plt.savefig(OUTPUT_DIR / 'autocorr.png')
     plt.show()
 
 def main():

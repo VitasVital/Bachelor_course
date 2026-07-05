@@ -8,6 +8,8 @@ from randomness_tests import (
     entropy, mutual_information, runs_length_distribution
 )
 import matplotlib.pyplot as plt
+from paths import OUTPUT_DIR, ensure_output_dir
+ensure_output_dir()
 
 def evaluate_topology(topology, N, num_samples, delay_distr, gate_func, clock_D, output_gate, delay_params=None):
     """Запускает симулятор для заданной топологии и возвращает статистику"""
@@ -50,7 +52,7 @@ def compare_topologies():
         stats, seq = evaluate_topology(topo, **params)
         results[topo] = stats
         # Сохраним последовательность для дальнейшего анализа
-        np.savetxt(f"seq_{topo}.txt", seq, fmt='%d')
+        np.savetxt(OUTPUT_DIR / f"seq_{topo}.txt", seq, fmt='%d')
     # Вывод таблицы
     print("\n=== Сравнение топологий ===")
     print("Топология\tp_равн\tp_бигр\tp_серий\tACF(1)\tЭнтропия\tMI1\tMI2\tp_дл_серий")
