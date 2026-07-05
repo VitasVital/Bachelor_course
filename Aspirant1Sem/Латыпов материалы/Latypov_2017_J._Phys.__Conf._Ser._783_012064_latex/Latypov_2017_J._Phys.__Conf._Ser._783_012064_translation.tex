@@ -33,7 +33,7 @@
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.3\textwidth]{figure1.png}
+\includegraphics[width=0.3\textwidth]{Fig1.png}
 \caption{Инвертор в режиме джиттера.}
 \label{fig:1}
 \end{figure}
@@ -63,7 +63,7 @@
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{figure2.png}
+\includegraphics[width=0.5\textwidth]{Fig2.png}
 \caption{Вариант генератора, содержащего три троичных элемента.}
 \label{fig:2}
 \end{figure}
@@ -107,15 +107,15 @@ $F_2$ & 1 & -1 & 1 \\ \hline
 Например, для $N=2$ матрица $Matr$ имеет вид (5):
 \[
 Matr = \left( \begin{array}{cccccccccc}
--2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
-1 & -2 & 1 & 0 & 0 & 0 & 0 & 1 & 0 & 0 \\
-0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & 1 & 0 \\
-1 & 0 & 0 & -2 & 0 & 1 & 1 & 0 & 0 & 0 \\
-0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 & 0 \\
-0 & 0 & 1 & 1 & 1 & -2 & 0 & 0 & 0 & 0 \\
-0 & 0 & -2 & 0 & 0 & -2 & 1 & 1 & 0 & 0 \\
-0 & 1 & 0 & 0 & 1 & 0 & 1 & -2 & 0 & 0 \\
-0 & 0 & 0 & 0 & 0 & 0 & 0 & 1 & -2 & 0
+-2 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & -2 & 1 & 0 & 0 & 0 & 0 & 1 & 0 \\
+0 & 1 & -2 & 0 & 0 & 1 & 0 & 0 & 1 \\
+1 & 0 & 0 & -2 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & -2 & 0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 & 1 & -2 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & -2 & 1 & 1 \\
+0 & 1 & 0 & 0 & 1 & 0 & 1 & -2 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & -2
 \end{array} \right) \tag{5}
 \]
 
@@ -184,12 +184,13 @@ Matr = \begin{pmatrix}
 
 В этом случае (9) выполняется, но стационарный вектор $\overline{\mathbf{P}}$ имеет компоненты
 \[
-\langle
-0.037 \ 0.037 \ 0.037 \ 0.037 \ 0.074 \ 0.037
-0.037 \ 0.037 \ 0.037 \ 0.037 \ 0.037 \ 0.037
-0.037 \ 0.074 \ 0.037 \ 0.037 \ 0.037 \ 0.074
-0.037 \ 0.037 \ 0.037 \ 0.037 \ 0.037 \ 0.037
-\rangle \tag{11}
+\overline{\mathbf{P}} = 
+\begin{pmatrix}
+0.037 & 0.037 & 0.037 & 0.037 & 0.074 & 0.037 \\
+0.037 & 0.037 & 0.037 & 0.037 & 0.037 & 0.037 \\
+0.037 & 0.074 & 0.037 & 0.037 & 0.037 & 0.074 \\
+0.037 & 0.037 & 0.037 & 0.037 & 0.037 & 0.037
+\end{pmatrix}. \tag{11}
 \]
 Следовательно, мы имеем неоднородное финальное распределение состояний. Более того, существуют особые состояния $\langle -1,0,1 \rangle$, $\langle 1,-1,0 \rangle$, $\langle 0,1,-1 \rangle$. Фактически, это одно и то же состояние, потому что каждое является результатом циклического преобразования других (см. рис. 2). Соответствующие строки в таблице содержат шесть единиц, тогда как другие строки содержат три единицы.
 
@@ -203,7 +204,7 @@ Pr^T \cdot Q \cdot Pr = \begin{pmatrix} A & 0 \\ B & C \end{pmatrix},
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.7\textwidth]{figure3.png}
+\includegraphics[width=0.7\textwidth]{Fig3.png}
 \caption{Пример компонент стационарного вектора для $N=4$.}
 \label{fig:3}
 \end{figure}
@@ -214,7 +215,7 @@ Pr^T \cdot Q \cdot Pr = \begin{pmatrix} A & 0 \\ B & C \end{pmatrix},
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{figure4.png}
+\includegraphics[width=0.5\textwidth]{Fig4.png}
 \caption{Реализация. Здесь gen — ГИСЧ, выходы которого управляются тактовым сигналом.}
 \label{fig:4}
 \end{figure}
@@ -248,7 +249,7 @@ $N$ \ $D$ & 2 & 4 & 8 & 16 \\ \hline
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.5\textwidth]{figure5.png}
+\includegraphics[width=0.5\textwidth]{Fig5.png}
 \caption{Генератор на основе независимых элементов.}
 \label{fig:5}
 \end{figure}
@@ -265,7 +266,7 @@ $N$ \ $D$ & 2 & 4 & 8 & 16 \\ \hline
 
 \begin{figure}[h]
 \centering
-\includegraphics[width=0.4\textwidth]{figure6.png}
+\includegraphics[width=0.4\textwidth]{Fig6.png}
 \caption{Генератор с опущенным выходом.}
 \label{fig:6}
 \end{figure}

@@ -117,10 +117,13 @@ INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm1728.tf
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1728.tfm
 OUTPUT Latypov_2017_J._Phys.__Conf._Ser._783_012064_translation.pdf
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
-INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\latt1200.tfm
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
+INPUT .\Fig1.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
@@ -141,6 +144,13 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT .\Fig2.png
+INPUT .\Fig2.png
+INPUT .\Fig2.png
+INPUT .\Fig2.png
+INPUT .\Fig2.png
+INPUT .\Fig2.png
+INPUT .\Fig2.png
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1440.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
@@ -152,7 +162,35 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT .\Fig3.png
+INPUT .\Fig3.png
+INPUT .\Fig3.png
+INPUT .\Fig3.png
+INPUT .\Fig3.png
+INPUT .\Fig3.png
+INPUT .\Fig3.png
+INPUT .\Fig4.png
+INPUT .\Fig4.png
+INPUT .\Fig4.png
+INPUT .\Fig4.png
+INPUT .\Fig4.png
+INPUT .\Fig4.png
+INPUT .\Fig4.png
+INPUT .\Fig5.png
+INPUT .\Fig5.png
+INPUT .\Fig5.png
+INPUT .\Fig5.png
+INPUT .\Fig5.png
+INPUT .\Fig5.png
+INPUT .\Fig5.png
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT .\Fig6.png
+INPUT .\Fig6.png
+INPUT .\Fig6.png
+INPUT .\Fig6.png
+INPUT .\Fig6.png
+INPUT .\Fig6.png
+INPUT .\Fig6.png
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lati1200.tfm
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx1200.tfm
 INPUT Latypov_2017_J._Phys.__Conf._Ser._783_012064_translation.aux
@@ -164,8 +202,6 @@ INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1440.pk
-INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
-INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm1200.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.pk
