@@ -1,10 +1,22 @@
 # ternary_gate.py
 # Реализация троичных логических функций по статье Latypov, Stolov (2017)
 
-from typing import Tuple
-
 # Определим троичные значения как целые числа -1, 0, 1
 TRIT_VALUES = (-1, 0, 1)
+
+# Таблицы диагональных значений для F1 и F2
+DIAG_F1 = {
+    (0, 0): 1, (1, 1): -1, (-1, -1): 0
+}
+DIAG_F2 = {
+    (0, 0): 1, (1, 1): -1, (-1, -1): 1
+}
+
+def _make_gate(a: int, b: int, diag_map: dict) -> int:
+    if a == b:
+        return diag_map[(a, a)]
+    # Для неравных аргументов возвращаем единственное значение, отличное от a и b
+    return set(TRIT_VALUES).difference({a, b}).pop()
 
 def F1(a: int, b: int) -> int:
     """
@@ -12,18 +24,7 @@ def F1(a: int, b: int) -> int:
     F(0,0)=1, F(1,1)=-1, F(-1,-1)=0.
     Для всех остальных пар возвращает третий символ, отличный от a и b.
     """
-    if a == 0 and b == 0:
-        return 1
-    if a == 1 and b == 1:
-        return -1
-    if a == -1 and b == -1:
-        return 0
-    # Для неравных аргументов или смешанных: возвращаем единственное значение, не равное a и b
-    # Поскольку все три значения различны, работает всегда
-    s = set(TRIT_VALUES)
-    s.discard(a)
-    s.discard(b)
-    return s.pop()
+    return _make_gate(a, b, DIAG_F1)
 
 def F2(a: int, b: int) -> int:
     """
@@ -31,13 +32,4 @@ def F2(a: int, b: int) -> int:
     F(0,0)=1, F(1,1)=-1, F(-1,-1)=1.
     Для остальных пар – аналогично F1.
     """
-    if a == 0 and b == 0:
-        return 1
-    if a == 1 and b == 1:
-        return -1
-    if a == -1 and b == -1:
-        return 1
-    s = set(TRIT_VALUES)
-    s.discard(a)
-    s.discard(b)
-    return s.pop()
+    return _make_gate(a, b, DIAG_F2)
