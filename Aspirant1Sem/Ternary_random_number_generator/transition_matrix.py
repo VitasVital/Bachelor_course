@@ -9,7 +9,7 @@ from state_manager import generate_all_states, exclude_homogeneous_states, build
 def build_transition_matrix(N: int, gate_func: Callable[[int, int], int]):
     """
     Строит матрицу Q (размер M' x M'), где M' = 3^N - 3.
-    Q[i,j] = количество способов перейти из состояния j в состояние i зёа один шаг.
+    Q[i,j] = количество способов перейти из состояния j в состояние i за один шаг.
     Возвращает Q, список состояний (исключая однородные), и маппинг состояние->индекс.
     """
     all_states = generate_all_states(N)
