@@ -234,3 +234,139 @@
 \contentsline {paragraph}{Булевы алгебры как многообразие.}{86}{section*.213}%
 \contentsline {paragraph}{Итог пункта.}{86}{section*.214}%
 \contentsline {subsubsection}{\numberline {1.3.8}Краткое резюме}{86}{subsubsection.1.3.8}%
+\contentsline {subsection}{\numberline {1.4}Формальные языки и способы их описания. Классификация формальных грамматик. Их использование в лексическом и синтаксическом анализе}{87}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Формальные языки: алфавит, цепочка, язык}{87}{subsubsection.1.4.1}%
+\contentsline {paragraph}{Алфавит.}{87}{section*.215}%
+\contentsline {paragraph}{Цепочка символов.}{87}{section*.216}%
+\contentsline {paragraph}{Пустая цепочка и длина.}{87}{section*.217}%
+\contentsline {paragraph}{Индуктивное определение цепочки.}{88}{section*.218}%
+\contentsline {paragraph}{Конкатенация цепочек.}{88}{section*.219}%
+\contentsline {paragraph}{Степень цепочки.}{88}{section*.220}%
+\contentsline {paragraph}{Обращение цепочки.}{89}{section*.221}%
+\contentsline {paragraph}{Язык в алфавите.}{89}{section*.222}%
+\contentsline {paragraph}{Множества \(V^*\) и \(V^+\).}{89}{section*.223}%
+\contentsline {paragraph}{Примеры языков.}{89}{section*.224}%
+\contentsline {paragraph}{Роль базовых понятий.}{90}{section*.225}%
+\contentsline {subsubsection}{\numberline {1.4.2}Порождающие грамматики и способы их задания}{90}{subsubsection.1.4.2}%
+\contentsline {paragraph}{Общее понятие порождающей грамматики.}{90}{section*.226}%
+\contentsline {paragraph}{Определение порождающей грамматики.}{90}{section*.227}%
+\contentsline {paragraph}{Терминалы и нетерминалы.}{91}{section*.228}%
+\contentsline {paragraph}{Форма записи правил и альтернативы.}{91}{section*.229}%
+\contentsline {paragraph}{Пример грамматики.}{91}{section*.230}%
+\contentsline {paragraph}{Непосредственная выводимость.}{91}{section*.231}%
+\contentsline {paragraph}{Пример непосредственной выводимости.}{92}{section*.232}%
+\contentsline {paragraph}{Выводимость и вывод.}{92}{section*.233}%
+\contentsline {paragraph}{Пример вывода.}{92}{section*.234}%
+\contentsline {paragraph}{Язык, порождаемый грамматикой.}{92}{section*.235}%
+\contentsline {paragraph}{Примеры языков, порождаемых грамматиками.}{92}{section*.236}%
+\contentsline {paragraph}{Сентенциальные формы.}{93}{section*.237}%
+\contentsline {paragraph}{Эквивалентность грамматик.}{93}{section*.238}%
+\contentsline {paragraph}{Почти эквивалентные грамматики.}{93}{section*.239}%
+\contentsline {paragraph}{Способы задания схем грамматик.}{94}{section*.240}%
+\contentsline {paragraph}{Форма Бэкуса~—~Наура.}{94}{section*.241}%
+\contentsline {paragraph}{Итерационная форма.}{94}{section*.242}%
+\contentsline {paragraph}{Синтаксические диаграммы.}{95}{section*.243}%
+\contentsline {paragraph}{Связь формы задания с построением анализатора.}{96}{section*.244}%
+\contentsline {subsubsection}{\numberline {1.4.3}Классификация грамматик и языков по Хомскому}{96}{subsubsection.1.4.3}%
+\contentsline {paragraph}{Иерархия Хомского.}{96}{section*.245}%
+\contentsline {paragraph}{Тип 0: неограниченные грамматики.}{96}{section*.246}%
+\contentsline {paragraph}{Тип 1: контекстно-зависимые (неукорачивающие) грамматики.}{96}{section*.247}%
+\contentsline {paragraph}{Тип 2: контекстно-свободные грамматики.}{97}{section*.248}%
+\contentsline {paragraph}{Тип 3: регулярные грамматики.}{97}{section*.249}%
+\contentsline {paragraph}{Соотношения между типами грамматик.}{97}{section*.250}%
+\contentsline {paragraph}{Соотношения между типами языков.}{98}{section*.251}%
+\contentsline {paragraph}{Пример грамматики типа 0.}{98}{section*.252}%
+\contentsline {paragraph}{Пример грамматики типа 1.}{99}{section*.253}%
+\contentsline {paragraph}{Пример грамматики типа 2.}{99}{section*.254}%
+\contentsline {paragraph}{Пример грамматики типа 3.}{99}{section*.255}%
+\contentsline {paragraph}{Практическое значение классификации.}{100}{section*.256}%
+\contentsline {subsubsection}{\numberline {1.4.4}Разбор цепочек и неоднозначность грамматик}{100}{subsubsection.1.4.4}%
+\contentsline {paragraph}{Задача разбора.}{100}{section*.257}%
+\contentsline {paragraph}{Левосторонний и правосторонний вывод.}{100}{section*.258}%
+\contentsline {paragraph}{Пример различных выводов.}{100}{section*.259}%
+\contentsline {paragraph}{Дерево вывода.}{101}{section*.260}%
+\contentsline {paragraph}{Пример дерева вывода.}{101}{section*.261}%
+\contentsline {paragraph}{Нисходящий и восходящий разбор.}{102}{section*.262}%
+\contentsline {paragraph}{Неоднозначность грамматик.}{102}{section*.263}%
+\contentsline {paragraph}{Пример неоднозначной грамматики.}{102}{section*.264}%
+\contentsline {paragraph}{Смысл неоднозначности для языков программирования.}{102}{section*.265}%
+\contentsline {paragraph}{Свойства неоднозначности.}{103}{section*.266}%
+\contentsline {paragraph}{Виды правил, приводящих к неоднозначности.}{103}{section*.267}%
+\contentsline {paragraph}{Пример устранения неоднозначности.}{103}{section*.268}%
+\contentsline {paragraph}{Практические выводы.}{104}{section*.269}%
+\contentsline {subsubsection}{\numberline {1.4.5}Распознаватели и их связь с типами языков}{104}{subsubsection.1.4.5}%
+\contentsline {paragraph}{Понятие распознавателя.}{104}{section*.270}%
+\contentsline {paragraph}{Общая схема распознавателя.}{104}{section*.271}%
+\contentsline {paragraph}{Устройство управления и внешняя память.}{105}{section*.272}%
+\contentsline {paragraph}{Конфигурация и работа распознавателя.}{105}{section*.273}%
+\contentsline {paragraph}{Виды распознавателей по считывающему устройству.}{105}{section*.274}%
+\contentsline {paragraph}{Детерминированные и недетерминированные распознаватели.}{106}{section*.275}%
+\contentsline {paragraph}{Виды распознавателей по внешней памяти.}{106}{section*.276}%
+\contentsline {paragraph}{Связь сложности распознавателя с типом языка.}{106}{section*.277}%
+\contentsline {paragraph}{Языки типа 0.}{106}{section*.278}%
+\contentsline {paragraph}{Языки типа 1.}{106}{section*.279}%
+\contentsline {paragraph}{Языки типа 2.}{107}{section*.280}%
+\contentsline {paragraph}{Языки типа 3.}{107}{section*.281}%
+\contentsline {paragraph}{Практическое значение классификации распознавателей.}{108}{section*.282}%
+\contentsline {subsubsection}{\numberline {1.4.6}Использование формальных грамматик в лексическом анализе}{108}{subsubsection.1.4.6}%
+\contentsline {paragraph}{Место лексического анализа в процессе трансляции.}{108}{section*.283}%
+\contentsline {paragraph}{Лексический анализатор как конечный автомат.}{108}{section*.284}%
+\contentsline {paragraph}{Диаграмма состояний-переходов конечного автомата.}{109}{section*.285}%
+\contentsline {paragraph}{Условия применимости КА в качестве лексического анализатора.}{109}{section*.286}%
+\contentsline {paragraph}{Пример КА для распознавания комментариев.}{109}{section*.287}%
+\contentsline {paragraph}{Формальное определение конечного автомата.}{109}{section*.288}%
+\contentsline {paragraph}{Допуск цепочки конечным автоматом.}{110}{section*.289}%
+\contentsline {paragraph}{Алгоритм разбора по диаграмме состояний КА.}{110}{section*.290}%
+\contentsline {paragraph}{Регулярные грамматики и языки.}{110}{section*.291}%
+\contentsline {paragraph}{Алгоритм разбора цепочки для леволинейной грамматики.}{111}{section*.292}%
+\contentsline {paragraph}{Таблица детерминированного разбора.}{111}{section*.293}%
+\contentsline {paragraph}{Построение конечного автомата на основе регулярной грамматики.}{111}{section*.294}%
+\contentsline {paragraph}{Построение леволинейной грамматики на основе конечного автомата.}{112}{section*.295}%
+\contentsline {paragraph}{Преобразование недетерминированного конечного автомата в детерминированный.}{112}{section*.296}%
+\contentsline {paragraph}{Алгоритм детерминирования.}{113}{section*.297}%
+\contentsline {paragraph}{Минимизация конечного автомата.}{113}{section*.298}%
+\contentsline {paragraph}{Токены, шаблоны и лексемы.}{113}{section*.299}%
+\contentsline {paragraph}{Таблица токенов.}{114}{section*.300}%
+\contentsline {paragraph}{Атрибуты токенов.}{114}{section*.301}%
+\contentsline {paragraph}{Лексические ошибки.}{114}{section*.302}%
+\contentsline {paragraph}{Определение токенов с помощью регулярных выражений.}{115}{section*.303}%
+\contentsline {paragraph}{Примеры регулярных выражений.}{115}{section*.304}%
+\contentsline {paragraph}{Распознавание токенов: пример.}{115}{section*.305}%
+\contentsline {paragraph}{Таблица пар «атрибут—значение».}{116}{section*.306}%
+\contentsline {paragraph}{Построение распознавателя для чисел.}{116}{section*.307}%
+\contentsline {subsubsection}{\numberline {1.4.7}Использование формальных грамматик в синтаксическом анализе}{116}{subsubsection.1.4.7}%
+\contentsline {paragraph}{Место синтаксического анализа в процессе трансляции.}{116}{section*.308}%
+\contentsline {paragraph}{Типы синтаксических анализаторов.}{117}{section*.309}%
+\contentsline {paragraph}{Приведённые грамматики.}{117}{section*.310}%
+\contentsline {paragraph}{Удаление бесплодных символов.}{117}{section*.311}%
+\contentsline {paragraph}{Удаление недостижимых символов.}{117}{section*.312}%
+\contentsline {paragraph}{Исключение цепных правил.}{118}{section*.313}%
+\contentsline {paragraph}{Исключение аннулирующих правил.}{118}{section*.314}%
+\contentsline {paragraph}{Нормальная форма Хомского.}{118}{section*.315}%
+\contentsline {paragraph}{Алгоритм преобразования к нормальной форме Хомского.}{119}{section*.316}%
+\contentsline {paragraph}{Нормальная форма Грейбах.}{119}{section*.317}%
+\contentsline {paragraph}{Отношения между символами формальной грамматики.}{120}{section*.318}%
+\contentsline {paragraph}{Алгоритм вычисления FIRST.}{120}{section*.319}%
+\contentsline {paragraph}{Алгоритм вычисления FOLLOW.}{121}{section*.320}%
+\contentsline {paragraph}{S-грамматики.}{121}{section*.321}%
+\contentsline {paragraph}{Q-грамматики.}{121}{section*.322}%
+\contentsline {paragraph}{LL(k)-грамматики.}{122}{section*.323}%
+\contentsline {paragraph}{LR(k)-грамматики.}{122}{section*.324}%
+\contentsline {paragraph}{Грамматики предшествования.}{123}{section*.325}%
+\contentsline {paragraph}{Магазинные автоматы: модель и формальное определение.}{124}{section*.326}%
+\contentsline {paragraph}{Работа магазинного автомата.}{125}{section*.327}%
+\contentsline {paragraph}{Язык, допускаемый магазинным автоматом.}{125}{section*.328}%
+\contentsline {paragraph}{Построение магазинного автомата по КС-грамматике.}{126}{section*.329}%
+\contentsline {paragraph}{Распознаватели с возвратом.}{126}{section*.330}%
+\contentsline {paragraph}{Нисходящий распознаватель с возвратом и алгоритм «сдвиг—свертка».}{127}{section*.331}%
+\contentsline {paragraph}{Табличные распознаватели для КС-языков.}{128}{section*.332}%
+\contentsline {paragraph}{Метод рекурсивного спуска.}{129}{section*.333}%
+\contentsline {paragraph}{Нисходящий распознаватель без возвратов на основе LL(k)-грамматик.}{130}{section*.334}%
+\contentsline {paragraph}{Восходящий распознаватель без возвратов на основе LR(k)-грамматик.}{131}{section*.335}%
+\contentsline {paragraph}{Метод предшествования.}{132}{section*.336}%
+\contentsline {paragraph}{Обработка синтаксических ошибок.}{133}{section*.337}%
+\contentsline {paragraph}{Стратегии восстановления состояния анализатора после ошибок.}{134}{section*.338}%
+\contentsline {paragraph}{Нерекурсивный предиктивный анализ.}{135}{section*.339}%
+\contentsline {paragraph}{Построение таблиц предиктивного анализа.}{135}{section*.340}%
+\contentsline {paragraph}{Восстановление после ошибок в предиктивном анализе.}{136}{section*.341}%
+\contentsline {subsubsection}{\numberline {1.4.8}Краткое резюме}{137}{subsubsection.1.4.8}%
