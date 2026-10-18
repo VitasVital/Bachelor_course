@@ -180,6 +180,15 @@ INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lati1200.tf
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0800.tfm
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\larm0600.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\jknappen\ec\tcrm1200.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
 INPUT Текстовый материал.aux
 INPUT .\Текстовый материал.out
 INPUT .\Текстовый материал.out
@@ -215,5 +224,11 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\euler\eufm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\symbols\msbm10.pfb

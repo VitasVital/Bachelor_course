@@ -61,3 +61,71 @@
 \contentsline {paragraph}{Замечание о минимальности.}{30}{section*.56}%
 \contentsline {paragraph}{Итог пункта.}{30}{section*.57}%
 \contentsline {subsubsection}{\numberline {1.1.6}Краткое резюме}{30}{subsubsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.2}Исчисление предикатов первого порядка. Понятие интерпретации. Выполнимость и общезначимость формулы первого порядка. Понятие модели. Теорема о полноте исчисления предикатов первого порядка}{31}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Исчисление предикатов первого порядка}{31}{subsubsection.1.2.1}%
+\contentsline {paragraph}{Общая идея аксиоматического построения.}{31}{section*.58}%
+\contentsline {paragraph}{Язык первого порядка.}{31}{section*.59}%
+\contentsline {paragraph}{Термы.}{32}{section*.60}%
+\contentsline {paragraph}{Формулы.}{32}{section*.61}%
+\contentsline {paragraph}{Свободные и связанные переменные.}{32}{section*.62}%
+\contentsline {paragraph}{Правильная подстановка.}{33}{section*.63}%
+\contentsline {paragraph}{Аксиомы исчисления предикатов.}{33}{section*.64}%
+\contentsline {paragraph}{Правила вывода.}{34}{section*.65}%
+\contentsline {paragraph}{Вывод и выводимость.}{34}{section*.66}%
+\contentsline {paragraph}{Теорема о дедукции.}{34}{section*.67}%
+\contentsline {paragraph}{Техника естественного вывода.}{35}{section*.68}%
+\contentsline {paragraph}{Правило подстановки.}{36}{section*.69}%
+\contentsline {paragraph}{Пример вывода с использованием техники естественного вывода.}{36}{section*.70}%
+\contentsline {paragraph}{Замечание об эквивалентных формулировках.}{36}{section*.71}%
+\contentsline {paragraph}{Связь с семантикой.}{37}{section*.72}%
+\contentsline {paragraph}{Итог пункта.}{37}{section*.73}%
+\contentsline {subsubsection}{\numberline {1.2.2}Понятие интерпретации}{37}{subsubsection.1.2.2}%
+\contentsline {paragraph}{Зачем нужна интерпретация.}{37}{section*.74}%
+\contentsline {paragraph}{Носитель.}{37}{section*.75}%
+\contentsline {paragraph}{Интерпретация символов.}{37}{section*.76}%
+\contentsline {paragraph}{Оценка переменных.}{38}{section*.77}%
+\contentsline {paragraph}{Значение терма.}{38}{section*.78}%
+\contentsline {paragraph}{Истинность формулы.}{39}{section*.79}%
+\contentsline {paragraph}{Пример интерпретации.}{39}{section*.80}%
+\contentsline {paragraph}{Свободные и связанные переменные при интерпретации.}{40}{section*.81}%
+\contentsline {paragraph}{Истинность и оценка: пример с кванторами.}{40}{section*.82}%
+\contentsline {paragraph}{Интерпретация и формализация.}{40}{section*.83}%
+\contentsline {paragraph}{Итог пункта.}{40}{section*.84}%
+\contentsline {subsubsection}{\numberline {1.2.3}Выполнимость и общезначимость формулы первого порядка}{41}{subsubsection.1.2.3}%
+\contentsline {paragraph}{Истинность при интерпретации.}{41}{section*.85}%
+\contentsline {paragraph}{Общезначимость.}{41}{section*.86}%
+\contentsline {paragraph}{Противоречие.}{41}{section*.87}%
+\contentsline {paragraph}{Выполнимость.}{42}{section*.88}%
+\contentsline {paragraph}{Четыре категории формул.}{42}{section*.89}%
+\contentsline {paragraph}{Связь общезначимости и выполнимости.}{42}{section*.90}%
+\contentsline {paragraph}{Примеры общезначимых формул.}{42}{section*.91}%
+\contentsline {paragraph}{Пример общезначимой формулы с кванторами.}{43}{section*.92}%
+\contentsline {paragraph}{Пример необщезначимой, но выполнимой формулы.}{44}{section*.93}%
+\contentsline {paragraph}{Замечание о разрешимости.}{44}{section*.94}%
+\contentsline {paragraph}{Общезначимость и логическое следование.}{44}{section*.95}%
+\contentsline {paragraph}{Связь с семантикой: теорема о корректности.}{45}{section*.96}%
+\contentsline {paragraph}{Итог пункта.}{45}{section*.97}%
+\contentsline {subsubsection}{\numberline {1.2.4}Понятие модели}{45}{subsubsection.1.2.4}%
+\contentsline {paragraph}{Модель языка.}{45}{section*.98}%
+\contentsline {paragraph}{Истинность в модели.}{46}{section*.99}%
+\contentsline {paragraph}{Модель формальной теории.}{46}{section*.100}%
+\contentsline {paragraph}{Теорема о корректности.}{46}{section*.101}%
+\contentsline {paragraph}{Примеры моделей.}{46}{section*.102}%
+\contentsline {paragraph}{Нестандартные модели.}{47}{section*.103}%
+\contentsline {paragraph}{Полнота теории относительно модели.}{47}{section*.104}%
+\contentsline {paragraph}{Разрешимость теории.}{48}{section*.105}%
+\contentsline {paragraph}{Пример: теория \(R\).}{48}{section*.106}%
+\contentsline {paragraph}{Связь с теоремой о полноте исчисления предикатов.}{49}{section*.107}%
+\contentsline {paragraph}{Итог пункта.}{49}{section*.108}%
+\contentsline {subsubsection}{\numberline {1.2.5}Теорема о полноте исчисления предикатов первого порядка}{49}{subsubsection.1.2.5}%
+\contentsline {paragraph}{Постановка вопроса.}{49}{section*.109}%
+\contentsline {paragraph}{Формулировка теоремы.}{49}{section*.110}%
+\contentsline {paragraph}{Две части теоремы.}{50}{section*.111}%
+\contentsline {paragraph}{Эквивалентные формулировки.}{50}{section*.112}%
+\contentsline {paragraph}{Исторический контекст.}{51}{section*.113}%
+\contentsline {paragraph}{Следствия из теоремы о полноте.}{51}{section*.114}%
+\contentsline {paragraph}{Связь с теоремой о неполноте.}{51}{section*.115}%
+\contentsline {paragraph}{Метод доказательства (заглушка).}{51}{section*.116}%
+\contentsline {paragraph}{Значение теоремы.}{52}{section*.117}%
+\contentsline {paragraph}{Итог пункта.}{53}{section*.118}%
+\contentsline {subsubsection}{\numberline {1.2.6}Краткое резюме}{53}{subsubsection.1.2.6}%
