@@ -189,9 +189,21 @@ INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\ueuf.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\euler\eufm7.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\cyrillic\t2acmtt.fd
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\lait1200.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx8.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx6.tfm
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\latt1200.tfm
 INPUT Текстовый материал.aux
 INPUT .\Текстовый материал.out
 INPUT .\Текстовый материал.out
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\latt1200.pk
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lait1200.pk
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\lait1200.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0800.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0800.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk
@@ -208,6 +220,8 @@ INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi60
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\labx1728.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm2074.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm2074.pk
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi12.pfb

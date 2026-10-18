@@ -1,131 +1,236 @@
 \babel@toc {russian}{}\relax 
-\contentsline {section}{\numberline {1}Раздел 2. Дискретная математика и математическая логика.}{2}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Алгебра логики. Булевы функции, канонические формы задания булевых функций. Понятие полной системы. Критерий полноты Поста. Минимизация булевых функций в классах нормальных форм}{2}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Алгебра логики: высказывания, операции, формулы и равносильности}{2}{subsubsection.1.1.1}%
-\contentsline {paragraph}{Высказывания и их истинностные значения.}{2}{section*.2}%
-\contentsline {paragraph}{Логические операции над высказываниями.}{3}{section*.3}%
-\contentsline {paragraph}{Формулы алгебры логики.}{5}{section*.4}%
-\contentsline {paragraph}{Классификация формул.}{6}{section*.5}%
-\contentsline {paragraph}{Равносильность формул.}{6}{section*.6}%
-\contentsline {paragraph}{Принцип двойственности.}{8}{section*.7}%
-\contentsline {paragraph}{Связь формул с булевыми функциями.}{8}{section*.8}%
-\contentsline {paragraph}{Итог пункта.}{8}{section*.9}%
-\contentsline {subsubsection}{\numberline {1.1.2}Булевы функции}{8}{subsubsection.1.1.2}%
-\contentsline {paragraph}{Понятие булевой функции.}{8}{section*.10}%
-\contentsline {paragraph}{Табличное задание булевой функции.}{9}{section*.11}%
-\contentsline {paragraph}{Число булевых функций от \(n\) переменных.}{10}{section*.12}%
-\contentsline {paragraph}{Равенство булевых функций.}{10}{section*.13}%
-\contentsline {paragraph}{Фиктивные и существенные переменные.}{10}{section*.14}%
-\contentsline {paragraph}{Булевы функции от одного аргумента.}{11}{section*.15}%
-\contentsline {paragraph}{Булевы функции от двух аргументов.}{11}{section*.16}%
-\contentsline {paragraph}{Формулы и суперпозиция.}{12}{section*.17}%
-\contentsline {paragraph}{Теорема о представлении булевых функций формулами.}{12}{section*.18}%
-\contentsline {paragraph}{Пример: мажоритарная функция.}{13}{section*.19}%
-\contentsline {paragraph}{Связь с алгеброй высказываний.}{13}{section*.20}%
-\contentsline {paragraph}{Итог пункта.}{13}{section*.21}%
-\contentsline {subsubsection}{\numberline {1.1.3}Канонические формы задания булевых функций}{13}{subsubsection.1.1.3}%
-\contentsline {paragraph}{Элементарные конъюнкции и дизъюнкции.}{13}{section*.22}%
-\contentsline {paragraph}{ДНФ и КНФ.}{14}{section*.23}%
-\contentsline {paragraph}{Совершенные ДНФ и КНФ.}{14}{section*.24}%
-\contentsline {paragraph}{Существование и единственность СДНФ.}{15}{section*.25}%
-\contentsline {paragraph}{Существование и единственность СКНФ.}{15}{section*.27}%
-\contentsline {paragraph}{Построение СДНФ и СКНФ по таблице истинности.}{16}{section*.29}%
-\contentsline {paragraph}{Пример построения СДНФ и СКНФ.}{16}{section*.30}%
-\contentsline {paragraph}{Построение СДНФ и СКНФ равносильными преобразованиями.}{17}{section*.31}%
-\contentsline {paragraph}{Связь между СДНФ и СКНФ.}{18}{section*.32}%
-\contentsline {paragraph}{Числовая форма записи.}{18}{section*.33}%
-\contentsline {paragraph}{Замечание о несовершенных формах.}{18}{section*.34}%
-\contentsline {paragraph}{Единственность и мощность.}{19}{section*.35}%
-\contentsline {paragraph}{Итог пункта.}{19}{section*.36}%
-\contentsline {subsubsection}{\numberline {1.1.4}Понятие полной системы. Критерий полноты Поста}{19}{subsubsection.1.1.4}%
-\contentsline {paragraph}{Замыкание и полнота системы булевых функций.}{19}{section*.37}%
-\contentsline {paragraph}{Примеры полных систем.}{19}{section*.38}%
-\contentsline {paragraph}{Класс \(P_0\): функции, сохраняющие нуль.}{20}{section*.39}%
-\contentsline {paragraph}{Класс \(P_1\): функции, сохраняющие единицу.}{20}{section*.40}%
-\contentsline {paragraph}{Класс \(L\): линейные функции.}{21}{section*.41}%
-\contentsline {paragraph}{Класс \(S\): самодвойственные функции.}{21}{section*.42}%
-\contentsline {paragraph}{Класс \(M\): монотонные функции.}{21}{section*.43}%
-\contentsline {paragraph}{Критерий полноты Поста.}{22}{section*.44}%
-\contentsline {paragraph}{Свойства классов Поста.}{23}{section*.45}%
-\contentsline {paragraph}{Пример проверки полноты.}{23}{section*.46}%
-\contentsline {paragraph}{Замечание о числе классов.}{23}{section*.47}%
-\contentsline {paragraph}{Итог пункта.}{23}{section*.48}%
-\contentsline {subsubsection}{\numberline {1.1.5}Минимизация булевых функций в классах нормальных форм}{24}{subsubsection.1.1.5}%
-\contentsline {paragraph}{Постановка задачи минимизации.}{24}{section*.49}%
-\contentsline {paragraph}{Импликанты и простые импликанты.}{24}{section*.50}%
-\contentsline {paragraph}{Метод тождественных преобразований.}{25}{section*.51}%
-\contentsline {paragraph}{Метод Квайна.}{26}{section*.52}%
-\contentsline {paragraph}{Карты Карно.}{27}{section*.53}%
-\contentsline {paragraph}{Минимизация в классе КНФ.}{29}{section*.54}%
-\contentsline {paragraph}{Сравнение методов.}{30}{section*.55}%
-\contentsline {paragraph}{Замечание о минимальности.}{30}{section*.56}%
-\contentsline {paragraph}{Итог пункта.}{30}{section*.57}%
-\contentsline {subsubsection}{\numberline {1.1.6}Краткое резюме}{30}{subsubsection.1.1.6}%
-\contentsline {subsection}{\numberline {1.2}Исчисление предикатов первого порядка. Понятие интерпретации. Выполнимость и общезначимость формулы первого порядка. Понятие модели. Теорема о полноте исчисления предикатов первого порядка}{31}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Исчисление предикатов первого порядка}{31}{subsubsection.1.2.1}%
-\contentsline {paragraph}{Общая идея аксиоматического построения.}{31}{section*.58}%
-\contentsline {paragraph}{Язык первого порядка.}{31}{section*.59}%
-\contentsline {paragraph}{Термы.}{32}{section*.60}%
-\contentsline {paragraph}{Формулы.}{32}{section*.61}%
-\contentsline {paragraph}{Свободные и связанные переменные.}{32}{section*.62}%
-\contentsline {paragraph}{Правильная подстановка.}{33}{section*.63}%
-\contentsline {paragraph}{Аксиомы исчисления предикатов.}{33}{section*.64}%
-\contentsline {paragraph}{Правила вывода.}{34}{section*.65}%
-\contentsline {paragraph}{Вывод и выводимость.}{34}{section*.66}%
-\contentsline {paragraph}{Теорема о дедукции.}{34}{section*.67}%
-\contentsline {paragraph}{Техника естественного вывода.}{35}{section*.68}%
-\contentsline {paragraph}{Правило подстановки.}{36}{section*.69}%
-\contentsline {paragraph}{Пример вывода с использованием техники естественного вывода.}{36}{section*.70}%
-\contentsline {paragraph}{Замечание об эквивалентных формулировках.}{36}{section*.71}%
-\contentsline {paragraph}{Связь с семантикой.}{37}{section*.72}%
-\contentsline {paragraph}{Итог пункта.}{37}{section*.73}%
-\contentsline {subsubsection}{\numberline {1.2.2}Понятие интерпретации}{37}{subsubsection.1.2.2}%
-\contentsline {paragraph}{Зачем нужна интерпретация.}{37}{section*.74}%
-\contentsline {paragraph}{Носитель.}{37}{section*.75}%
-\contentsline {paragraph}{Интерпретация символов.}{37}{section*.76}%
-\contentsline {paragraph}{Оценка переменных.}{38}{section*.77}%
-\contentsline {paragraph}{Значение терма.}{38}{section*.78}%
-\contentsline {paragraph}{Истинность формулы.}{39}{section*.79}%
-\contentsline {paragraph}{Пример интерпретации.}{39}{section*.80}%
-\contentsline {paragraph}{Свободные и связанные переменные при интерпретации.}{40}{section*.81}%
-\contentsline {paragraph}{Истинность и оценка: пример с кванторами.}{40}{section*.82}%
-\contentsline {paragraph}{Интерпретация и формализация.}{40}{section*.83}%
-\contentsline {paragraph}{Итог пункта.}{40}{section*.84}%
-\contentsline {subsubsection}{\numberline {1.2.3}Выполнимость и общезначимость формулы первого порядка}{41}{subsubsection.1.2.3}%
-\contentsline {paragraph}{Истинность при интерпретации.}{41}{section*.85}%
-\contentsline {paragraph}{Общезначимость.}{41}{section*.86}%
-\contentsline {paragraph}{Противоречие.}{41}{section*.87}%
-\contentsline {paragraph}{Выполнимость.}{42}{section*.88}%
-\contentsline {paragraph}{Четыре категории формул.}{42}{section*.89}%
-\contentsline {paragraph}{Связь общезначимости и выполнимости.}{42}{section*.90}%
-\contentsline {paragraph}{Примеры общезначимых формул.}{42}{section*.91}%
-\contentsline {paragraph}{Пример общезначимой формулы с кванторами.}{43}{section*.92}%
-\contentsline {paragraph}{Пример необщезначимой, но выполнимой формулы.}{44}{section*.93}%
-\contentsline {paragraph}{Замечание о разрешимости.}{44}{section*.94}%
-\contentsline {paragraph}{Общезначимость и логическое следование.}{44}{section*.95}%
-\contentsline {paragraph}{Связь с семантикой: теорема о корректности.}{45}{section*.96}%
-\contentsline {paragraph}{Итог пункта.}{45}{section*.97}%
-\contentsline {subsubsection}{\numberline {1.2.4}Понятие модели}{45}{subsubsection.1.2.4}%
-\contentsline {paragraph}{Модель языка.}{45}{section*.98}%
-\contentsline {paragraph}{Истинность в модели.}{46}{section*.99}%
-\contentsline {paragraph}{Модель формальной теории.}{46}{section*.100}%
-\contentsline {paragraph}{Теорема о корректности.}{46}{section*.101}%
-\contentsline {paragraph}{Примеры моделей.}{46}{section*.102}%
-\contentsline {paragraph}{Нестандартные модели.}{47}{section*.103}%
-\contentsline {paragraph}{Полнота теории относительно модели.}{47}{section*.104}%
-\contentsline {paragraph}{Разрешимость теории.}{48}{section*.105}%
-\contentsline {paragraph}{Пример: теория \(R\).}{48}{section*.106}%
-\contentsline {paragraph}{Связь с теоремой о полноте исчисления предикатов.}{49}{section*.107}%
-\contentsline {paragraph}{Итог пункта.}{49}{section*.108}%
-\contentsline {subsubsection}{\numberline {1.2.5}Теорема о полноте исчисления предикатов первого порядка}{49}{subsubsection.1.2.5}%
-\contentsline {paragraph}{Постановка вопроса.}{49}{section*.109}%
-\contentsline {paragraph}{Формулировка теоремы.}{49}{section*.110}%
-\contentsline {paragraph}{Две части теоремы.}{50}{section*.111}%
-\contentsline {paragraph}{Эквивалентные формулировки.}{50}{section*.112}%
-\contentsline {paragraph}{Исторический контекст.}{51}{section*.113}%
-\contentsline {paragraph}{Следствия из теоремы о полноте.}{51}{section*.114}%
-\contentsline {paragraph}{Связь с теоремой о неполноте.}{51}{section*.115}%
-\contentsline {paragraph}{Метод доказательства (заглушка).}{51}{section*.116}%
-\contentsline {paragraph}{Значение теоремы.}{52}{section*.117}%
-\contentsline {paragraph}{Итог пункта.}{53}{section*.118}%
-\contentsline {subsubsection}{\numberline {1.2.6}Краткое резюме}{53}{subsubsection.1.2.6}%
+\contentsline {section}{\numberline {1}Раздел 2. Дискретная математика и математическая логика.}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Алгебра логики. Булевы функции, канонические формы задания булевых функций. Понятие полной системы. Критерий полноты Поста. Минимизация булевых функций в классах нормальных форм}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Алгебра логики: высказывания, операции, формулы и равносильности}{3}{subsubsection.1.1.1}%
+\contentsline {paragraph}{Высказывания и их истинностные значения.}{3}{section*.2}%
+\contentsline {paragraph}{Логические операции над высказываниями.}{4}{section*.3}%
+\contentsline {paragraph}{Формулы алгебры логики.}{6}{section*.4}%
+\contentsline {paragraph}{Классификация формул.}{7}{section*.5}%
+\contentsline {paragraph}{Равносильность формул.}{7}{section*.6}%
+\contentsline {paragraph}{Принцип двойственности.}{9}{section*.7}%
+\contentsline {paragraph}{Связь формул с булевыми функциями.}{9}{section*.8}%
+\contentsline {paragraph}{Итог пункта.}{9}{section*.9}%
+\contentsline {subsubsection}{\numberline {1.1.2}Булевы функции}{9}{subsubsection.1.1.2}%
+\contentsline {paragraph}{Понятие булевой функции.}{9}{section*.10}%
+\contentsline {paragraph}{Табличное задание булевой функции.}{10}{section*.11}%
+\contentsline {paragraph}{Число булевых функций от \(n\) переменных.}{11}{section*.12}%
+\contentsline {paragraph}{Равенство булевых функций.}{11}{section*.13}%
+\contentsline {paragraph}{Фиктивные и существенные переменные.}{11}{section*.14}%
+\contentsline {paragraph}{Булевы функции от одного аргумента.}{12}{section*.15}%
+\contentsline {paragraph}{Булевы функции от двух аргументов.}{12}{section*.16}%
+\contentsline {paragraph}{Формулы и суперпозиция.}{13}{section*.17}%
+\contentsline {paragraph}{Теорема о представлении булевых функций формулами.}{13}{section*.18}%
+\contentsline {paragraph}{Пример: мажоритарная функция.}{14}{section*.19}%
+\contentsline {paragraph}{Связь с алгеброй высказываний.}{14}{section*.20}%
+\contentsline {paragraph}{Итог пункта.}{14}{section*.21}%
+\contentsline {subsubsection}{\numberline {1.1.3}Канонические формы задания булевых функций}{14}{subsubsection.1.1.3}%
+\contentsline {paragraph}{Элементарные конъюнкции и дизъюнкции.}{14}{section*.22}%
+\contentsline {paragraph}{ДНФ и КНФ.}{15}{section*.23}%
+\contentsline {paragraph}{Совершенные ДНФ и КНФ.}{15}{section*.24}%
+\contentsline {paragraph}{Существование и единственность СДНФ.}{16}{section*.25}%
+\contentsline {paragraph}{Существование и единственность СКНФ.}{16}{section*.27}%
+\contentsline {paragraph}{Построение СДНФ и СКНФ по таблице истинности.}{17}{section*.29}%
+\contentsline {paragraph}{Пример построения СДНФ и СКНФ.}{17}{section*.30}%
+\contentsline {paragraph}{Построение СДНФ и СКНФ равносильными преобразованиями.}{18}{section*.31}%
+\contentsline {paragraph}{Связь между СДНФ и СКНФ.}{19}{section*.32}%
+\contentsline {paragraph}{Числовая форма записи.}{19}{section*.33}%
+\contentsline {paragraph}{Замечание о несовершенных формах.}{19}{section*.34}%
+\contentsline {paragraph}{Единственность и мощность.}{20}{section*.35}%
+\contentsline {paragraph}{Итог пункта.}{20}{section*.36}%
+\contentsline {subsubsection}{\numberline {1.1.4}Понятие полной системы. Критерий полноты Поста}{20}{subsubsection.1.1.4}%
+\contentsline {paragraph}{Замыкание и полнота системы булевых функций.}{20}{section*.37}%
+\contentsline {paragraph}{Примеры полных систем.}{20}{section*.38}%
+\contentsline {paragraph}{Класс \(P_0\): функции, сохраняющие нуль.}{21}{section*.39}%
+\contentsline {paragraph}{Класс \(P_1\): функции, сохраняющие единицу.}{21}{section*.40}%
+\contentsline {paragraph}{Класс \(L\): линейные функции.}{22}{section*.41}%
+\contentsline {paragraph}{Класс \(S\): самодвойственные функции.}{22}{section*.42}%
+\contentsline {paragraph}{Класс \(M\): монотонные функции.}{22}{section*.43}%
+\contentsline {paragraph}{Критерий полноты Поста.}{23}{section*.44}%
+\contentsline {paragraph}{Свойства классов Поста.}{24}{section*.45}%
+\contentsline {paragraph}{Пример проверки полноты.}{24}{section*.46}%
+\contentsline {paragraph}{Замечание о числе классов.}{24}{section*.47}%
+\contentsline {paragraph}{Итог пункта.}{24}{section*.48}%
+\contentsline {subsubsection}{\numberline {1.1.5}Минимизация булевых функций в классах нормальных форм}{25}{subsubsection.1.1.5}%
+\contentsline {paragraph}{Постановка задачи минимизации.}{25}{section*.49}%
+\contentsline {paragraph}{Импликанты и простые импликанты.}{25}{section*.50}%
+\contentsline {paragraph}{Метод тождественных преобразований.}{26}{section*.51}%
+\contentsline {paragraph}{Метод Квайна.}{27}{section*.52}%
+\contentsline {paragraph}{Карты Карно.}{28}{section*.53}%
+\contentsline {paragraph}{Минимизация в классе КНФ.}{30}{section*.54}%
+\contentsline {paragraph}{Сравнение методов.}{31}{section*.55}%
+\contentsline {paragraph}{Замечание о минимальности.}{31}{section*.56}%
+\contentsline {paragraph}{Итог пункта.}{31}{section*.57}%
+\contentsline {subsubsection}{\numberline {1.1.6}Краткое резюме}{31}{subsubsection.1.1.6}%
+\contentsline {subsection}{\numberline {1.2}Исчисление предикатов первого порядка. Понятие интерпретации. Выполнимость и общезначимость формулы первого порядка. Понятие модели. Теорема о полноте исчисления предикатов первого порядка}{32}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Исчисление предикатов первого порядка}{32}{subsubsection.1.2.1}%
+\contentsline {paragraph}{Общая идея аксиоматического построения.}{32}{section*.58}%
+\contentsline {paragraph}{Язык первого порядка.}{32}{section*.59}%
+\contentsline {paragraph}{Термы.}{33}{section*.60}%
+\contentsline {paragraph}{Формулы.}{33}{section*.61}%
+\contentsline {paragraph}{Свободные и связанные переменные.}{33}{section*.62}%
+\contentsline {paragraph}{Правильная подстановка.}{34}{section*.63}%
+\contentsline {paragraph}{Аксиомы исчисления предикатов.}{34}{section*.64}%
+\contentsline {paragraph}{Правила вывода.}{35}{section*.65}%
+\contentsline {paragraph}{Вывод и выводимость.}{35}{section*.66}%
+\contentsline {paragraph}{Теорема о дедукции.}{35}{section*.67}%
+\contentsline {paragraph}{Техника естественного вывода.}{36}{section*.68}%
+\contentsline {paragraph}{Правило подстановки.}{37}{section*.69}%
+\contentsline {paragraph}{Пример вывода с использованием техники естественного вывода.}{37}{section*.70}%
+\contentsline {paragraph}{Замечание об эквивалентных формулировках.}{37}{section*.71}%
+\contentsline {paragraph}{Связь с семантикой.}{38}{section*.72}%
+\contentsline {paragraph}{Итог пункта.}{38}{section*.73}%
+\contentsline {subsubsection}{\numberline {1.2.2}Понятие интерпретации}{38}{subsubsection.1.2.2}%
+\contentsline {paragraph}{Зачем нужна интерпретация.}{38}{section*.74}%
+\contentsline {paragraph}{Носитель.}{38}{section*.75}%
+\contentsline {paragraph}{Интерпретация символов.}{38}{section*.76}%
+\contentsline {paragraph}{Оценка переменных.}{39}{section*.77}%
+\contentsline {paragraph}{Значение терма.}{39}{section*.78}%
+\contentsline {paragraph}{Истинность формулы.}{40}{section*.79}%
+\contentsline {paragraph}{Пример интерпретации.}{40}{section*.80}%
+\contentsline {paragraph}{Свободные и связанные переменные при интерпретации.}{41}{section*.81}%
+\contentsline {paragraph}{Истинность и оценка: пример с кванторами.}{41}{section*.82}%
+\contentsline {paragraph}{Интерпретация и формализация.}{41}{section*.83}%
+\contentsline {paragraph}{Итог пункта.}{41}{section*.84}%
+\contentsline {subsubsection}{\numberline {1.2.3}Выполнимость и общезначимость формулы первого порядка}{42}{subsubsection.1.2.3}%
+\contentsline {paragraph}{Истинность при интерпретации.}{42}{section*.85}%
+\contentsline {paragraph}{Общезначимость.}{42}{section*.86}%
+\contentsline {paragraph}{Противоречие.}{42}{section*.87}%
+\contentsline {paragraph}{Выполнимость.}{43}{section*.88}%
+\contentsline {paragraph}{Четыре категории формул.}{43}{section*.89}%
+\contentsline {paragraph}{Связь общезначимости и выполнимости.}{43}{section*.90}%
+\contentsline {paragraph}{Примеры общезначимых формул.}{43}{section*.91}%
+\contentsline {paragraph}{Пример общезначимой формулы с кванторами.}{44}{section*.92}%
+\contentsline {paragraph}{Пример необщезначимой, но выполнимой формулы.}{45}{section*.93}%
+\contentsline {paragraph}{Замечание о разрешимости.}{45}{section*.94}%
+\contentsline {paragraph}{Общезначимость и логическое следование.}{45}{section*.95}%
+\contentsline {paragraph}{Связь с семантикой: теорема о корректности.}{46}{section*.96}%
+\contentsline {paragraph}{Итог пункта.}{46}{section*.97}%
+\contentsline {subsubsection}{\numberline {1.2.4}Понятие модели}{46}{subsubsection.1.2.4}%
+\contentsline {paragraph}{Модель языка.}{46}{section*.98}%
+\contentsline {paragraph}{Истинность в модели.}{47}{section*.99}%
+\contentsline {paragraph}{Модель формальной теории.}{47}{section*.100}%
+\contentsline {paragraph}{Теорема о корректности.}{47}{section*.101}%
+\contentsline {paragraph}{Примеры моделей.}{47}{section*.102}%
+\contentsline {paragraph}{Нестандартные модели.}{48}{section*.103}%
+\contentsline {paragraph}{Полнота теории относительно модели.}{48}{section*.104}%
+\contentsline {paragraph}{Разрешимость теории.}{49}{section*.105}%
+\contentsline {paragraph}{Пример: теория \(R\).}{49}{section*.106}%
+\contentsline {paragraph}{Связь с теоремой о полноте исчисления предикатов.}{50}{section*.107}%
+\contentsline {paragraph}{Итог пункта.}{50}{section*.108}%
+\contentsline {subsubsection}{\numberline {1.2.5}Теорема о полноте исчисления предикатов первого порядка}{50}{subsubsection.1.2.5}%
+\contentsline {paragraph}{Постановка вопроса.}{50}{section*.109}%
+\contentsline {paragraph}{Формулировка теоремы.}{50}{section*.110}%
+\contentsline {paragraph}{Две части теоремы.}{51}{section*.111}%
+\contentsline {paragraph}{Эквивалентные формулировки.}{51}{section*.112}%
+\contentsline {paragraph}{Исторический контекст.}{52}{section*.113}%
+\contentsline {paragraph}{Следствия из теоремы о полноте.}{52}{section*.114}%
+\contentsline {paragraph}{Связь с теоремой о неполноте.}{52}{section*.115}%
+\contentsline {paragraph}{Метод доказательства (заглушка).}{52}{section*.116}%
+\contentsline {paragraph}{Значение теоремы.}{53}{section*.117}%
+\contentsline {paragraph}{Итог пункта.}{54}{section*.118}%
+\contentsline {subsubsection}{\numberline {1.2.6}Краткое резюме}{54}{subsubsection.1.2.6}%
+\contentsline {subsection}{\numberline {1.3}Элементы универсальной алгебры: отношения, функции, фактормножества, упорядоченные множества и решётки}{55}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Отношения, соответствия и функции}{55}{subsubsection.1.3.1}%
+\contentsline {paragraph}{Классы, множества и упорядоченные пары.}{55}{section*.119}%
+\contentsline {paragraph}{Функции.}{55}{section*.120}%
+\contentsline {paragraph}{Соответствия.}{56}{section*.121}%
+\contentsline {paragraph}{Типы соответствий.}{56}{section*.122}%
+\contentsline {paragraph}{Функции как частный случай соответствий.}{57}{section*.123}%
+\contentsline {paragraph}{\(n\)-арные отношения.}{57}{section*.124}%
+\contentsline {paragraph}{Замечание о терминологии и роли понятий.}{57}{section*.125}%
+\contentsline {paragraph}{Итог пункта.}{57}{section*.126}%
+\contentsline {subsubsection}{\numberline {1.3.2}Отношение эквивалентности, разбиения и фактормножество}{58}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Определение эквивалентности.}{58}{section*.127}%
+\contentsline {paragraph}{Классы эквивалентности.}{58}{section*.128}%
+\contentsline {paragraph}{Разбиения.}{58}{section*.129}%
+\contentsline {paragraph}{Фактормножество.}{59}{section*.130}%
+\contentsline {paragraph}{Естественное отображение.}{59}{section*.131}%
+\contentsline {paragraph}{Ядро отображения.}{59}{section*.132}%
+\contentsline {paragraph}{Теорема о разложении отображения.}{59}{section*.133}%
+\contentsline {paragraph}{Следствие о разбиениях.}{60}{section*.134}%
+\contentsline {paragraph}{Теорема о фактормножествах.}{60}{section*.135}%
+\contentsline {paragraph}{Вложенные эквивалентности.}{60}{section*.136}%
+\contentsline {paragraph}{Замечание о фактормножествах и частичном порядке.}{61}{section*.137}%
+\contentsline {paragraph}{Итог пункта.}{61}{section*.138}%
+\contentsline {subsubsection}{\numberline {1.3.3}Отношения частичного порядка}{61}{subsubsection.1.3.3}%
+\contentsline {paragraph}{Упорядоченность.}{61}{section*.139}%
+\contentsline {paragraph}{Линейная упорядоченность.}{62}{section*.140}%
+\contentsline {paragraph}{Подмножества и индуцированная упорядоченность.}{62}{section*.141}%
+\contentsline {paragraph}{Верхние и нижние грани.}{62}{section*.142}%
+\contentsline {paragraph}{Наибольший и максимальный элементы.}{62}{section*.143}%
+\contentsline {paragraph}{Точные грани.}{63}{section*.144}%
+\contentsline {paragraph}{Лемма Цорна и аксиома выбора.}{63}{section*.145}%
+\contentsline {paragraph}{Условие минимальности и полная упорядоченность.}{63}{section*.146}%
+\contentsline {paragraph}{Обобщённый принцип индукции.}{63}{section*.147}%
+\contentsline {paragraph}{Структуры (решётки).}{63}{section*.148}%
+\contentsline {paragraph}{Левые и правые отрезки.}{64}{section*.149}%
+\contentsline {paragraph}{Монотонные и структурные гомоморфизмы.}{64}{section*.150}%
+\contentsline {paragraph}{Неподвижные точки монотонных гомоморфизмов.}{65}{section*.151}%
+\contentsline {paragraph}{Теорема Кантора--Бернштейна--Шрёдера для упорядоченных множеств.}{65}{section*.152}%
+\contentsline {paragraph}{Следствие Шрёдера--Бернштейна.}{66}{section*.153}%
+\contentsline {paragraph}{Следствие для линейно упорядоченных множеств.}{66}{section*.154}%
+\contentsline {paragraph}{Теорема Дилуорса--Глисона.}{66}{section*.155}%
+\contentsline {paragraph}{Графы упорядоченных множеств.}{67}{section*.156}%
+\contentsline {paragraph}{Теорема редукции Ньюмена.}{67}{section*.157}%
+\contentsline {paragraph}{Итог пункта.}{68}{section*.158}%
+\contentsline {subsubsection}{\numberline {1.3.4}Решётки: теоретико-множественное и алгебраическое определения}{68}{subsubsection.1.3.4}%
+\contentsline {paragraph}{Терминологическое замечание.}{68}{section*.159}%
+\contentsline {paragraph}{Определение через порядок.}{68}{section*.160}%
+\contentsline {paragraph}{Примеры структур.}{68}{section*.161}%
+\contentsline {paragraph}{Алгебраическое определение.}{69}{section*.162}%
+\contentsline {paragraph}{Доказательство прямой части.}{69}{section*.163}%
+\contentsline {paragraph}{Доказательство обратной части.}{69}{section*.164}%
+\contentsline {paragraph}{Следствие: структура как алгебра.}{70}{section*.165}%
+\contentsline {paragraph}{Принцип двойственности.}{70}{section*.166}%
+\contentsline {paragraph}{Итог пункта.}{70}{section*.167}%
+\contentsline {subsubsection}{\numberline {1.3.5}Свойства решёток}{70}{subsubsection.1.3.5}%
+\contentsline {paragraph}{Терминологическое замечание.}{71}{section*.168}%
+\contentsline {paragraph}{Интервалы и проекции.}{71}{section*.169}%
+\contentsline {paragraph}{Модулярные структуры.}{71}{section*.170}%
+\contentsline {paragraph}{Критерий модулярности.}{72}{section*.171}%
+\contentsline {paragraph}{Дистрибутивные структуры.}{72}{section*.172}%
+\contentsline {paragraph}{Перспективные и проективные интервалы.}{72}{section*.173}%
+\contentsline {paragraph}{Теорема об уплотнениях цепей.}{73}{section*.174}%
+\contentsline {paragraph}{Теорема Жордана--Гёльдера для структур.}{73}{section*.175}%
+\contentsline {paragraph}{Длина и формула длины.}{73}{section*.176}%
+\contentsline {paragraph}{Независимые множества и прямые объединения.}{74}{section*.177}%
+\contentsline {paragraph}{Лемма о замене сомножителя.}{74}{section*.178}%
+\contentsline {paragraph}{Неразложимые элементы и полные разложения.}{74}{section*.179}%
+\contentsline {paragraph}{Теорема Крулля--Шмидта для структур.}{74}{section*.180}%
+\contentsline {paragraph}{Неприводимые элементы и теорема Куроша--Оре.}{75}{section*.181}%
+\contentsline {paragraph}{Дополнения и атомы.}{75}{section*.182}%
+\contentsline {paragraph}{Итог пункта.}{76}{section*.183}%
+\contentsline {subsubsection}{\numberline {1.3.6}Полные решётки и системы замыканий}{76}{subsubsection.1.3.6}%
+\contentsline {paragraph}{Терминологическое замечание.}{76}{section*.184}%
+\contentsline {paragraph}{Определение полной решётки.}{76}{section*.185}%
+\contentsline {paragraph}{Критерий полноты.}{76}{section*.186}%
+\contentsline {paragraph}{Примеры полных решёток.}{77}{section*.187}%
+\contentsline {paragraph}{Системы замыканий.}{77}{section*.188}%
+\contentsline {paragraph}{Примеры систем замыканий.}{77}{section*.189}%
+\contentsline {paragraph}{Операторы замыкания.}{78}{section*.190}%
+\contentsline {paragraph}{Системы замыканий как полные решётки.}{79}{section*.191}%
+\contentsline {paragraph}{Алгебраические операторы замыкания.}{79}{section*.192}%
+\contentsline {paragraph}{Индуктивные системы замыканий.}{79}{section*.193}%
+\contentsline {paragraph}{Следствие о направленных подсистемах.}{79}{section*.194}%
+\contentsline {paragraph}{Теорема о максимальном элементе.}{80}{section*.195}%
+\contentsline {paragraph}{Связь с алгебрами: системы подалгебр.}{80}{section*.196}%
+\contentsline {paragraph}{Топологические системы замыканий.}{80}{section*.197}%
+\contentsline {paragraph}{Системы конечного характера.}{81}{section*.198}%
+\contentsline {paragraph}{Соответствия Галуа.}{81}{section*.199}%
+\contentsline {paragraph}{Итог пункта.}{81}{section*.200}%
+\contentsline {subsubsection}{\numberline {1.3.7}Булевы решётки}{82}{subsubsection.1.3.7}%
+\contentsline {paragraph}{Терминологическое замечание.}{82}{section*.201}%
+\contentsline {paragraph}{Структуры с дополнениями.}{82}{section*.202}%
+\contentsline {paragraph}{Определение булевой алгебры.}{82}{section*.203}%
+\contentsline {paragraph}{Аксиомы булевой алгебры.}{82}{section*.204}%
+\contentsline {paragraph}{Примеры булевых алгебр.}{83}{section*.205}%
+\contentsline {paragraph}{Законы де Моргана.}{83}{section*.206}%
+\contentsline {paragraph}{Связь с булевыми кольцами.}{84}{section*.207}%
+\contentsline {paragraph}{Полные булевы алгебры.}{84}{section*.208}%
+\contentsline {paragraph}{Нормальные формы.}{84}{section*.209}%
+\contentsline {paragraph}{Идеалы и фильтры.}{85}{section*.210}%
+\contentsline {paragraph}{Ультрафильтры и теорема Стоуна.}{85}{section*.211}%
+\contentsline {paragraph}{Булевы алгебры и логика высказываний.}{85}{section*.212}%
+\contentsline {paragraph}{Булевы алгебры как многообразие.}{86}{section*.213}%
+\contentsline {paragraph}{Итог пункта.}{86}{section*.214}%
+\contentsline {subsubsection}{\numberline {1.3.8}Краткое резюме}{86}{subsubsection.1.3.8}%
