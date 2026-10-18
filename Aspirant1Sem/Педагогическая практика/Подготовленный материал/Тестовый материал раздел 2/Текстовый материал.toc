@@ -1,2 +1,63 @@
 \babel@toc {russian}{}\relax 
 \contentsline {section}{\numberline {1}Раздел 2. Дискретная математика и математическая логика.}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Алгебра логики. Булевы функции, канонические формы задания булевых функций. Понятие полной системы. Критерий полноты Поста. Минимизация булевых функций в классах нормальных форм}{2}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Алгебра логики: высказывания, операции, формулы и равносильности}{2}{subsubsection.1.1.1}%
+\contentsline {paragraph}{Высказывания и их истинностные значения.}{2}{section*.2}%
+\contentsline {paragraph}{Логические операции над высказываниями.}{3}{section*.3}%
+\contentsline {paragraph}{Формулы алгебры логики.}{5}{section*.4}%
+\contentsline {paragraph}{Классификация формул.}{6}{section*.5}%
+\contentsline {paragraph}{Равносильность формул.}{6}{section*.6}%
+\contentsline {paragraph}{Принцип двойственности.}{8}{section*.7}%
+\contentsline {paragraph}{Связь формул с булевыми функциями.}{8}{section*.8}%
+\contentsline {paragraph}{Итог пункта.}{8}{section*.9}%
+\contentsline {subsubsection}{\numberline {1.1.2}Булевы функции}{8}{subsubsection.1.1.2}%
+\contentsline {paragraph}{Понятие булевой функции.}{8}{section*.10}%
+\contentsline {paragraph}{Табличное задание булевой функции.}{9}{section*.11}%
+\contentsline {paragraph}{Число булевых функций от \(n\) переменных.}{10}{section*.12}%
+\contentsline {paragraph}{Равенство булевых функций.}{10}{section*.13}%
+\contentsline {paragraph}{Фиктивные и существенные переменные.}{10}{section*.14}%
+\contentsline {paragraph}{Булевы функции от одного аргумента.}{11}{section*.15}%
+\contentsline {paragraph}{Булевы функции от двух аргументов.}{11}{section*.16}%
+\contentsline {paragraph}{Формулы и суперпозиция.}{12}{section*.17}%
+\contentsline {paragraph}{Теорема о представлении булевых функций формулами.}{12}{section*.18}%
+\contentsline {paragraph}{Пример: мажоритарная функция.}{13}{section*.19}%
+\contentsline {paragraph}{Связь с алгеброй высказываний.}{13}{section*.20}%
+\contentsline {paragraph}{Итог пункта.}{13}{section*.21}%
+\contentsline {subsubsection}{\numberline {1.1.3}Канонические формы задания булевых функций}{13}{subsubsection.1.1.3}%
+\contentsline {paragraph}{Элементарные конъюнкции и дизъюнкции.}{13}{section*.22}%
+\contentsline {paragraph}{ДНФ и КНФ.}{14}{section*.23}%
+\contentsline {paragraph}{Совершенные ДНФ и КНФ.}{14}{section*.24}%
+\contentsline {paragraph}{Существование и единственность СДНФ.}{15}{section*.25}%
+\contentsline {paragraph}{Существование и единственность СКНФ.}{15}{section*.27}%
+\contentsline {paragraph}{Построение СДНФ и СКНФ по таблице истинности.}{16}{section*.29}%
+\contentsline {paragraph}{Пример построения СДНФ и СКНФ.}{16}{section*.30}%
+\contentsline {paragraph}{Построение СДНФ и СКНФ равносильными преобразованиями.}{17}{section*.31}%
+\contentsline {paragraph}{Связь между СДНФ и СКНФ.}{18}{section*.32}%
+\contentsline {paragraph}{Числовая форма записи.}{18}{section*.33}%
+\contentsline {paragraph}{Замечание о несовершенных формах.}{18}{section*.34}%
+\contentsline {paragraph}{Единственность и мощность.}{19}{section*.35}%
+\contentsline {paragraph}{Итог пункта.}{19}{section*.36}%
+\contentsline {subsubsection}{\numberline {1.1.4}Понятие полной системы. Критерий полноты Поста}{19}{subsubsection.1.1.4}%
+\contentsline {paragraph}{Замыкание и полнота системы булевых функций.}{19}{section*.37}%
+\contentsline {paragraph}{Примеры полных систем.}{19}{section*.38}%
+\contentsline {paragraph}{Класс \(P_0\): функции, сохраняющие нуль.}{20}{section*.39}%
+\contentsline {paragraph}{Класс \(P_1\): функции, сохраняющие единицу.}{20}{section*.40}%
+\contentsline {paragraph}{Класс \(L\): линейные функции.}{21}{section*.41}%
+\contentsline {paragraph}{Класс \(S\): самодвойственные функции.}{21}{section*.42}%
+\contentsline {paragraph}{Класс \(M\): монотонные функции.}{21}{section*.43}%
+\contentsline {paragraph}{Критерий полноты Поста.}{22}{section*.44}%
+\contentsline {paragraph}{Свойства классов Поста.}{23}{section*.45}%
+\contentsline {paragraph}{Пример проверки полноты.}{23}{section*.46}%
+\contentsline {paragraph}{Замечание о числе классов.}{23}{section*.47}%
+\contentsline {paragraph}{Итог пункта.}{23}{section*.48}%
+\contentsline {subsubsection}{\numberline {1.1.5}Минимизация булевых функций в классах нормальных форм}{24}{subsubsection.1.1.5}%
+\contentsline {paragraph}{Постановка задачи минимизации.}{24}{section*.49}%
+\contentsline {paragraph}{Импликанты и простые импликанты.}{24}{section*.50}%
+\contentsline {paragraph}{Метод тождественных преобразований.}{25}{section*.51}%
+\contentsline {paragraph}{Метод Квайна.}{26}{section*.52}%
+\contentsline {paragraph}{Карты Карно.}{27}{section*.53}%
+\contentsline {paragraph}{Минимизация в классе КНФ.}{29}{section*.54}%
+\contentsline {paragraph}{Сравнение методов.}{30}{section*.55}%
+\contentsline {paragraph}{Замечание о минимальности.}{30}{section*.56}%
+\contentsline {paragraph}{Итог пункта.}{30}{section*.57}%
+\contentsline {subsubsection}{\numberline {1.1.6}Краткое резюме}{30}{subsubsection.1.1.6}%
