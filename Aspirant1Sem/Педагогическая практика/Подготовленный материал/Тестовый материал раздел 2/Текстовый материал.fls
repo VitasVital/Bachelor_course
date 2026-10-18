@@ -1,0 +1,20 @@
+PWD c:\Users\vitaly.gusev\Desktop\Универ\Bachelor_course\Aspirant1Sem\Педагогическая практика\Подготовленный материал\Тестовый материал раздел 2
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
+INPUT c:\Users\vitaly.gusev\Desktop\Универ\Bachelor_course\Aspirant1Sem\Педагогическая практика\Подготовленный материал\Тестовый материал раздел 2\Текстовый материал.tex
+OUTPUT Текстовый материал.log
+INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT C:\Program Files\MiKTeX\tex\latex\l3backend\l3backend-pdftex.def
+INPUT .\Текстовый материал.aux
+INPUT .\Текстовый материал.aux
+INPUT Текстовый материал.aux
+OUTPUT Текстовый материал.aux
+OUTPUT Текстовый материал.pdf
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\map\pdftex\pdftex.map
+INPUT Текстовый материал.aux
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
