@@ -370,3 +370,54 @@
 \contentsline {paragraph}{Построение таблиц предиктивного анализа.}{135}{section*.340}%
 \contentsline {paragraph}{Восстановление после ошибок в предиктивном анализе.}{136}{section*.341}%
 \contentsline {subsubsection}{\numberline {1.4.8}Краткое резюме}{137}{subsubsection.1.4.8}%
+\contentsline {subsection}{\numberline {1.5}Основы комбинаторного анализа. Метод производящих функций, метод включений и исключений. Примеры применения}{138}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Основные понятия комбинаторики: размещения, перестановки, сочетания}{138}{subsubsection.1.5.1}%
+\contentsline {paragraph}{Постановка комбинаторных задач о размещениях.}{138}{section*.342}%
+\contentsline {paragraph}{Функции и размещения без ограничений.}{138}{section*.343}%
+\contentsline {paragraph}{Инъективные размещения и перестановки.}{139}{section*.344}%
+\contentsline {paragraph}{Упорядоченные размещения по ящикам.}{139}{section*.345}%
+\contentsline {paragraph}{Перестановки: разложение на циклы.}{140}{section*.346}%
+\contentsline {paragraph}{Инверсии и знак перестановки.}{141}{section*.347}%
+\contentsline {paragraph}{Подмножества и биномиальные коэффициенты.}{142}{section*.348}%
+\contentsline {paragraph}{Сочетания с повторениями.}{143}{section*.349}%
+\contentsline {paragraph}{Сводка основных формул.}{144}{section*.350}%
+\contentsline {paragraph}{Итог пункта.}{144}{section*.351}%
+\contentsline {subsubsection}{\numberline {1.5.2}Разбиения множеств и чисел, числа Стирлинга}{145}{subsubsection.1.5.2}%
+\contentsline {paragraph}{Разбиения множества.}{145}{section*.352}%
+\contentsline {paragraph}{Числа Стирлинга второго рода.}{146}{section*.353}%
+\contentsline {paragraph}{Числа Белла.}{147}{section*.354}%
+\contentsline {paragraph}{Связь с сюръективными функциями.}{147}{section*.355}%
+\contentsline {paragraph}{Числа Стирлинга первого рода.}{148}{section*.356}%
+\contentsline {paragraph}{Разбиения чисел.}{149}{section*.357}%
+\contentsline {paragraph}{Алгоритм генерирования разбиений числа.}{150}{section*.358}%
+\contentsline {paragraph}{Итог пункта.}{150}{section*.359}%
+\contentsline {subsubsection}{\numberline {1.5.3}Метод производящих функций}{150}{subsubsection.1.5.3}%
+\contentsline {paragraph}{Определение производящей функции.}{151}{section*.360}%
+\contentsline {paragraph}{Операции над формальными рядами.}{151}{section*.361}%
+\contentsline {paragraph}{Связь с аналитическими функциями.}{152}{section*.362}%
+\contentsline {paragraph}{Простейшие производящие функции.}{152}{section*.363}%
+\contentsline {paragraph}{Комбинаторная интерпретация произведения.}{153}{section*.364}%
+\contentsline {paragraph}{Множества с повторениями и производящие функции.}{153}{section*.365}%
+\contentsline {paragraph}{Доказательство теоремы о сочетаниях с повторениями.}{153}{section*.366}%
+\contentsline {paragraph}{Доказательство тождества Коши.}{154}{section*.367}%
+\contentsline {paragraph}{Разбиения чисел и производящие функции.}{154}{section*.368}%
+\contentsline {paragraph}{Доказательство теоремы 1.21 через производящие функции.}{155}{section*.369}%
+\contentsline {paragraph}{Числа Фибоначчи.}{155}{section*.370}%
+\contentsline {paragraph}{Числа Каталана.}{156}{section*.371}%
+\contentsline {paragraph}{Общий метод решения линейных рекуррентных уравнений.}{157}{section*.372}%
+\contentsline {paragraph}{Экспоненциальные производящие функции.}{158}{section*.373}%
+\contentsline {paragraph}{Пример: число сюръективных функций.}{158}{section*.374}%
+\contentsline {paragraph}{Итог пункта.}{159}{section*.375}%
+\contentsline {subsubsection}{\numberline {1.5.4}Метод включений и исключений}{159}{subsubsection.1.5.4}%
+\contentsline {paragraph}{Постановка задачи.}{159}{section*.376}%
+\contentsline {paragraph}{Формула включений и исключений.}{159}{section*.377}%
+\contentsline {paragraph}{Доказательство (индукция по \(n\)).}{160}{section*.378}%
+\contentsline {paragraph}{Комбинаторный смысл.}{160}{section*.379}%
+\contentsline {paragraph}{Пример: число сюръективных функций.}{160}{section*.380}%
+\contentsline {paragraph}{Числа Стирлинга второго рода.}{161}{section*.381}%
+\contentsline {paragraph}{Пример: беспорядки (derangements).}{161}{section*.382}%
+\contentsline {paragraph}{Пример: подмножества множества с повторениями с ограничениями.}{162}{section*.383}%
+\contentsline {paragraph}{Пример: число простых чисел.}{162}{section*.384}%
+\contentsline {paragraph}{Вычислительные аспекты.}{163}{section*.385}%
+\contentsline {paragraph}{Итог пункта.}{163}{section*.386}%
+\contentsline {subsubsection}{\numberline {1.5.5}Краткое резюме}{163}{subsubsection.1.5.5}%

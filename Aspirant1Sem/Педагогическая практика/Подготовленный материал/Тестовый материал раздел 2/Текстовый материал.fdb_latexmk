@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1792339525.58979 "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал раздел 2/Текстовый материал.tex" "Текстовый материал.pdf" "Текстовый материал" 1792339528.71587 0
+["pdflatex"] 1792340228.1235 "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал раздел 2/Текстовый материал.tex" "Текстовый материал.pdf" "Текстовый материал" 1792340231.35142 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/euler/eufm10.tfm" 1233951852 1040 b84415f97d114011685943ade933dc71 ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/euler/eufm5.tfm" 1233951852 1040 a9d2074f3fa062d4d9046b92e2334d8c ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/euler/eufm7.tfm" 1233951852 1040 82eb6630b094bff824fccca83ff507f9 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1233951854 924 9904cf1d39e9767e7a3622f2a125a565 ""
@@ -12,6 +13,7 @@
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm5.tfm" 1233951854 940 75ac932a52f80982a9f8ea75d03a34cf ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1233951854 940 228d6584342e91276bf566bcf9716b83 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx12.tfm" 1136765053 1324 c910af8c371558dc20f2d7822f66fe64 ""
+  "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx5.tfm" 1136765053 1332 f817c21a1ba54560425663374f1b651a ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx6.tfm" 1136765053 1344 8a0be4fe4d376203000810ad4dc81558 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmbx8.tfm" 1136765053 1332 1fde11373e221473104d6cc5993f046e ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/cm/cmex10.tfm" 1136765053 992 662f679a0b3d2d53c1b94050fdaa3f50 ""
@@ -119,11 +121,11 @@
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/tfm/lh/lh-t2a/latt0800.tfm" 1792318949 1272 2a21550efcb075c108e98819097de5c8 ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/tfm/lh/lh-t2a/latt1200.tfm" 1783236481 1272 bf3bb5cc29880b269c8bcb412a1ac6e2 ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1783231363 13323481 a330ab8b9f97997ee7e5e050de7f2cd1 ""
-  "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал раздел 2/Текстовый материал.tex" 1792339521 665993 80a22e27be0bac22b1261d4c5618e56d ""
-  "Текстовый материал.aux" 1792339528 55238 da0422bcb6182bab4157504b65ae6279 "pdflatex"
-  "Текстовый материал.out" 1792339528 15476 d769dbc2ec2ee592f71d4b952e48190f "pdflatex"
-  "Текстовый материал.tex" 1792339521 665993 80a22e27be0bac22b1261d4c5618e56d ""
-  "Текстовый материал.toc" 1792339528 39755 5c41a9d4b5eba17fcbee9758a6c10c15 "pdflatex"
+  "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал раздел 2/Текстовый материал.tex" 1792340224 755552 f0a0550b9c98182c2f4d20fe7e8fc9ff ""
+  "Текстовый материал.aux" 1792340231 63084 45cabbb6a14b5da8a58d125c39325c51 "pdflatex"
+  "Текстовый материал.out" 1792340231 18133 3231d8260c03b31ff5234be36c7ee4d1 "pdflatex"
+  "Текстовый материал.tex" 1792340224 755552 f0a0550b9c98182c2f4d20fe7e8fc9ff ""
+  "Текстовый материал.toc" 1792340231 45510 4a56bdd4111a926d04b4986ca1525225 "pdflatex"
   (generated)
   "Текстовый материал.aux"
   "Текстовый материал.log"
