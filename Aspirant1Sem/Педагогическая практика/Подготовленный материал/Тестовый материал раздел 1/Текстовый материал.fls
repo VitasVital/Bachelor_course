@@ -1,6 +1,6 @@
-PWD c:\Users\vitaly.gusev\Desktop\Универ\Bachelor_course\Aspirant1Sem\Педагогическая практика\Подготовленный материал\Тестовый материал
+PWD c:\Users\vitaly.gusev\Desktop\Универ\Bachelor_course\Aspirant1Sem\Педагогическая практика\Подготовленный материал\Тестовый материал раздел 1
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\miktex\data\le\pdftex\pdflatex.fmt
-INPUT c:\Users\vitaly.gusev\Desktop\Универ\Bachelor_course\Aspirant1Sem\Педагогическая практика\Подготовленный материал\Тестовый материал\Текстовый материал.tex
+INPUT c:\Users\vitaly.gusev\Desktop\Универ\Bachelor_course\Aspirant1Sem\Педагогическая практика\Подготовленный материал\Тестовый материал раздел 1\Текстовый материал.tex
 OUTPUT Текстовый материал.log
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
@@ -188,6 +188,8 @@ INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\tfm\lh\lh-t2a\labx0600.tf
 INPUT Текстовый материал.aux
 INPUT .\Текстовый материал.out
 INPUT .\Текстовый материал.out
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0600.pk
+INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0600.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0800.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\lh\lh-t2a\dpi600\larm0800.pk
 INPUT C:\Users\vitaly.gusev\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1200.pk

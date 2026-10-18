@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1792314799.04409 "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал/Текстовый материал.tex" "Текстовый материал.pdf" "Текстовый материал" 1792314800.48871 0
+["pdflatex"] 1792317082.50158 "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал раздел 1/Текстовый материал.tex" "Текстовый материал.pdf" "Текстовый материал" 1792317084.04239 0
   "C:/Program Files/MiKTeX/fonts/tfm/jknappen/ec/tcrm1200.tfm" 993062508 1444 95ffe0f19b974d50849790c8225c7ef7 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -93,6 +93,7 @@
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/labx1200.pk" 1783231422 29472 755b0952b28bae8a69f5f0070bfabf19 ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/labx1440.pk" 1783231424 36852 e03400590fdfdcdc1a33075cdc078e39 ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/labx1728.pk" 1783231427 45168 9a15c57bbb43ca66224b6a91b87c0e63 ""
+  "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/larm0600.pk" 1792317082 14008 2177ae08a3af9743bf177b372f578bfc ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/larm0800.pk" 1792314795 18244 950f890ab42a9b2b5c12117868326347 ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/larm1200.pk" 1783231425 27028 e571174dc5ede2fa69150fe40c695931 ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/pk/ljfour/lh/lh-t2a/dpi600/larm2074.pk" 1783231432 50548 3cc5482f944a4cd873935b90bf953ec6 ""
@@ -110,11 +111,11 @@
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/tfm/lh/lh-t2a/larm2074.tfm" 1783231408 3264 c29ba0a7d68c56f5a738fbe91d6d9e9d ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/fonts/tfm/lh/lh-t2a/lati1200.tfm" 1783231419 3512 f3a56cfe95a159371df20f73d1eb107d ""
   "C:/Users/vitaly.gusev/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1783231363 13323481 a330ab8b9f97997ee7e5e050de7f2cd1 ""
-  "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал/Текстовый материал.tex" 1792314761 167618 1b1082e5f8af4c4f8908a34671bcf389 ""
-  "Текстовый материал.aux" 1792314800 2921 0fab7aa60ff2958c22ba4acbaa3a274a "pdflatex"
-  "Текстовый материал.out" 1792314800 5016 c4ee06bfb1a4a8155d43edb4c05c13db "pdflatex"
-  "Текстовый материал.tex" 1792314761 167618 1b1082e5f8af4c4f8908a34671bcf389 ""
-  "Текстовый материал.toc" 1792314800 1965 da646464811236845b70960da8137c16 "pdflatex"
+  "c:/Users/vitaly.gusev/Desktop/Универ/Bachelor_course/Aspirant1Sem/Педагогическая практика/Подготовленный материал/Тестовый материал раздел 1/Текстовый материал.tex" 1792317078 181586 0a159142c825f62e2190907c8d578b32 ""
+  "Текстовый материал.aux" 1792317083 2921 b53b2444f7c413f60903640197356483 "pdflatex"
+  "Текстовый материал.out" 1792317083 5016 c4ee06bfb1a4a8155d43edb4c05c13db "pdflatex"
+  "Текстовый материал.tex" 1792317078 181586 0a159142c825f62e2190907c8d578b32 ""
+  "Текстовый материал.toc" 1792317083 1965 ad6bece78d2cf63e8fa7fc0384cd11eb "pdflatex"
   (generated)
   "Текстовый материал.aux"
   "Текстовый материал.log"
