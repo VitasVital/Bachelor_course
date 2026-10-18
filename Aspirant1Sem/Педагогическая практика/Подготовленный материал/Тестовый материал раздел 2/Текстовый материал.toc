@@ -1,0 +1,2 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Раздел 2. Дискретная математика и математическая логика.}{2}{section.1}%
