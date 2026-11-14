@@ -1,0 +1,111 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {2}Раздел 3. Вычислительные машины, системы и сети. Языки программирования.}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Классификация вычислительных систем по способу организации параллельной обработки}{3}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Понятие параллельной обработки и необходимость классификации}{3}{subsubsection.2.1.1}%
+\contentsline {paragraph}{Ограничения фон-неймановской архитектуры.}{3}{section*.2}%
+\contentsline {paragraph}{Многообразие параллельных систем и задачи классификации.}{3}{section*.3}%
+\contentsline {subsubsection}{\numberline {2.1.2}Уровни параллелизма и гранулярность}{3}{subsubsection.2.1.2}%
+\contentsline {paragraph}{Уровни параллелизма.}{3}{section*.4}%
+\contentsline {paragraph}{Гранулярность параллелизма.}{4}{section*.5}%
+\contentsline {paragraph}{Профиль параллелизма.}{4}{section*.6}%
+\contentsline {subsubsection}{\numberline {2.1.3}Классификация Флинна}{5}{subsubsection.2.1.3}%
+\contentsline {paragraph}{Понятие потока.}{5}{section*.7}%
+\contentsline {paragraph}{SISD.}{5}{section*.8}%
+\contentsline {paragraph}{MISD.}{5}{section*.9}%
+\contentsline {paragraph}{SIMD.}{5}{section*.10}%
+\contentsline {paragraph}{MIMD.}{6}{section*.11}%
+\contentsline {subsubsection}{\numberline {2.1.4}Классификация по способу организации памяти}{6}{subsubsection.2.1.4}%
+\contentsline {paragraph}{Разделяемая и распределённая память.}{6}{section*.12}%
+\contentsline {paragraph}{Различие в интерпретации адреса.}{7}{section*.13}%
+\contentsline {paragraph}{Модели архитектур памяти.}{7}{section*.14}%
+\contentsline {subsubsection}{\numberline {2.1.5}Классификация MIMD-систем}{8}{subsubsection.2.1.5}%
+\contentsline {paragraph}{Общая характеристика.}{8}{section*.15}%
+\contentsline {paragraph}{Симметричные мультипроцессорные системы (SMP).}{8}{section*.16}%
+\contentsline {paragraph}{Системы с неоднородным доступом к памяти (NUMA).}{9}{section*.17}%
+\contentsline {paragraph}{Системы с массовой параллельной обработкой (MPP).}{9}{section*.18}%
+\contentsline {paragraph}{Кластерные вычислительные системы.}{10}{section*.19}%
+\contentsline {paragraph}{Кластеры больших SMP-систем (Constellations).}{10}{section*.20}%
+\contentsline {subsubsection}{\numberline {2.1.6}Классификация по способу управления вычислениями}{11}{subsubsection.2.1.6}%
+\contentsline {paragraph}{Управление последовательностью команд.}{11}{section*.21}%
+\contentsline {paragraph}{Управление от потока данных.}{11}{section*.22}%
+\contentsline {paragraph}{Управление по запросу.}{11}{section*.23}%
+\contentsline {subsubsection}{\numberline {2.1.7}Метрики параллельных вычислений}{12}{subsubsection.2.1.7}%
+\contentsline {paragraph}{Ускорение и эффективность.}{12}{section*.24}%
+\contentsline {paragraph}{Закон Амдала.}{12}{section*.25}%
+\contentsline {paragraph}{Закон Густафсона.}{12}{section*.26}%
+\contentsline {subsubsection}{\numberline {2.1.8}Краткое резюме подраздела}{13}{subsubsection.2.1.8}%
+\contentsline {subsection}{\numberline {2.2}Многопроцессорные и многомашинные комплексы}{13}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Общая характеристика и классификация}{13}{subsubsection.2.2.1}%
+\contentsline {paragraph}{Понятие многопроцессорной и многомашинной системы.}{13}{section*.27}%
+\contentsline {paragraph}{Сильно и слабо связанные системы.}{13}{section*.28}%
+\contentsline {paragraph}{Классификация MIMD-систем.}{14}{section*.29}%
+\contentsline {subsubsection}{\numberline {2.2.2}Симметричные мультипроцессорные системы (SMP)}{14}{subsubsection.2.2.2}%
+\contentsline {paragraph}{Определение и архитектура.}{14}{section*.30}%
+\contentsline {paragraph}{Характеристики и примеры.}{14}{section*.31}%
+\contentsline {paragraph}{Достоинства и недостатки.}{15}{section*.32}%
+\contentsline {subsubsection}{\numberline {2.2.3}Системы с неоднородным доступом к памяти (NUMA)}{15}{subsubsection.2.2.3}%
+\contentsline {paragraph}{Архитектура NUMA.}{15}{section*.33}%
+\contentsline {paragraph}{Когерентность кэшей в NUMA.}{15}{section*.34}%
+\contentsline {paragraph}{Масштабируемость и примеры.}{16}{section*.35}%
+\contentsline {subsubsection}{\numberline {2.2.4}Системы с массовой параллельной обработкой (MPP)}{16}{subsubsection.2.2.4}%
+\contentsline {paragraph}{Назначение и структура.}{16}{section*.36}%
+\contentsline {paragraph}{Управление и особенности.}{16}{section*.37}%
+\contentsline {paragraph}{Преимущества и ограничения.}{17}{section*.38}%
+\contentsline {subsubsection}{\numberline {2.2.5}Многомашинные комплексы и кластеры}{17}{subsubsection.2.2.5}%
+\contentsline {paragraph}{Кластерные вычислительные системы.}{17}{section*.39}%
+\contentsline {paragraph}{Кластеры больших SMP-систем (Constellations).}{18}{section*.40}%
+\contentsline {paragraph}{Многомашинные комплексы.}{18}{section*.41}%
+\contentsline {subsubsection}{\numberline {2.2.6}Сравнительный анализ архитектур}{18}{subsubsection.2.2.6}%
+\contentsline {paragraph}{Сводная таблица.}{18}{section*.42}%
+\contentsline {paragraph}{Области применения.}{19}{section*.43}%
+\contentsline {subsubsection}{\numberline {2.2.7}Краткое резюме подраздела}{19}{subsubsection.2.2.7}%
+\contentsline {subsection}{\numberline {2.3}Вычислительные кластеры}{20}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Определение и назначение кластеров}{20}{subsubsection.2.3.1}%
+\contentsline {paragraph}{Понятие кластера.}{20}{section*.44}%
+\contentsline {paragraph}{Место кластеров в классификации MIMD-систем.}{20}{section*.45}%
+\contentsline {subsubsection}{\numberline {2.3.2}Архитектура кластера}{20}{subsubsection.2.3.2}%
+\contentsline {paragraph}{Узлы кластера.}{20}{section*.46}%
+\contentsline {paragraph}{Сеть и протоколы.}{21}{section*.47}%
+\contentsline {subsubsection}{\numberline {2.3.3}Программное обеспечение кластера}{21}{subsubsection.2.3.3}%
+\contentsline {paragraph}{Кластерное ПО.}{21}{section*.48}%
+\contentsline {paragraph}{Механизм контроля работоспособности.}{22}{section*.49}%
+\contentsline {paragraph}{Подходы к построению кластеров.}{22}{section*.50}%
+\contentsline {subsubsection}{\numberline {2.3.4}Классификация кластеров}{22}{subsubsection.2.3.4}%
+\contentsline {paragraph}{По назначению.}{22}{section*.51}%
+\contentsline {paragraph}{По типу узлов.}{22}{section*.52}%
+\contentsline {subsubsection}{\numberline {2.3.5}Преимущества и недостатки кластеризации}{22}{subsubsection.2.3.5}%
+\contentsline {paragraph}{Преимущества.}{22}{section*.53}%
+\contentsline {paragraph}{Недостатки.}{23}{section*.54}%
+\contentsline {subsubsection}{\numberline {2.3.6}Примеры кластерных систем}{23}{subsubsection.2.3.6}%
+\contentsline {paragraph}{Roadrunner.}{23}{section*.55}%
+\contentsline {paragraph}{Другие примеры.}{23}{section*.56}%
+\contentsline {subsubsection}{\numberline {2.3.7}Сравнение с MPP}{24}{subsubsection.2.3.7}%
+\contentsline {paragraph}{Сходство и различие.}{24}{section*.57}%
+\contentsline {subsubsection}{\numberline {2.3.8}Кластеры больших SMP-систем (Constellations)}{24}{subsubsection.2.3.8}%
+\contentsline {paragraph}{Определение и особенности.}{24}{section*.58}%
+\contentsline {paragraph}{Пример.}{24}{section*.59}%
+\contentsline {subsubsection}{\numberline {2.3.9}Краткое резюме подраздела}{24}{subsubsection.2.3.9}%
+\contentsline {subsection}{\numberline {2.4}Проблемно-ориентированные параллельные структуры}{25}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Общая характеристика}{25}{subsubsection.2.4.1}%
+\contentsline {paragraph}{Назначение и место в классификации.}{25}{section*.60}%
+\contentsline {subsubsection}{\numberline {2.4.2}Матричные вычислительные системы}{25}{subsubsection.2.4.2}%
+\contentsline {paragraph}{Общая структура.}{25}{section*.61}%
+\contentsline {paragraph}{Контроллер массива процессорных элементов.}{25}{section*.62}%
+\contentsline {paragraph}{Структура процессорного элемента.}{26}{section*.63}%
+\contentsline {paragraph}{Маскирование.}{26}{section*.64}%
+\contentsline {paragraph}{Сети взаимосвязей.}{27}{section*.65}%
+\contentsline {paragraph}{Достоинства и недостатки.}{27}{section*.66}%
+\contentsline {subsubsection}{\numberline {2.4.3}Систолические структуры}{27}{subsubsection.2.4.3}%
+\contentsline {paragraph}{Идея систолической обработки.}{27}{section*.67}%
+\contentsline {paragraph}{Процессорный элемент и принцип работы.}{27}{section*.68}%
+\contentsline {paragraph}{Классификация систолических структур.}{28}{section*.69}%
+\contentsline {paragraph}{Пример вычислений.}{28}{section*.70}%
+\contentsline {paragraph}{Достоинства и недостатки.}{28}{section*.71}%
+\contentsline {subsubsection}{\numberline {2.4.4}Нейросети}{29}{subsubsection.2.4.4}%
+\contentsline {paragraph}{Понятие искусственной нейронной сети.}{29}{section*.72}%
+\contentsline {paragraph}{Искусственный нейрон.}{29}{section*.73}%
+\contentsline {paragraph}{Архитектуры нейронных сетей.}{30}{section*.74}%
+\contentsline {paragraph}{Обучение нейронных сетей.}{30}{section*.75}%
+\contentsline {paragraph}{Место нейросетей в классификации параллельных структур.}{31}{section*.76}%
+\contentsline {paragraph}{Применение нейросетей.}{31}{section*.77}%
+\contentsline {subsubsection}{\numberline {2.4.5}Краткое резюме подраздела}{31}{subsubsection.2.4.5}%

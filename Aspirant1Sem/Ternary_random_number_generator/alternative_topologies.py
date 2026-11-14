@@ -7,12 +7,18 @@ from randomness_tests import (
     chi_square_uniform, chi_square_independence, runs_test, autocorrelation,
     entropy, mutual_information, runs_length_distribution
 )
-import matplotlib.pyplot as plt
+from topologies import ALL_TOPOLOGIES
 from paths import OUTPUT_DIR, ensure_output_dir
 ensure_output_dir()
 
 def evaluate_topology(topology, N, num_samples, delay_distr, gate_func, clock_D, output_gate, delay_params=None):
     """Запускает симулятор для заданной топологии и возвращает статистику"""
+    # Сначала проверяем корректность топологии через построение матрицы Q
+    # (бросит ValueError, если суммы столбцов != N)
+    from transition_matrix import build_transition_matrix
+    from topologies import get_connections
+    in1, in2 = get_connections(topology, N)
+    build_transition_matrix(N, gate_func, in1=in1, in2=in2)
     sim = TRNGSimulator(N=N, gate_func=gate_func, delay_distribution=delay_distr,
                         delay_params=delay_params, clock_D=clock_D,
                         record_output=output_gate, topology=topology)
@@ -33,23 +39,24 @@ def evaluate_topology(topology, N, num_samples, delay_distr, gate_func, clock_D,
 
 def compare_topologies():
     """Сравнивает несколько топологий в одинаковых условиях"""
+    from ternary_gate import F1
     params = {
         'N': 3,
         'num_samples': 50000,
         'delay_distr': 'exponential',
-        'gate_func': None,  # будет подставлен F1
+        'gate_func': F1,
         'clock_D': 8,
         'output_gate': 0,
-        'delay_params': {'scale': 1.0}
+        'delay_params': {'scale': 1.0},
     }
-    from ternary_gate import F1
-    params['gate_func'] = F1
-
-    topologies = ['ring', 'ring_omit_output', 'parallel_single']
     results = {}
-    for topo in topologies:
+    for topo in ALL_TOPOLOGIES:
         print(f"Тестирование топологии: {topo}")
-        stats, seq = evaluate_topology(topo, **params)
+        try:
+            stats, seq = evaluate_topology(topo, **params)
+        except ValueError as e:
+            print(f"  [{topo} пропущено] {e}")
+            continue
         results[topo] = stats
         # Сохраним последовательность для дальнейшего анализа
         np.savetxt(OUTPUT_DIR / f"seq_{topo}.txt", seq, fmt='%d')
@@ -57,9 +64,10 @@ def compare_topologies():
     print("\n=== Сравнение топологий ===")
     print("Топология\tp_равн\tp_бигр\tp_серий\tACF(1)\tЭнтропия\tMI1\tMI2\tp_дл_серий")
     for topo, s in results.items():
-        print(f"{topo}\t{s['uniform_p']:.3f}\t{s['bigram_p']:.3f}\t{s['runs_p']:.3f}\t"
-              f"{s['acf1']:.4f}\t{s['entropy']:.3f}\t{s['mutual_info_lag1']:.3f}\t"
-              f"{s['mutual_info_lag2']:.3f}\t{s['runs_len_p']:.3f}")
+        print(f"{topo}\t{s['uniform_p']:.3f}\t{s['bigram_p']:.3f}\t"
+              f"{s['runs_p']:.3f}\t{s['acf1']:.4f}\t{s['entropy']:.3f}\t"
+              f"{s['mutual_info_lag1']:.3f}\t{s['mutual_info_lag2']:.3f}\t"
+              f"{s['runs_len_p']:.3f}")
     return results
 
 if __name__ == "__main__":

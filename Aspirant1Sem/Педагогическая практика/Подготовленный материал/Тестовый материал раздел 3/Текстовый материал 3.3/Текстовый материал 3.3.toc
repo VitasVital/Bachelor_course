@@ -1,0 +1,159 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {3}Раздел 3. Вычислительные машины, системы и сети. Языки программирования.}{3}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Назначение, архитектура и принципы построения информационно-вычислительных сетей (ИВС)}{3}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Понятие и назначение ИВС}{3}{subsubsection.3.1.1}%
+\contentsline {paragraph}{Определение информационно-вычислительной сети.}{3}{section*.2}%
+\contentsline {paragraph}{Основное назначение ИВС.}{3}{section*.3}%
+\contentsline {paragraph}{Основные эффекты от построения ИВС.}{4}{section*.4}%
+\contentsline {subsubsection}{\numberline {3.1.2}Архитектура ИВС}{4}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Понятие архитектуры сети.}{4}{section*.5}%
+\contentsline {paragraph}{Компоненты архитектуры ИВС.}{4}{section*.6}%
+\contentsline {paragraph}{Линии связи и организация передачи данных.}{5}{section*.7}%
+\contentsline {paragraph}{Топология сети.}{5}{section*.8}%
+\contentsline {paragraph}{Методы доступа к среде передачи.}{6}{section*.9}%
+\contentsline {paragraph}{Методы коммутации.}{6}{section*.10}%
+\contentsline {paragraph}{Адресация и маршрутизация.}{6}{section*.11}%
+\contentsline {paragraph}{Сетевое оборудование.}{7}{section*.12}%
+\contentsline {paragraph}{Программное обеспечение ИВС.}{7}{section*.13}%
+\contentsline {paragraph}{Многоуровневая модель OSI.}{7}{section*.14}%
+\contentsline {subsubsection}{\numberline {3.1.3}Принципы построения ИВС}{8}{subsubsection.3.1.3}%
+\contentsline {paragraph}{Основные принципы.}{8}{section*.15}%
+\contentsline {paragraph}{Физическая и логическая структуризация.}{8}{section*.16}%
+\contentsline {paragraph}{Принцип пакетной передачи и коммутации.}{8}{section*.17}%
+\contentsline {paragraph}{Принцип открытых систем.}{9}{section*.18}%
+\contentsline {paragraph}{Принципы надёжности и безопасности.}{9}{section*.19}%
+\contentsline {subsubsection}{\numberline {3.1.4}Краткое резюме подраздела}{9}{subsubsection.3.1.4}%
+\contentsline {subsection}{\numberline {3.2}Локальные и глобальные ИВС, технические и программные средства объединения различных сетей}{9}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Локальные вычислительные сети}{9}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Определение и особенности ЛВС.}{9}{section*.20}%
+\contentsline {paragraph}{Топологии ЛВС.}{10}{section*.21}%
+\contentsline {paragraph}{Технологии и среда передачи ЛВС.}{10}{section*.22}%
+\contentsline {paragraph}{Оборудование ЛВС.}{11}{section*.23}%
+\contentsline {paragraph}{Методы доступа в ЛВС.}{11}{section*.24}%
+\contentsline {subsubsection}{\numberline {3.2.2}Глобальные вычислительные сети}{11}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Определение и особенности ГВС.}{11}{section*.25}%
+\contentsline {paragraph}{Технологии глобальных сетей.}{11}{section*.26}%
+\contentsline {paragraph}{Маршрутизация и адресация в ГВС.}{12}{section*.27}%
+\contentsline {subsubsection}{\numberline {3.2.3}Сравнение ЛВС и ГВС}{12}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Технические средства объединения различных сетей}{12}{subsubsection.3.2.4}%
+\contentsline {paragraph}{Устройства объединения сетей.}{12}{section*.28}%
+\contentsline {paragraph}{Линии связи и кабельная инфраструктура.}{13}{section*.29}%
+\contentsline {paragraph}{Оборудование для связи ЛВС с ГВС.}{13}{section*.30}%
+\contentsline {subsubsection}{\numberline {3.2.5}Программные средства объединения различных сетей}{14}{subsubsection.3.2.5}%
+\contentsline {paragraph}{Протоколы и стеки протоколов.}{14}{section*.31}%
+\contentsline {paragraph}{Сетевые операционные системы и службы.}{14}{section*.32}%
+\contentsline {paragraph}{Маршрутизация, туннелирование и трансляция.}{14}{section*.33}%
+\contentsline {paragraph}{Виртуальные частные сети.}{15}{section*.34}%
+\contentsline {paragraph}{Управление сетью и мониторинг.}{15}{section*.35}%
+\contentsline {subsubsection}{\numberline {3.2.6}Краткое резюме подраздела}{15}{subsubsection.3.2.6}%
+\contentsline {subsection}{\numberline {3.3}Методы и средства передачи данных в ИВС, протоколы передачи данных}{15}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}Методы передачи данных}{15}{subsubsection.3.3.1}%
+\contentsline {paragraph}{Линии связи и их характеристики.}{15}{section*.36}%
+\contentsline {paragraph}{Аналоговая модуляция.}{16}{section*.37}%
+\contentsline {paragraph}{Цифровое кодирование.}{16}{section*.38}%
+\contentsline {paragraph}{Дискретная модуляция аналоговых сигналов.}{16}{section*.39}%
+\contentsline {paragraph}{Мультиплексирование.}{17}{section*.40}%
+\contentsline {paragraph}{Методы коммутации.}{17}{section*.41}%
+\contentsline {paragraph}{Обеспечение достоверности передачи.}{17}{section*.42}%
+\contentsline {paragraph}{Компрессия данных.}{18}{section*.43}%
+\contentsline {subsubsection}{\numberline {3.3.2}Средства передачи данных}{18}{subsubsection.3.3.2}%
+\contentsline {paragraph}{Кабельные системы.}{18}{section*.44}%
+\contentsline {paragraph}{Сетевые адаптеры.}{18}{section*.45}%
+\contentsline {paragraph}{Модемы.}{19}{section*.46}%
+\contentsline {paragraph}{Устройства DSU/CSU и терминальные адаптеры ISDN.}{19}{section*.47}%
+\contentsline {paragraph}{Интерфейсы DTE-DCE.}{19}{section*.48}%
+\contentsline {subsubsection}{\numberline {3.3.3}Протоколы передачи данных}{20}{subsubsection.3.3.3}%
+\contentsline {paragraph}{Понятие протокола и интерфейса.}{20}{section*.49}%
+\contentsline {paragraph}{Многоуровневая модель OSI.}{20}{section*.50}%
+\contentsline {paragraph}{Стек TCP/IP.}{21}{section*.51}%
+\contentsline {paragraph}{Протоколы канального уровня.}{21}{section*.52}%
+\contentsline {paragraph}{Протокол IP.}{22}{section*.53}%
+\contentsline {paragraph}{Протоколы TCP и UDP.}{22}{section*.54}%
+\contentsline {paragraph}{Служебные протоколы и маршрутизация.}{23}{section*.55}%
+\contentsline {paragraph}{Прикладные протоколы.}{23}{section*.56}%
+\contentsline {subsubsection}{\numberline {3.3.4}Краткое резюме подраздела}{24}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Особенности архитектуры локальных сетей (Ethernet, Token Ring, FDDI)}{24}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}Общие принципы построения локальных сетей}{24}{subsubsection.3.4.1}%
+\contentsline {paragraph}{Разделяемая среда и типовые топологии.}{24}{section*.57}%
+\contentsline {paragraph}{Уровни MAC и LLC.}{25}{section*.58}%
+\contentsline {paragraph}{Форматы кадров и адресация.}{25}{section*.59}%
+\contentsline {subsubsection}{\numberline {3.4.2}Технология Ethernet}{25}{subsubsection.3.4.2}%
+\contentsline {paragraph}{История и семейство стандартов.}{25}{section*.60}%
+\contentsline {paragraph}{Метод доступа CSMA/CD.}{25}{section*.61}%
+\contentsline {paragraph}{Время двойного оборота и минимальная длина кадра.}{26}{section*.62}%
+\contentsline {paragraph}{Форматы кадров Ethernet.}{26}{section*.63}%
+\contentsline {paragraph}{Физический уровень Ethernet.}{26}{section*.64}%
+\contentsline {paragraph}{Производительность Ethernet.}{27}{section*.65}%
+\contentsline {subsubsection}{\numberline {3.4.3}Технология Token Ring}{27}{subsubsection.3.4.3}%
+\contentsline {paragraph}{Общая характеристика.}{27}{section*.66}%
+\contentsline {paragraph}{Маркерный метод доступа.}{27}{section*.67}%
+\contentsline {paragraph}{Активный монитор и отказоустойчивость.}{27}{section*.68}%
+\contentsline {paragraph}{Форматы кадров Token Ring.}{28}{section*.69}%
+\contentsline {paragraph}{Физический уровень Token Ring.}{28}{section*.70}%
+\contentsline {subsubsection}{\numberline {3.4.4}Технология FDDI}{28}{subsubsection.3.4.4}%
+\contentsline {paragraph}{Общая характеристика.}{28}{section*.71}%
+\contentsline {paragraph}{Двойное кольцо и отказоустойчивость.}{28}{section*.72}%
+\contentsline {paragraph}{Метод доступа FDDI.}{29}{section*.73}%
+\contentsline {paragraph}{Формат кадра FDDI.}{29}{section*.74}%
+\contentsline {paragraph}{Физический уровень FDDI.}{29}{section*.75}%
+\contentsline {subsubsection}{\numberline {3.4.5}Сравнение архитектур Ethernet, Token Ring и FDDI}{30}{subsubsection.3.4.5}%
+\contentsline {subsubsection}{\numberline {3.4.6}Краткое резюме подраздела}{30}{subsubsection.3.4.6}%
+\contentsline {subsection}{\numberline {3.5}Сеть Internet, доменная организация, семейство протоколов TCP/IP}{30}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Internet как глобальная составная сеть}{31}{subsubsection.3.5.1}%
+\contentsline {paragraph}{Понятие составной сети и межсетевого взаимодействия.}{31}{section*.76}%
+\contentsline {paragraph}{Автономные системы.}{31}{section*.77}%
+\contentsline {paragraph}{Структура Internet.}{31}{section*.78}%
+\contentsline {subsubsection}{\numberline {3.5.2}Доменная организация и система доменных имён}{31}{subsubsection.3.5.2}%
+\contentsline {paragraph}{Символьные имена и проблема уникальности.}{31}{section*.79}%
+\contentsline {paragraph}{Домены верхнего уровня.}{32}{section*.80}%
+\contentsline {paragraph}{Система доменных имён DNS.}{32}{section*.81}%
+\contentsline {paragraph}{Разрешение имён.}{32}{section*.82}%
+\contentsline {subsubsection}{\numberline {3.5.3}Семейство протоколов TCP/IP}{32}{subsubsection.3.5.3}%
+\contentsline {paragraph}{Общая характеристика стека TCP/IP.}{32}{section*.83}%
+\contentsline {paragraph}{Прикладной уровень.}{33}{section*.84}%
+\contentsline {paragraph}{Транспортный уровень.}{33}{section*.85}%
+\contentsline {paragraph}{Уровень межсетевого взаимодействия.}{33}{section*.86}%
+\contentsline {paragraph}{Уровень сетевых интерфейсов.}{34}{section*.87}%
+\contentsline {subsubsection}{\numberline {3.5.4}Протокол IP}{34}{subsubsection.3.5.4}%
+\contentsline {paragraph}{Функции и особенности.}{34}{section*.88}%
+\contentsline {paragraph}{Структура IP-пакета.}{34}{section*.89}%
+\contentsline {paragraph}{IP-адресация.}{34}{section*.90}%
+\contentsline {paragraph}{Фрагментация.}{34}{section*.91}%
+\contentsline {subsubsection}{\numberline {3.5.5}Протоколы TCP и UDP}{35}{subsubsection.3.5.5}%
+\contentsline {paragraph}{Протокол TCP.}{35}{section*.92}%
+\contentsline {paragraph}{Протокол UDP.}{35}{section*.93}%
+\contentsline {paragraph}{Порты и сокеты.}{35}{section*.94}%
+\contentsline {subsubsection}{\numberline {3.5.6}Служебные протоколы и маршрутизация}{36}{subsubsection.3.5.6}%
+\contentsline {paragraph}{Протокол ARP.}{36}{section*.95}%
+\contentsline {paragraph}{Протокол ICMP.}{36}{section*.96}%
+\contentsline {paragraph}{Протоколы маршрутизации.}{36}{section*.97}%
+\contentsline {subsubsection}{\numberline {3.5.7}Прикладные протоколы}{36}{subsubsection.3.5.7}%
+\contentsline {paragraph}{Основные прикладные протоколы.}{36}{section*.98}%
+\contentsline {subsubsection}{\numberline {3.5.8}Краткое резюме подраздела}{37}{subsubsection.3.5.8}%
+\contentsline {subsection}{\numberline {3.6}Информационно-вычислительные сети и распределенная обработка информации}{37}{subsection.3.6}%
+\contentsline {subsubsection}{\numberline {3.6.1}Понятие распределённой вычислительной системы}{37}{subsubsection.3.6.1}%
+\contentsline {paragraph}{Определение распределённой системы.}{37}{section*.99}%
+\contentsline {paragraph}{Мультипроцессорные компьютеры.}{37}{section*.100}%
+\contentsline {paragraph}{Кластеры (многомашинные вычислительные комплексы).}{38}{section*.101}%
+\contentsline {subsubsection}{\numberline {3.6.2}Компьютерная сеть как распределённая система}{39}{subsubsection.3.6.2}%
+\contentsline {paragraph}{Особенности сетей.}{39}{section*.102}%
+\contentsline {paragraph}{Разделение ресурсов и клиент-серверная модель.}{39}{section*.103}%
+\contentsline {paragraph}{Сетевые службы.}{39}{section*.104}%
+\contentsline {subsubsection}{\numberline {3.6.3}Распределённые приложения}{40}{subsubsection.3.6.3}%
+\contentsline {paragraph}{Определение и отличие от локальных приложений.}{40}{section*.105}%
+\contentsline {subsubsection}{\numberline {3.6.4}Репликация данных и удалённые вызовы}{41}{subsubsection.3.6.4}%
+\contentsline {paragraph}{Репликация.}{41}{section*.106}%
+\contentsline {paragraph}{Удалённый вызов процедур.}{41}{section*.107}%
+\contentsline {subsubsection}{\numberline {3.6.5}Прозрачность и именование ресурсов}{41}{subsubsection.3.6.5}%
+\contentsline {paragraph}{Прозрачность доступа.}{41}{section*.108}%
+\contentsline {paragraph}{Именование ресурсов.}{42}{section*.109}%
+\contentsline {paragraph}{Аспекты прозрачности.}{42}{section*.110}%
+\contentsline {subsubsection}{\numberline {3.6.6}Требования к ИВС и качество обслуживания}{42}{subsubsection.3.6.6}%
+\contentsline {paragraph}{Основные требования.}{42}{section*.111}%
+\contentsline {paragraph}{Производительность.}{42}{section*.112}%
+\contentsline {paragraph}{Надёжность и безопасность.}{43}{section*.113}%
+\contentsline {paragraph}{Расширяемость и масштабируемость.}{44}{section*.114}%
+\contentsline {paragraph}{Прозрачность, управляемость и совместимость.}{44}{section*.115}%
+\contentsline {paragraph}{Качество обслуживания.}{45}{section*.116}%
+\contentsline {paragraph}{Типы QoS и механизмы поддержки.}{46}{section*.117}%
+\contentsline {subsubsection}{\numberline {3.6.7}Краткое резюме подраздела}{47}{subsubsection.3.6.7}%

@@ -1,0 +1,113 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {3}Раздел 2. Дискретная математика и математическая логика.}{2}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Основы комбинаторного анализа. Метод производящих функций, метод включений и исключений. Примеры применения}{2}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Основные понятия комбинаторики: размещения, перестановки, сочетания}{2}{subsubsection.3.1.1}%
+\contentsline {paragraph}{Постановка комбинаторных задач о размещениях.}{2}{section*.2}%
+\contentsline {paragraph}{Функции и размещения без ограничений.}{2}{section*.3}%
+\contentsline {paragraph}{Инъективные размещения и перестановки.}{3}{section*.4}%
+\contentsline {paragraph}{Упорядоченные размещения по ящикам.}{3}{section*.5}%
+\contentsline {paragraph}{Перестановки: разложение на циклы.}{4}{section*.6}%
+\contentsline {paragraph}{Инверсии и знак перестановки.}{5}{section*.7}%
+\contentsline {paragraph}{Подмножества и биномиальные коэффициенты.}{6}{section*.8}%
+\contentsline {paragraph}{Сочетания с повторениями.}{7}{section*.9}%
+\contentsline {paragraph}{Сводка основных формул.}{8}{section*.10}%
+\contentsline {paragraph}{Итог пункта.}{8}{section*.11}%
+\contentsline {subsubsection}{\numberline {3.1.2}Разбиения множеств и чисел, числа Стирлинга}{9}{subsubsection.3.1.2}%
+\contentsline {paragraph}{Разбиения множества.}{9}{section*.12}%
+\contentsline {paragraph}{Числа Стирлинга второго рода.}{10}{section*.13}%
+\contentsline {paragraph}{Числа Белла.}{11}{section*.14}%
+\contentsline {paragraph}{Связь с сюръективными функциями.}{11}{section*.15}%
+\contentsline {paragraph}{Числа Стирлинга первого рода.}{12}{section*.16}%
+\contentsline {paragraph}{Разбиения чисел.}{13}{section*.17}%
+\contentsline {paragraph}{Алгоритм генерирования разбиений числа.}{14}{section*.18}%
+\contentsline {paragraph}{Итог пункта.}{14}{section*.19}%
+\contentsline {subsubsection}{\numberline {3.1.3}Метод производящих функций}{14}{subsubsection.3.1.3}%
+\contentsline {paragraph}{Определение производящей функции.}{15}{section*.20}%
+\contentsline {paragraph}{Операции над формальными рядами.}{15}{section*.21}%
+\contentsline {paragraph}{Связь с аналитическими функциями.}{16}{section*.22}%
+\contentsline {paragraph}{Простейшие производящие функции.}{16}{section*.23}%
+\contentsline {paragraph}{Комбинаторная интерпретация произведения.}{17}{section*.24}%
+\contentsline {paragraph}{Множества с повторениями и производящие функции.}{17}{section*.25}%
+\contentsline {paragraph}{Доказательство теоремы о сочетаниях с повторениями.}{17}{section*.26}%
+\contentsline {paragraph}{Доказательство тождества Коши.}{18}{section*.27}%
+\contentsline {paragraph}{Разбиения чисел и производящие функции.}{18}{section*.28}%
+\contentsline {paragraph}{Доказательство теоремы 1.21 через производящие функции.}{19}{section*.29}%
+\contentsline {paragraph}{Числа Фибоначчи.}{19}{section*.30}%
+\contentsline {paragraph}{Числа Каталана.}{20}{section*.31}%
+\contentsline {paragraph}{Общий метод решения линейных рекуррентных уравнений.}{21}{section*.32}%
+\contentsline {paragraph}{Экспоненциальные производящие функции.}{22}{section*.33}%
+\contentsline {paragraph}{Пример: число сюръективных функций.}{22}{section*.34}%
+\contentsline {paragraph}{Итог пункта.}{23}{section*.35}%
+\contentsline {subsubsection}{\numberline {3.1.4}Метод включений и исключений}{23}{subsubsection.3.1.4}%
+\contentsline {paragraph}{Постановка задачи.}{23}{section*.36}%
+\contentsline {paragraph}{Формула включений и исключений.}{23}{section*.37}%
+\contentsline {paragraph}{Доказательство (индукция по \(n\)).}{24}{section*.38}%
+\contentsline {paragraph}{Комбинаторный смысл.}{24}{section*.39}%
+\contentsline {paragraph}{Пример: число сюръективных функций.}{24}{section*.40}%
+\contentsline {paragraph}{Числа Стирлинга второго рода.}{25}{section*.41}%
+\contentsline {paragraph}{Пример: беспорядки (derangements).}{25}{section*.42}%
+\contentsline {paragraph}{Пример: подмножества множества с повторениями с ограничениями.}{26}{section*.43}%
+\contentsline {paragraph}{Пример: число простых чисел.}{26}{section*.44}%
+\contentsline {paragraph}{Вычислительные аспекты.}{27}{section*.45}%
+\contentsline {paragraph}{Итог пункта.}{27}{section*.46}%
+\contentsline {subsubsection}{\numberline {3.1.5}Краткое резюме}{27}{subsubsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.2}Коды с исправлением ошибок. Алфавитное кодирование. Методы сжатия информации}{27}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Алфавитное кодирование и взаимная однозначность}{27}{subsubsection.3.2.1}%
+\contentsline {paragraph}{Алфавиты, слова и кодирование.}{27}{section*.47}%
+\contentsline {paragraph}{Алфавитное (побуквенное) кодирование.}{28}{section*.48}%
+\contentsline {paragraph}{Примеры.}{29}{section*.49}%
+\contentsline {paragraph}{Неравенство Макмиллана.}{29}{section*.50}%
+\contentsline {paragraph}{Проблема взаимной однозначности.}{30}{section*.51}%
+\contentsline {paragraph}{Нетривиальные разложения.}{30}{section*.52}%
+\contentsline {paragraph}{Теорема Маркова.}{30}{section*.53}%
+\contentsline {paragraph}{Алгоритм построения графа \(G_\Sigma \).}{30}{section*.54}%
+\contentsline {paragraph}{Пример 5.}{31}{section*.55}%
+\contentsline {paragraph}{Пример 6.}{32}{section*.56}%
+\contentsline {paragraph}{Пример 7.}{32}{section*.57}%
+\contentsline {paragraph}{Итог.}{33}{section*.58}%
+\contentsline {subsubsection}{\numberline {3.2.2}Префиксные коды и их построение}{33}{subsubsection.3.2.2}%
+\contentsline {paragraph}{Определение префиксного кода.}{33}{section*.59}%
+\contentsline {paragraph}{Связь префиксности и разделимости.}{34}{section*.60}%
+\contentsline {paragraph}{Представление префиксного кода с помощью дерева.}{34}{section*.61}%
+\contentsline {paragraph}{Пример 1.}{34}{section*.62}%
+\contentsline {paragraph}{Построение префиксного кода по набору длин.}{35}{section*.63}%
+\contentsline {paragraph}{Пример 3.}{36}{section*.64}%
+\contentsline {paragraph}{Пример 4.}{36}{section*.65}%
+\contentsline {paragraph}{Алгоритм Шеннона построения префиксного кода.}{37}{section*.66}%
+\contentsline {paragraph}{Пример 5.}{37}{section*.67}%
+\contentsline {paragraph}{Замечание о выборе алгоритма.}{38}{section*.68}%
+\contentsline {paragraph}{Итог.}{38}{section*.69}%
+\contentsline {subsubsection}{\numberline {3.2.3}Оптимальное кодирование (сжатие информации)}{38}{subsubsection.3.2.3}%
+\contentsline {paragraph}{Постановка задачи сжатия.}{38}{section*.70}%
+\contentsline {paragraph}{Стоимость кодирования.}{39}{section*.71}%
+\contentsline {paragraph}{Свойства оптимальных кодов.}{39}{section*.72}%
+\contentsline {paragraph}{Пример 1.}{39}{section*.73}%
+\contentsline {paragraph}{Алгоритм Фано.}{40}{section*.74}%
+\contentsline {paragraph}{Алгоритм Шеннона.}{40}{section*.75}%
+\contentsline {paragraph}{Алгоритм Хаффмана.}{41}{section*.76}%
+\contentsline {paragraph}{Оптимальность кода Хаффмана.}{41}{section*.77}%
+\contentsline {paragraph}{Пример 5.}{42}{section*.78}%
+\contentsline {paragraph}{Сравнение методов.}{42}{section*.79}%
+\contentsline {paragraph}{Блочное кодирование.}{42}{section*.80}%
+\contentsline {paragraph}{Итог.}{42}{section*.81}%
+\contentsline {subsubsection}{\numberline {3.2.4}Помехоустойчивое кодирование}{42}{subsubsection.3.2.4}%
+\contentsline {paragraph}{Назначение помехоустойчивого кодирования.}{43}{section*.82}%
+\contentsline {paragraph}{Классификация помехоустойчивых кодов.}{43}{section*.83}%
+\contentsline {paragraph}{Параметры помехоустойчивого кодирования.}{43}{section*.84}%
+\contentsline {paragraph}{Простой бит чётности.}{44}{section*.85}%
+\contentsline {paragraph}{Прямоугольный код.}{44}{section*.86}%
+\contentsline {paragraph}{Кодовое расстояние.}{44}{section*.87}%
+\contentsline {paragraph}{Пример 1.}{45}{section*.88}%
+\contentsline {paragraph}{Код Хэмминга.}{45}{section*.89}%
+\contentsline {paragraph}{Пример 3.}{46}{section*.90}%
+\contentsline {paragraph}{Пример 4.}{46}{section*.91}%
+\contentsline {paragraph}{Пример 5.}{46}{section*.92}%
+\contentsline {paragraph}{Линейно блочные коды.}{46}{section*.93}%
+\contentsline {paragraph}{Способы задания линейных кодов.}{46}{section*.94}%
+\contentsline {paragraph}{Синдром ошибки.}{47}{section*.95}%
+\contentsline {paragraph}{Пример 13.}{48}{section*.96}%
+\contentsline {paragraph}{Пример 14.}{48}{section*.97}%
+\contentsline {paragraph}{Циклические коды (кратко).}{48}{section*.98}%
+\contentsline {paragraph}{Пример 20.}{49}{section*.99}%
+\contentsline {paragraph}{Итог.}{49}{section*.100}%
+\contentsline {subsubsection}{\numberline {3.2.5}Краткое резюме}{49}{subsubsection.3.2.5}%

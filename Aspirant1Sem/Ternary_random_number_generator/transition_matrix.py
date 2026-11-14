@@ -2,21 +2,26 @@
 # Построение матрицы переходов Q и вычисление стационарного распределения
 
 import numpy as np
-from scipy.linalg import eig, lstsq, expm
-from typing import Tuple, List, Callable
-from state_manager import generate_all_states, exclude_homogeneous_states, build_state_mapping
+from scipy.linalg import expm
+from typing import Callable
+from state_manager import (generate_all_states, exclude_homogeneous_states,
+                           build_state_mapping)
 
-def build_transition_matrix(N: int, gate_func: Callable[[int, int], int]):
+
+def build_transition_matrix(N: int, gate_func: Callable[[int, int], int],
+                            in1=None, in2=None):
     """
-    Строит матрицу Q (размер M' x M'), где M' = 3^N - 3.
-    Q[i,j] = количество способов перейти из состояния j в состояние i за один шаг.
-    Возвращает Q, список состояний (исключая однородные), и маппинг состояние->индекс.
+    Строит матрицу Q (размер M' x M', где M' = 3^N - 3 при N > 1).
+
+    Если in1/in2 не заданы — используется кольцевая топология:
+    in1[k] = k, in2[k] = (k-1) mod N.
     """
+    if in1 is None or in2 is None:
+        in1 = list(range(N))
+        in2 = [(k - 1) % N for k in range(N)]
+
     all_states = generate_all_states(N)
-    if N == 1:
-        states = all_states
-    else:
-        states = exclude_homogeneous_states(all_states)
+    states = all_states if N == 1 else exclude_homogeneous_states(all_states)
     M = len(states)
     state_to_idx = build_state_mapping(states)
 
@@ -26,20 +31,23 @@ def build_transition_matrix(N: int, gate_func: Callable[[int, int], int]):
         # Пробуем переключить каждый из N вентилей
         for k in range(N):
             # Входы вентиля k: собственный выход state[k] и выход предыдущего вентиля (k-1 mod N)
-            a = state[k]
-            b = state[(k - 1) % N]
+            a = state[in1[k]]
+            b = state[in2[k]]
             new_out = gate_func(a, b)
             if new_out == state[k]:
-                # По условию (2) из статьи это не должно происходить, но оставим проверку
+                # Элемент k не меняет выход — это тоже самопереход.
+                Q[j_idx, j_idx] += 1
                 continue
-            # Формируем новое состояние
             new_state_list = list(state)
             new_state_list[k] = new_out
             new_state = tuple(new_state_list)
             if new_state in state_to_idx:
-                i_idx = state_to_idx[new_state]
-                Q[i_idx, j_idx] += 1
-            # Если new_state оказался однородным (исключён), то переход в него невозможен
+                Q[state_to_idx[new_state], j_idx] += 1
+            else:
+                # Целевое состояние однородное и исключено из пространства.
+                # Физически элемент «пытается» переключиться, но запрещённое
+                # состояние недостижимо → он остаётся на месте (самопереход).
+                Q[j_idx, j_idx] += 1
     # Проверка: сумма элементов каждого столбца должна быть равна N
     col_sums = Q.sum(axis=0)
     if not np.allclose(col_sums, N):
@@ -76,8 +84,8 @@ def compute_convergence_rate(Q: np.ndarray, N: int) -> float:
     mask = np.abs(eigvals - N) > 1e-6
     if not np.any(mask):
         return -np.inf
-    V = np.max(eigvals_real[mask]) - N
-    return V
+    return np.max(eigvals_real[mask]) - N
+
 
 def compute_delta(Q: np.ndarray, N: int, D: float) -> float:
     """
@@ -91,5 +99,4 @@ def compute_delta(Q: np.ndarray, N: int, D: float) -> float:
     p = stationary_distribution(Q, N)
     # Стационарная матрица: каждый столбец = p
     Stab = np.tile(p, (M, 1)).T  # размер M x M, столбцы одинаковые
-    delta = np.max(np.abs(Stab - Astab))
-    return delta
+    return np.max(np.abs(Stab - Astab))

@@ -3,7 +3,6 @@
 
 from itertools import product
 from typing import List, Tuple, Dict
-import numpy as np
 
 TRIT_VALUES = (-1, 0, 1)
 

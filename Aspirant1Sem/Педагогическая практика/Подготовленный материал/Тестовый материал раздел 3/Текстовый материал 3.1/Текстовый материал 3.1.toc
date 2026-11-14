@@ -1,0 +1,199 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Раздел 3. Вычислительные машины, системы и сети. Языки программирования.}{3}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Архитектура современных компьютеров. Организация памяти и архитектура процессора современных вычислительных машин}{3}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Понятия архитектуры и организации вычислительной машины}{3}{subsubsection.1.1.1}%
+\contentsline {paragraph}{Архитектура и организация.}{3}{section*.2}%
+\contentsline {paragraph}{Уровни детализации структуры ВМ.}{3}{section*.3}%
+\contentsline {paragraph}{Функциональная схема фон-неймановской ВМ.}{3}{section*.4}%
+\contentsline {subsubsection}{\numberline {1.1.2}Фон-неймановская архитектура и принципы построения}{4}{subsubsection.1.1.2}%
+\contentsline {paragraph}{Принципы фон Неймана.}{4}{section*.5}%
+\contentsline {paragraph}{Структуры вычислительных машин.}{4}{section*.6}%
+\contentsline {paragraph}{Типы структур вычислительных систем.}{5}{section*.7}%
+\contentsline {subsubsection}{\numberline {1.1.3}Архитектура системы команд}{5}{subsubsection.1.1.3}%
+\contentsline {paragraph}{Понятие архитектуры системы команд.}{5}{section*.8}%
+\contentsline {paragraph}{Классификация АСК по составу и сложности команд.}{5}{section*.9}%
+\contentsline {paragraph}{Классификация АСК по месту хранения операндов.}{6}{section*.10}%
+\contentsline {paragraph}{Типы и форматы операндов.}{7}{section*.11}%
+\contentsline {paragraph}{Типы команд.}{8}{section*.12}%
+\contentsline {paragraph}{Форматы команд.}{8}{section*.13}%
+\contentsline {paragraph}{Способы адресации операндов.}{9}{section*.14}%
+\contentsline {subsubsection}{\numberline {1.1.4}Организация памяти}{9}{subsubsection.1.1.4}%
+\contentsline {paragraph}{Иерархия памяти.}{9}{section*.15}%
+\contentsline {paragraph}{Основная память.}{10}{section*.16}%
+\contentsline {paragraph}{Кэш-память.}{11}{section*.17}%
+\contentsline {paragraph}{Виртуальная память.}{12}{section*.18}%
+\contentsline {subsubsection}{\numberline {1.1.5}Архитектура процессора}{13}{subsubsection.1.1.5}%
+\contentsline {paragraph}{Конвейеризация вычислений.}{13}{section*.19}%
+\contentsline {paragraph}{Конвейер команд.}{13}{section*.20}%
+\contentsline {paragraph}{Суперскалярная обработка и параллельное выполнение независимых команд.}{13}{section*.21}%
+\contentsline {paragraph}{Арифметический конвейер и векторные команды.}{14}{section*.22}%
+\contentsline {paragraph}{Многоядерные процессоры.}{14}{section*.23}%
+\contentsline {paragraph}{Краткое резюме подраздела.}{15}{section*.24}%
+\contentsline {subsection}{\numberline {1.2}Страничная и сегментная организация виртуальной памяти}{15}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Понятие виртуальной памяти}{15}{subsubsection.1.2.1}%
+\contentsline {paragraph}{Назначение виртуальной памяти.}{15}{section*.25}%
+\contentsline {subsubsection}{\numberline {1.2.2}Страничная организация памяти}{16}{subsubsection.1.2.2}%
+\contentsline {paragraph}{Разбиение на страницы.}{16}{section*.26}%
+\contentsline {paragraph}{Страничная таблица.}{17}{section*.27}%
+\contentsline {paragraph}{Буфер быстрого преобразования адреса (TLB).}{18}{section*.28}%
+\contentsline {paragraph}{Многоуровневые и инвертированные страничные таблицы.}{19}{section*.29}%
+\contentsline {paragraph}{Алгоритмы замещения страниц.}{19}{section*.30}%
+\contentsline {paragraph}{Защита памяти.}{20}{section*.31}%
+\contentsline {subsubsection}{\numberline {1.2.3}Сегментная организация памяти}{20}{subsubsection.1.2.3}%
+\contentsline {paragraph}{Понятие сегмента.}{20}{section*.32}%
+\contentsline {paragraph}{Достоинства и недостатки сегментной организации.}{21}{section*.33}%
+\contentsline {subsubsection}{\numberline {1.2.4}Сегментно-страничная организация памяти}{21}{subsubsection.1.2.4}%
+\contentsline {paragraph}{Принцип построения.}{21}{section*.34}%
+\contentsline {paragraph}{Защита памяти в сегментно-страничной организации.}{22}{section*.35}%
+\contentsline {subsubsection}{\numberline {1.2.5}Краткое резюме подраздела}{22}{subsubsection.1.2.5}%
+\contentsline {subsection}{\numberline {1.3}Кэш-память}{22}{subsection.1.3}%
+\contentsline {subsubsection}{\numberline {1.3.1}Назначение и общая структура кэш-памяти}{22}{subsubsection.1.3.1}%
+\contentsline {paragraph}{Причины введения кэш-памяти.}{22}{section*.36}%
+\contentsline {paragraph}{Структура системы с кэш-памятью.}{23}{section*.37}%
+\contentsline {paragraph}{Эффективность кэш-памяти.}{23}{section*.38}%
+\contentsline {subsubsection}{\numberline {1.3.2}Ёмкость кэш-памяти и размер блока}{24}{subsubsection.1.3.2}%
+\contentsline {paragraph}{Выбор ёмкости.}{24}{section*.39}%
+\contentsline {paragraph}{Размер блока.}{24}{section*.40}%
+\contentsline {subsubsection}{\numberline {1.3.3}Способы отображения оперативной памяти на кэш-память}{24}{subsubsection.1.3.3}%
+\contentsline {paragraph}{Постановка задачи отображения.}{24}{section*.41}%
+\contentsline {paragraph}{Прямое отображение.}{25}{section*.42}%
+\contentsline {paragraph}{Полностью ассоциативное отображение.}{25}{section*.43}%
+\contentsline {paragraph}{Частично-ассоциативное отображение.}{26}{section*.44}%
+\contentsline {subsubsection}{\numberline {1.3.4}Алгоритмы замещения информации в заполненной кэш-памяти}{26}{subsubsection.1.3.4}%
+\contentsline {paragraph}{Необходимость замещения.}{26}{section*.45}%
+\contentsline {paragraph}{Алгоритм LRU (Least Recently Used).}{27}{section*.46}%
+\contentsline {paragraph}{Алгоритм FIFO (First In First Out).}{27}{section*.47}%
+\contentsline {paragraph}{Алгоритм LFU (Least Frequently Used).}{27}{section*.48}%
+\contentsline {paragraph}{Случайный выбор.}{27}{section*.49}%
+\contentsline {subsubsection}{\numberline {1.3.5}Алгоритмы согласования содержимого кэш-памяти и основной памяти}{28}{subsubsection.1.3.5}%
+\contentsline {paragraph}{Проблема согласования.}{28}{section*.50}%
+\contentsline {paragraph}{Метод сквозной записи.}{28}{section*.51}%
+\contentsline {paragraph}{Метод обратной записи.}{28}{section*.52}%
+\contentsline {paragraph}{Согласование при вводе из устройства ввода/вывода.}{29}{section*.53}%
+\contentsline {subsubsection}{\numberline {1.3.6}Смешанная и разделённая кэш-память}{29}{subsubsection.1.3.6}%
+\contentsline {paragraph}{Смешанная кэш-память.}{29}{section*.54}%
+\contentsline {paragraph}{Разделённая кэш-память.}{29}{section*.55}%
+\contentsline {subsubsection}{\numberline {1.3.7}Одноуровневая и многоуровневая кэш-память}{30}{subsubsection.1.3.7}%
+\contentsline {paragraph}{Многоуровневая организация.}{30}{section*.56}%
+\contentsline {paragraph}{Инклюзивная и эксклюзивная иерархия.}{31}{section*.57}%
+\contentsline {subsubsection}{\numberline {1.3.8}Когерентность кэш-памяти в многопроцессорных системах}{31}{subsubsection.1.3.8}%
+\contentsline {paragraph}{Проблема когерентности.}{31}{section*.58}%
+\contentsline {paragraph}{Аппаратные протоколы когерентности.}{32}{section*.59}%
+\contentsline {paragraph}{Протоколы наблюдения.}{32}{section*.60}%
+\contentsline {paragraph}{Протокол MESI.}{33}{section*.61}%
+\contentsline {paragraph}{Протоколы на основе справочника.}{33}{section*.62}%
+\contentsline {subsubsection}{\numberline {1.3.9}Краткое резюме подраздела}{34}{subsubsection.1.3.9}%
+\contentsline {subsection}{\numberline {1.4}Командный и арифметический конвейеры, параллельное выполнение независимых команд, векторные команды}{34}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Командный конвейер}{34}{subsubsection.1.4.1}%
+\contentsline {paragraph}{Идея конвейеризации вычислений.}{34}{section*.63}%
+\contentsline {paragraph}{Структура конвейера команд.}{34}{section*.64}%
+\contentsline {paragraph}{Конфликты в конвейере команд.}{35}{section*.65}%
+\contentsline {paragraph}{Структурный риск.}{35}{section*.66}%
+\contentsline {paragraph}{Риск по данным.}{36}{section*.67}%
+\contentsline {paragraph}{Риск по управлению и предсказание переходов.}{37}{section*.68}%
+\contentsline {subsubsection}{\numberline {1.4.2}Арифметический конвейер}{39}{subsubsection.1.4.2}%
+\contentsline {paragraph}{Принцип построения.}{39}{section*.69}%
+\contentsline {subsubsection}{\numberline {1.4.3}Параллельное выполнение независимых команд}{39}{subsubsection.1.4.3}%
+\contentsline {paragraph}{Суперскалярная обработка.}{39}{section*.70}%
+\contentsline {paragraph}{Стратегии выдачи и завершения команд.}{39}{section*.71}%
+\contentsline {paragraph}{Переименование регистров.}{40}{section*.72}%
+\contentsline {paragraph}{Переупорядочивание команд.}{40}{section*.73}%
+\contentsline {paragraph}{Гиперпотоковая обработка.}{41}{section*.74}%
+\contentsline {subsubsection}{\numberline {1.4.4}Векторные команды}{41}{subsubsection.1.4.4}%
+\contentsline {paragraph}{Понятие векторной обработки.}{41}{section*.75}%
+\contentsline {paragraph}{Архитектуры «память-память» и «регистр-регистр».}{41}{section*.76}%
+\contentsline {paragraph}{Регистры управления векторными операциями.}{42}{section*.77}%
+\contentsline {paragraph}{SIMD-команды в микропроцессорах.}{42}{section*.78}%
+\contentsline {paragraph}{Зацепление векторов.}{43}{section*.79}%
+\contentsline {subsubsection}{\numberline {1.4.5}Краткое резюме подраздела}{43}{subsubsection.1.4.5}%
+\contentsline {subsection}{\numberline {1.5}Специализированные процессоры}{43}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Общая характеристика специализированных процессоров}{43}{subsubsection.1.5.1}%
+\contentsline {paragraph}{Назначение и место в архитектуре ВМ.}{43}{section*.80}%
+\contentsline {paragraph}{Классификация по уровню параллелизма.}{44}{section*.81}%
+\contentsline {subsubsection}{\numberline {1.5.2}Матричные процессоры}{44}{subsubsection.1.5.2}%
+\contentsline {paragraph}{Общая структура.}{44}{section*.82}%
+\contentsline {paragraph}{Структура процессорного элемента.}{44}{section*.83}%
+\contentsline {paragraph}{Маскирование.}{44}{section*.84}%
+\contentsline {paragraph}{Сети взаимосвязей.}{45}{section*.85}%
+\contentsline {paragraph}{Достоинства и недостатки.}{45}{section*.86}%
+\contentsline {subsubsection}{\numberline {1.5.3}Ассоциативные процессоры}{45}{subsubsection.1.5.3}%
+\contentsline {paragraph}{Принцип ассоциативной обработки.}{45}{section*.87}%
+\contentsline {paragraph}{Структура ассоциативного процессора.}{45}{section*.88}%
+\contentsline {paragraph}{Классификация ассоциативных процессоров.}{46}{section*.89}%
+\contentsline {paragraph}{Ассоциативные вычислительные системы.}{46}{section*.90}%
+\contentsline {subsubsection}{\numberline {1.5.4}Систолические структуры}{46}{subsubsection.1.5.4}%
+\contentsline {paragraph}{Идея систолической обработки.}{46}{section*.91}%
+\contentsline {paragraph}{Процессорный элемент и принцип работы.}{47}{section*.92}%
+\contentsline {paragraph}{Классификация систолических структур.}{47}{section*.93}%
+\contentsline {paragraph}{Пример вычислений.}{48}{section*.94}%
+\contentsline {paragraph}{Достоинства и недостатки.}{48}{section*.95}%
+\contentsline {subsubsection}{\numberline {1.5.5}Процессоры и каналы ввода/вывода}{48}{subsubsection.1.5.5}%
+\contentsline {paragraph}{Назначение.}{48}{section*.96}%
+\contentsline {paragraph}{Канальная программа и управляющие слова канала.}{49}{section*.97}%
+\contentsline {paragraph}{Структура ВМ с канальной системой ввода/вывода.}{49}{section*.98}%
+\contentsline {paragraph}{Режимы работы канала.}{49}{section*.99}%
+\contentsline {paragraph}{Канальная подсистема.}{50}{section*.100}%
+\contentsline {subsubsection}{\numberline {1.5.6}Краткое резюме подраздела}{50}{subsubsection.1.5.6}%
+\contentsline {subsection}{\numberline {1.6}Машины, обеспечивающие выполнение вычислений, управляемых потоком данных}{51}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Механизмы управления вычислениями}{51}{subsubsection.1.6.1}%
+\contentsline {paragraph}{Традиционное управление последовательностью команд.}{51}{section*.101}%
+\contentsline {subsubsection}{\numberline {1.6.2}Вычислительная модель потоковой обработки}{51}{subsubsection.1.6.2}%
+\contentsline {paragraph}{Граф потоков данных.}{51}{section*.102}%
+\contentsline {paragraph}{Токены и движение данных.}{52}{section*.103}%
+\contentsline {paragraph}{Примитивы узлов потокового графа.}{52}{section*.104}%
+\contentsline {subsubsection}{\numberline {1.6.3}Архитектура потоковых вычислительных систем}{53}{subsubsection.1.6.3}%
+\contentsline {paragraph}{Представление программы в памяти.}{53}{section*.105}%
+\contentsline {subsubsection}{\numberline {1.6.4}Статические потоковые вычислительные системы}{53}{subsubsection.1.6.4}%
+\contentsline {paragraph}{Правило активации и структура токена.}{53}{section*.106}%
+\contentsline {paragraph}{Структура процессорного элемента.}{54}{section*.107}%
+\contentsline {paragraph}{Достоинства и недостатки.}{54}{section*.108}%
+\contentsline {subsubsection}{\numberline {1.6.5}Динамические потоковые вычислительные системы}{54}{subsubsection.1.6.5}%
+\contentsline {paragraph}{Архитектура с помеченными токенами.}{54}{section*.109}%
+\contentsline {paragraph}{Архитектура с явно адресуемыми токенами.}{56}{section*.110}%
+\contentsline {subsubsection}{\numberline {1.6.6}Мультипотоковые вычислительные системы}{57}{subsubsection.1.6.6}%
+\contentsline {paragraph}{Идея мультипотоковой обработки.}{57}{section*.111}%
+\contentsline {paragraph}{Формы мультипотоковой обработки.}{57}{section*.112}%
+\contentsline {subsubsection}{\numberline {1.6.7}Вычислительные системы с управлением по запросу (редукционные ВС)}{58}{subsubsection.1.6.7}%
+\contentsline {paragraph}{Идея управления по запросу.}{58}{section*.113}%
+\contentsline {paragraph}{Строчная и графовая модели редукции.}{58}{section*.114}%
+\contentsline {subsubsection}{\numberline {1.6.8}Сравнение потоковых и редукционных вычислений с фон-неймановской моделью}{59}{subsubsection.1.6.8}%
+\contentsline {paragraph}{Преимущества и недостатки.}{59}{section*.115}%
+\contentsline {subsubsection}{\numberline {1.6.9}Краткое резюме подраздела}{60}{subsubsection.1.6.9}%
+\contentsline {subsection}{\numberline {1.7}Организация ввода-вывода, каналы и процессоры ввода-вывода, устройства сопряжения с объектами}{60}{subsection.1.7}%
+\contentsline {subsubsection}{\numberline {1.7.1}Система ввода/вывода и её место в архитектуре ВМ}{60}{subsubsection.1.7.1}%
+\contentsline {paragraph}{Назначение системы ввода/вывода.}{60}{section*.116}%
+\contentsline {paragraph}{Способы подключения СВВ к ядру ВМ.}{61}{section*.117}%
+\contentsline {subsubsection}{\numberline {1.7.2}Адресное пространство системы ввода/вывода}{61}{subsubsection.1.7.2}%
+\contentsline {paragraph}{Совмещённое адресное пространство.}{61}{section*.118}%
+\contentsline {paragraph}{Выделенное адресное пространство.}{62}{section*.119}%
+\contentsline {subsubsection}{\numberline {1.7.3}Периферийные устройства}{63}{subsubsection.1.7.3}%
+\contentsline {paragraph}{Категории периферийных устройств.}{63}{section*.120}%
+\contentsline {paragraph}{Обобщённая структура периферийного устройства.}{63}{section*.121}%
+\contentsline {subsubsection}{\numberline {1.7.4}Модули ввода/вывода}{64}{subsubsection.1.7.4}%
+\contentsline {paragraph}{Функции модуля ввода/вывода.}{64}{section*.122}%
+\contentsline {paragraph}{Локализация данных.}{64}{section*.123}%
+\contentsline {paragraph}{Управление и синхронизация.}{64}{section*.124}%
+\contentsline {paragraph}{Обмен информацией.}{65}{section*.125}%
+\contentsline {paragraph}{Буферизация данных.}{66}{section*.126}%
+\contentsline {paragraph}{Обнаружение ошибок.}{66}{section*.127}%
+\contentsline {paragraph}{Структура модуля ввода/вывода.}{67}{section*.128}%
+\contentsline {subsubsection}{\numberline {1.7.5}Методы управления вводом/выводом}{68}{subsubsection.1.7.5}%
+\contentsline {paragraph}{Общая классификация.}{68}{section*.129}%
+\contentsline {paragraph}{Ввод/вывод с опросом.}{69}{section*.130}%
+\contentsline {paragraph}{Ввод/вывод по прерываниям.}{70}{section*.131}%
+\contentsline {paragraph}{Прямой доступ к памяти.}{71}{section*.132}%
+\contentsline {subsubsection}{\numberline {1.7.6}Каналы и процессоры ввода/вывода}{73}{subsubsection.1.7.6}%
+\contentsline {paragraph}{Назначение каналов.}{73}{section*.133}%
+\contentsline {paragraph}{Канальная программа и управляющие слова канала.}{73}{section*.134}%
+\contentsline {paragraph}{Иерархия управления вводом/выводом.}{74}{section*.135}%
+\contentsline {paragraph}{Структура ВМ с канальной системой ввода/вывода.}{74}{section*.136}%
+\contentsline {paragraph}{Мультиплексный и монопольный режимы.}{75}{section*.137}%
+\contentsline {paragraph}{Канальная подсистема.}{76}{section*.138}%
+\contentsline {subsubsection}{\numberline {1.7.7}Устройства сопряжения с объектами}{77}{subsubsection.1.7.7}%
+\contentsline {paragraph}{Назначение и состав.}{77}{section*.139}%
+\contentsline {paragraph}{Порты ввода/вывода.}{77}{section*.140}%
+\contentsline {paragraph}{Блоки управления периферийными устройствами.}{77}{section*.141}%
+\contentsline {paragraph}{Адаптеры и интерфейсы.}{77}{section*.142}%
+\contentsline {paragraph}{Сопряжение с объектами управления.}{78}{section*.143}%
+\contentsline {subsubsection}{\numberline {1.7.8}Краткое резюме подраздела}{78}{subsubsection.1.7.8}%
+\contentsline {subsection}{\numberline {1.8}Краткое резюме}{78}{subsection.1.8}%
